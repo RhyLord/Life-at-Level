@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://dlkcde7rlksrk"]
+
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/stats_menu.gd" id="1_enee4"]
+[ext_resource type="Script" path="res://Scripts/Go_Back_Button.gd" id="2_kj3yr"]
+
+[node name="stats_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_enee4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -17.0
+offset_right = 1164.0
+offset_bottom = 667.0
+color = Color(0.492416, 0.658999, 0.893626, 1)
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = -10.0
+offset_right = 320.0
+offset_bottom = 98.0
+theme_override_font_sizes/normal_font_size = 75
+text = "Player"
+
+[node name="Leveltxt" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 90.0
+offset_right = 742.0
+offset_bottom = 139.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Level"
+
+[node name="Nxt_Lvl_Txt" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 125.0
+offset_right = 742.0
+offset_bottom = 174.0
+theme_override_font_sizes/normal_font_size = 25
+text = "EXP:"
+
+[node name="Description" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 155.0
+offset_right = 701.0
+offset_bottom = 575.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "EXP:"
+
+[node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1067.0
+offset_top = 7.0
+offset_right = 1139.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 40
+text = "X"
+script = ExtResource("2_kj3yr")
+
+[connection signal="button_up" from="Go_Back_Button" to="Go_Back_Button" method="_on_button_up"]

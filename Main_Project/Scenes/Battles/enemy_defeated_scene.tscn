@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4sh384ux05h1"]
+
+[ext_resource type="Script" path="res://Scripts/Battle_Scripts/enemy_defeated_scene.gd" id="1_q3dsf"]
+
+[node name="Enemy_defeated_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_q3dsf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -11.0
+offset_right = 1173.0
+offset_bottom = 678.0
+color = Color(0, 0, 0, 0.686275)
+
+[node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1068.0
+offset_top = 15.0
+offset_right = 1140.0
+offset_bottom = 78.0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="Details" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 72.0
+offset_right = 876.0
+offset_bottom = 375.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "data"
+
+[node name="Return_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 393.0
+offset_right = 455.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "Return"
+
+[node name="Next_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 686.0
+offset_top = 393.0
+offset_right = 853.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "Next"
+
+[connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]
+[connection signal="button_up" from="Return_Button" to="." method="_on_return_button_button_up"]
+[connection signal="button_up" from="Next_Button" to="." method="_on_next_button_button_up"]

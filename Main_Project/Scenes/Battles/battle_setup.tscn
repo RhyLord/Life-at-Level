@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=3 uid="uid://008eed0vc7aq"]
+
+[ext_resource type="Script" path="res://Scripts/Battle_Scripts/battle_setup.gd" id="1_ikuij"]
+[ext_resource type="Texture2D" uid="uid://x5c1usdih7h7" path="res://Assets/Location_Art/Plains/Plains_Bg_Noon.png" id="2_hig3t"]
+[ext_resource type="Texture2D" uid="uid://bbotkdixvyeub" path="res://Assets/Card_art/Card_base.png" id="3_w0r74"]
+[ext_resource type="Texture2D" uid="uid://pccm33tv3ohh" path="res://Assets/Card_art/Player_Card.png" id="4_aiij7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ydf4y"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qaoa3"]
+bg_color = Color(1, 0.127268, 0.24005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mfder"]
+bg_color = Color(0.305318, 0.598754, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xv46c"]
+bg_color = Color(0.650045, 0.000170864, 0.601295, 1)
+
+[node name="Battle_Setup" type="Node2D"]
+script = ExtResource("1_ikuij")
+
+[node name="Dungeon_Name_Txt" type="RichTextLabel" parent="."]
+offset_right = 1156.0
+offset_bottom = 105.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Dungeon Name"
+
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(592, 325)
+scale = Vector2(0.650231, 0.650231)
+texture = ExtResource("2_hig3t")
+
+[node name="Ready_button" type="Button" parent="."]
+offset_left = 33.0
+offset_top = 454.0
+offset_right = 156.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 30
+text = "Ready"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+offset_left = 6.0
+offset_top = 514.0
+offset_right = 189.0
+offset_bottom = 541.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ydf4y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qaoa3")
+value = 50.0
+show_percentage = false
+
+[node name="HPTXTLabel" type="RichTextLabel" parent="HealthBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="ManaBar" type="ProgressBar" parent="."]
+offset_left = 6.0
+offset_top = 550.0
+offset_right = 189.0
+offset_bottom = 577.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ydf4y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mfder")
+value = 50.0
+show_percentage = false
+
+[node name="MPTXTLabel" type="RichTextLabel" parent="ManaBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="ENBar" type="ProgressBar" parent="."]
+offset_left = 6.0
+offset_top = 585.0
+offset_right = 189.0
+offset_bottom = 612.0
+theme_override_styles/background = SubResource("StyleBoxFlat_ydf4y")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xv46c")
+value = 50.0
+show_percentage = false
+
+[node name="ENTXTLabel" type="RichTextLabel" parent="ENBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+modulate = Color(1, 1, 1, 0.686275)
+offset_left = 283.0
+offset_top = 403.0
+offset_right = 1142.0
+offset_bottom = 647.0
+theme_override_constants/h_separation = 160
+theme_override_constants/v_separation = 0
+columns = 5
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Player_Card" type="Sprite2D" parent="."]
+position = Vector2(96, 282)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_w0r74")
+
+[node name="Card_image" type="Sprite2D" parent="Player_Card"]
+texture = ExtResource("4_aiij7")
+
+[connection signal="button_up" from="Ready_button" to="." method="_on_ready_button_button_up"]

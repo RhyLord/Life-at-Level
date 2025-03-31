@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://c64uygfg48ifi"]
+
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/catalogue_menu.gd" id="1_jhj4t"]
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Go_Back_To_Skills.gd" id="1_lnmh7"]
+[ext_resource type="Script" path="res://Scripts/Go_Back_Button.gd" id="1_mrkrw"]
+
+[node name="catalogue_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jhj4t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -17.0
+offset_right = 1164.0
+offset_bottom = 667.0
+color = Color(0.492416, 0.658999, 0.893626, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 129.0
+offset_right = 949.0
+offset_bottom = 392.0
+
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Skills"
+script = ExtResource("1_lnmh7")
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Inventory"
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Stats"
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Go Back"
+script = ExtResource("1_mrkrw")
+
+[connection signal="button_up" from="GridContainer/Button4" to="GridContainer/Button4" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="GridContainer/Button" to="GridContainer/Button" method="_on_button_up"]

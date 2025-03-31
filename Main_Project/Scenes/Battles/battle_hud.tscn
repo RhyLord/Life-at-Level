@@ -1,0 +1,466 @@
+[gd_scene load_steps=13 format=3 uid="uid://dkd068viwcaxf"]
+
+[ext_resource type="Script" path="res://Scripts/Battle_Scripts/Recovery_battle_button.gd" id="1_5uy33"]
+[ext_resource type="Script" path="res://Scripts/Battle_Scripts/BattleHUD.gd" id="1_sap45"]
+[ext_resource type="Script" path="res://Scripts/Battle_Scripts/Attack_battle_button.gd" id="2_geucx"]
+[ext_resource type="Texture2D" uid="uid://bbotkdixvyeub" path="res://Assets/Card_art/Card_base.png" id="3_dxqv2"]
+[ext_resource type="Texture2D" uid="uid://pccm33tv3ohh" path="res://Assets/Card_art/Player_Card.png" id="4_ulhow"]
+[ext_resource type="Texture2D" uid="uid://dm6dcxckg13v" path="res://Assets/Card_art/GreenSlime_Card.png" id="5_vq5fo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7iyq"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cjq43"]
+bg_color = Color(1, 0.127268, 0.24005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhsti"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8hxme"]
+bg_color = Color(1, 0.127268, 0.24005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cihbf"]
+bg_color = Color(0.305318, 0.598754, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fa43m"]
+bg_color = Color(0.650045, 0.000170864, 0.601295, 1)
+
+[node name="Battle_HUD" type="Node2D"]
+script = ExtResource("1_sap45")
+
+[node name="Button_Holder" type="Node2D" parent="."]
+visible = false
+
+[node name="Button4" type="Button" parent="Button_Holder"]
+offset_left = 860.0
+offset_top = 169.0
+offset_right = 897.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button" type="Button" parent="Button_Holder"]
+offset_left = 270.0
+offset_top = 169.0
+offset_right = 307.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button2" type="Button" parent="Button_Holder"]
+offset_left = 460.0
+offset_top = 169.0
+offset_right = 497.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button3" type="Button" parent="Button_Holder"]
+offset_left = 660.0
+offset_top = 169.0
+offset_right = 697.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Button5" type="Button" parent="Button_Holder"]
+offset_left = 1060.0
+offset_top = 169.0
+offset_right = 1097.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+text = "+"
+
+[node name="Options_holder" type="ColorRect" parent="."]
+offset_right = 200.0
+offset_bottom = 504.0
+color = Color(0.113725, 0.113725, 0.113725, 0.501961)
+
+[node name="Option_button_1" type="Button" parent="Options_holder"]
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 70.0
+offset_right = 185.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 25
+text = "Recovery"
+script = ExtResource("1_5uy33")
+
+[node name="Option_button_2" type="Button" parent="Options_holder"]
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 135.0
+offset_right = 185.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 25
+text = "Attack"
+script = ExtResource("2_geucx")
+
+[node name="Option_button_3" type="Button" parent="Options_holder"]
+visible = false
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 200.0
+offset_right = 185.0
+offset_bottom = 257.0
+theme_override_font_sizes/font_size = 25
+text = "Go for a Run"
+
+[node name="Option_button_4" type="Button" parent="Options_holder"]
+visible = false
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 265.0
+offset_right = 185.0
+offset_bottom = 322.0
+theme_override_font_sizes/font_size = 25
+text = "Study"
+
+[node name="Option_button_5" type="Button" parent="Options_holder"]
+visible = false
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 330.0
+offset_right = 185.0
+offset_bottom = 387.0
+theme_override_font_sizes/font_size = 25
+text = "Creation"
+
+[node name="Option_button_6" type="Button" parent="Options_holder"]
+visible = false
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 395.0
+offset_right = 185.0
+offset_bottom = 452.0
+theme_override_font_sizes/font_size = 25
+text = "Travel"
+
+[node name="Player_Card" type="Sprite2D" parent="."]
+position = Vector2(1453, 649)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_dxqv2")
+
+[node name="Player_Image" type="TextureButton" parent="Player_Card"]
+offset_left = -116.667
+offset_top = -150.0
+offset_right = 115.333
+offset_bottom = 150.0
+texture_normal = ExtResource("4_ulhow")
+
+[node name="Enemy_Card_1" type="Sprite2D" parent="."]
+position = Vector2(-464, 103)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_dxqv2")
+
+[node name="HealthBar" type="ProgressBar" parent="Enemy_Card_1"]
+z_index = 1
+offset_left = -111.667
+offset_top = -193.333
+offset_right = 119.333
+offset_bottom = -163.333
+theme_override_styles/background = SubResource("StyleBoxFlat_x7iyq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cjq43")
+value = 50.0
+show_percentage = false
+
+[node name="HPTXTLabel" type="RichTextLabel" parent="Enemy_Card_1/HealthBar"]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 30.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="Enemy_Name_1" type="RichTextLabel" parent="Enemy_Card_1"]
+z_index = 1
+offset_left = -110.0
+offset_right = 108.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Name
+Lvl"
+
+[node name="Enemy_Image" type="TextureButton" parent="Enemy_Card_1"]
+offset_left = -116.667
+offset_top = -148.333
+offset_right = 115.333
+offset_bottom = 151.667
+texture_normal = ExtResource("5_vq5fo")
+
+[node name="Enemy_Card_2" type="Sprite2D" parent="."]
+position = Vector2(-751, 103)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_dxqv2")
+
+[node name="HealthBar" type="ProgressBar" parent="Enemy_Card_2"]
+z_index = 1
+offset_left = -111.667
+offset_top = -193.333
+offset_right = 119.333
+offset_bottom = -163.333
+theme_override_styles/background = SubResource("StyleBoxFlat_x7iyq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cjq43")
+value = 50.0
+show_percentage = false
+
+[node name="HPTXTLabel" type="RichTextLabel" parent="Enemy_Card_2/HealthBar"]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 30.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="Enemy_Name" type="RichTextLabel" parent="Enemy_Card_2"]
+z_index = 1
+offset_left = -110.0
+offset_right = 108.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Name
+Lvl"
+
+[node name="Enemy_Image_2" type="TextureButton" parent="Enemy_Card_2"]
+offset_left = -116.667
+offset_top = -148.333
+offset_right = 115.333
+offset_bottom = 151.667
+texture_normal = ExtResource("5_vq5fo")
+
+[node name="Enemy_Card_3" type="Sprite2D" parent="."]
+position = Vector2(-1045, 103)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_dxqv2")
+
+[node name="HealthBar" type="ProgressBar" parent="Enemy_Card_3"]
+z_index = 1
+offset_left = -111.667
+offset_top = -193.333
+offset_right = 119.333
+offset_bottom = -163.333
+theme_override_styles/background = SubResource("StyleBoxFlat_x7iyq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cjq43")
+value = 50.0
+show_percentage = false
+
+[node name="HPTXTLabel" type="RichTextLabel" parent="Enemy_Card_3/HealthBar"]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 30.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="Enemy_Name" type="RichTextLabel" parent="Enemy_Card_3"]
+z_index = 1
+offset_left = -110.0
+offset_right = 108.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Name
+Lvl"
+
+[node name="Enemy_Image_3" type="TextureButton" parent="Enemy_Card_3"]
+offset_left = -116.667
+offset_top = -148.333
+offset_right = 115.333
+offset_bottom = 151.667
+texture_normal = ExtResource("5_vq5fo")
+
+[node name="Enemy_Card_4" type="Sprite2D" parent="."]
+position = Vector2(-1264, 103)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_dxqv2")
+
+[node name="HealthBar" type="ProgressBar" parent="Enemy_Card_4"]
+z_index = 1
+offset_left = -111.667
+offset_top = -193.333
+offset_right = 119.333
+offset_bottom = -163.333
+theme_override_styles/background = SubResource("StyleBoxFlat_x7iyq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cjq43")
+value = 50.0
+show_percentage = false
+
+[node name="HPTXTLabel" type="RichTextLabel" parent="Enemy_Card_4/HealthBar"]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 30.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="Enemy_Name" type="RichTextLabel" parent="Enemy_Card_4"]
+z_index = 1
+offset_left = -110.0
+offset_right = 108.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Name
+Lvl"
+
+[node name="Enemy_Image_4" type="TextureButton" parent="Enemy_Card_4"]
+offset_left = -116.667
+offset_top = -148.333
+offset_right = 115.333
+offset_bottom = 151.667
+texture_normal = ExtResource("5_vq5fo")
+
+[node name="Enemy_Card_5" type="Sprite2D" parent="."]
+position = Vector2(-1494, 103)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_dxqv2")
+
+[node name="HealthBar" type="ProgressBar" parent="Enemy_Card_5"]
+z_index = 1
+offset_left = -111.667
+offset_top = -193.333
+offset_right = 119.333
+offset_bottom = -163.333
+theme_override_styles/background = SubResource("StyleBoxFlat_x7iyq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cjq43")
+value = 50.0
+show_percentage = false
+
+[node name="HPTXTLabel" type="RichTextLabel" parent="Enemy_Card_5/HealthBar"]
+layout_mode = 0
+offset_right = 228.0
+offset_bottom = 30.0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="Enemy_Name" type="RichTextLabel" parent="Enemy_Card_5"]
+z_index = 1
+offset_left = -110.0
+offset_right = 108.0
+offset_bottom = 117.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "Name
+Lvl"
+
+[node name="Enemy_Image_5" type="TextureButton" parent="Enemy_Card_5"]
+offset_left = -116.667
+offset_top = -148.333
+offset_right = 115.333
+offset_bottom = 151.667
+texture_normal = ExtResource("5_vq5fo")
+
+[node name="Dungeon_Name_Txt" type="RichTextLabel" parent="."]
+offset_left = 298.0
+offset_right = 1144.0
+offset_bottom = 76.0
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Dungeon Name"
+
+[node name="Stat_Holder" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = 503.0
+offset_right = 1182.0
+offset_bottom = 698.0
+color = Color(0, 0, 0, 0.482353)
+
+[node name="HealthBar" type="ProgressBar" parent="Stat_Holder"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 12.0
+offset_right = 187.0
+offset_bottom = 39.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bhsti")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8hxme")
+value = 50.0
+show_percentage = false
+
+[node name="HPTXTLabel" type="RichTextLabel" parent="Stat_Holder/HealthBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="ManaBar" type="ProgressBar" parent="Stat_Holder"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 48.0
+offset_right = 187.0
+offset_bottom = 75.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bhsti")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cihbf")
+value = 50.0
+show_percentage = false
+
+[node name="MPTXTLabel" type="RichTextLabel" parent="Stat_Holder/ManaBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="ENBar" type="ProgressBar" parent="Stat_Holder"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 83.0
+offset_right = 187.0
+offset_bottom = 110.0
+theme_override_styles/background = SubResource("StyleBoxFlat_bhsti")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fa43m")
+value = 50.0
+show_percentage = false
+
+[node name="ENTXTLabel" type="RichTextLabel" parent="Stat_Holder/ENBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="Desc" type="RichTextLabel" parent="Stat_Holder"]
+layout_mode = 0
+offset_left = 203.0
+offset_right = 1136.0
+offset_bottom = 103.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Data"
+
+[connection signal="button_up" from="Options_holder/Option_button_1" to="Options_holder/Option_button_1" method="_on_button_up"]
+[connection signal="button_up" from="Options_holder/Option_button_2" to="Options_holder/Option_button_2" method="_on_button_up"]
+[connection signal="button_up" from="Enemy_Card_1/Enemy_Image" to="." method="_on_enemy_image_button_up"]
+[connection signal="button_up" from="Enemy_Card_2/Enemy_Image_2" to="." method="_on_enemy_image_2_button_up"]
+[connection signal="button_up" from="Enemy_Card_3/Enemy_Image_3" to="." method="_on_enemy_image_3_button_up"]
+[connection signal="button_up" from="Enemy_Card_4/Enemy_Image_4" to="." method="_on_enemy_image_4_button_up"]
+[connection signal="button_up" from="Enemy_Card_5/Enemy_Image_5" to="." method="_on_enemy_image_5_button_up"]

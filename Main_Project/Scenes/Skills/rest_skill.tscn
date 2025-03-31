@@ -1,0 +1,101 @@
+[gd_scene load_steps=4 format=3 uid="uid://clsxxn6byhcxv"]
+
+[ext_resource type="Texture2D" uid="uid://dsrdh364413j7" path="res://Assets/Skills_art/Rest_Button.png" id="1_4qyvc"]
+[ext_resource type="Script" path="res://Scripts/Skill_Menu_Scripts/rest_skill.gd" id="1_8vxh0"]
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Go_Back_To_Skills.gd" id="3_xodiy"]
+
+[node name="Rest_Skill" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8vxh0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -17.0
+offset_right = 1164.0
+offset_bottom = 667.0
+color = Color(0.492416, 0.658999, 0.893626, 1)
+
+[node name="Leveltxt" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 100.0
+offset_right = 742.0
+offset_bottom = 149.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Level"
+
+[node name="Nxt_Lvl_Txt" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 135.0
+offset_right = 742.0
+offset_bottom = 184.0
+theme_override_font_sizes/normal_font_size = 25
+text = "EXP:"
+
+[node name="Type_Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 180.0
+offset_right = 742.0
+offset_bottom = 229.0
+theme_override_font_sizes/normal_font_size = 25
+text = "Type: Recovery, Combat and Off-Combat"
+
+[node name="Description" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 299.0
+offset_right = 1123.0
+offset_bottom = 396.0
+theme_override_font_sizes/normal_font_size = 20
+text = "EXP:"
+
+[node name="Off-Combat_Desc" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 400.0
+offset_right = 1123.0
+offset_bottom = 448.0
+theme_override_font_sizes/normal_font_size = 20
+text = "EXP:"
+
+[node name="Combat_Desc" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 450.0
+offset_right = 1123.0
+offset_bottom = 498.0
+theme_override_font_sizes/normal_font_size = 20
+text = "EXP:"
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 10.0
+offset_right = 320.0
+offset_bottom = 118.0
+theme_override_font_sizes/normal_font_size = 75
+text = "Rest"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(921, 149)
+texture = ExtResource("1_4qyvc")
+
+[node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 6.0
+offset_right = 1144.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 40
+text = "X"
+script = ExtResource("3_xodiy")
+
+[connection signal="button_up" from="Go_Back_Button" to="Go_Back_Button" method="_on_button_up"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca8sd2bg5x086"]
+
+[ext_resource type="Script" path="res://Scripts/Battle_Scripts/recovery_options_scene.gd" id="1_6j8mv"]
+[ext_resource type="Texture2D" uid="uid://n4a8htoqdqyf" path="res://Assets/Skills_art/Unknown_Button.png" id="2_l8caq"]
+
+[node name="Recovery_Options_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6j8mv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -11.0
+offset_right = 1173.0
+offset_bottom = 678.0
+color = Color(0, 0, 0, 0.470588)
+
+[node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1067.0
+offset_top = 7.0
+offset_right = 1139.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 86.0
+offset_right = 2032.0
+offset_bottom = 1112.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Skill_Button_1" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_l8caq")
+
+[connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]
+[connection signal="button_up" from="GridContainer/Skill_Button_1" to="." method="_on_skill_button_1_button_up"]

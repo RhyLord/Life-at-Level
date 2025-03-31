@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Life_At_Level"
+run/main_scene="res://Scenes/main_menu.tscn"
+config/features=PackedStringArray("4.2", "Mobile")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Player="*res://Scripts/Global_Scripts/Player.gd"
+Skill="*res://Scripts/Global_Scripts/Skill.gd"
+Global="*res://Scripts/Global_Scripts/Global.gd"
+PreBattleData="*res://Scripts/Global_Scripts/PreBattle_Data.gd"
+BattleMech="*res://Scripts/Global_Scripts/Battle_Mech.gd"
+Enemy1Data="*res://Scripts/Global_Scripts/Enemy_1_data.gd"
+PostBattleData="*res://Scripts/Global_Scripts/PostBattleData.gd"
+Enemy2Data="*res://Scripts/Global_Scripts/Enemy_2_data.gd"
+Enemy3Data="*res://Scripts/Global_Scripts/Enemy_3_data.gd"
+Enemy4Data="*res://Scripts/Global_Scripts/Enemy_4_data.gd"
+Enemy5Data="*res://Scripts/Global_Scripts/Enemy_5_data.gd"
+DungeonData="*res://Scripts/Global_Scripts/DungeonData.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
