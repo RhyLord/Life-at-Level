@@ -1,0 +1,116 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnnj0c07g45wx"]
+
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/lowest_level_slime_selection.gd" id="1_27hi2"]
+
+[node name="Lowest_Level_Slime_Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_27hi2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -17.0
+offset_right = 1164.0
+offset_bottom = 667.0
+color = Color(0.492416, 0.658999, 0.893626, 1)
+
+[node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1067.0
+offset_top = 7.0
+offset_right = 1139.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 11.0
+offset_right = 963.0
+offset_bottom = 80.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 50
+text = "Lowest Level Slime Dungeon"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 159.0
+offset_right = 273.0
+offset_bottom = 317.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button_1_10" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901442, 0, 0.151654, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "1 - 10"
+
+[node name="Button_11_20" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901442, 0, 0.151654, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "11-20"
+
+[node name="Button_21_30" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901442, 0, 0.151654, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "21-30"
+
+[node name="Button_31_40" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901442, 0, 0.151654, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "31-40"
+
+[node name="Button_41_50" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901442, 0, 0.151654, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "41-50"
+
+[node name="Button_51_60" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901442, 0, 0.151654, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "51-60"
+
+[connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]
+[connection signal="button_up" from="GridContainer/Button_1_10" to="." method="_on_button_1_10_button_up"]
+[connection signal="button_up" from="GridContainer/Button_11_20" to="." method="_on_button_11_20_button_up"]
+[connection signal="button_up" from="GridContainer/Button_21_30" to="." method="_on_button_21_30_button_up"]
+[connection signal="button_up" from="GridContainer/Button_31_40" to="." method="_on_button_31_40_button_up"]
+[connection signal="button_up" from="GridContainer/Button_41_50" to="." method="_on_button_41_50_button_up"]
+[connection signal="button_up" from="GridContainer/Button_51_60" to="." method="_on_button_51_60_button_up"]

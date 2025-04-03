@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://n4a8htoqdqyf" path="res://Assets/Skills_art/Unknown_Button.png" id="2_l8caq"]
 
 [node name="Recovery_Options_scene" type="Control"]
+z_index = 100
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,10 +37,39 @@ offset_top = 86.0
 offset_right = 2032.0
 offset_bottom = 1112.0
 scale = Vector2(0.5, 0.5)
+theme_override_constants/h_separation = 20
+columns = 2
 
 [node name="Skill_Button_1" type="TextureButton" parent="GridContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_l8caq")
 
+[node name="Cost_TXT" type="RichTextLabel" parent="GridContainer/Skill_Button_1"]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 274.0
+offset_bottom = 270.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+
+[node name="Skill_Button_2" type="TextureButton" parent="GridContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_l8caq")
+
+[node name="Cost_TXT" type="RichTextLabel" parent="GridContainer/Skill_Button_2"]
+layout_mode = 0
+offset_top = 192.0
+offset_right = 274.0
+offset_bottom = 270.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+
 [connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]
 [connection signal="button_up" from="GridContainer/Skill_Button_1" to="." method="_on_skill_button_1_button_up"]
+[connection signal="button_up" from="GridContainer/Skill_Button_2" to="." method="_on_skill_button_2_button_up"]

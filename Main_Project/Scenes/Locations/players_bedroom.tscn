@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dq65csdtmmxpg"]
 
-[ext_resource type="Script" path="res://Scripts/players_bedroom.gd" id="1_d226b"]
+[ext_resource type="Script" path="res://Scripts/Location_Scripts/players_bedroom.gd" id="1_d226b"]
 [ext_resource type="Texture2D" uid="uid://ca3karudjt3kj" path="res://Assets/Player_bedroom/Player_Bedroom_Morning.png" id="1_hk1kx"]
 [ext_resource type="Script" path="res://Scripts/Options_Toggle_Bedroom.gd" id="3_hf5eu"]
 [ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="4_ogc7n"]
@@ -61,7 +61,7 @@ offset_top = 140.0
 offset_right = 185.0
 offset_bottom = 197.0
 theme_override_font_sizes/font_size = 25
-text = "Go for a Run"
+text = "Meditate"
 
 [node name="Option_button_4" type="Button" parent="Options_holder"]
 modulate = Color(0.848727, 0.471042, 0.0524029, 1)
@@ -82,6 +82,16 @@ offset_right = 185.0
 offset_bottom = 392.0
 theme_override_font_sizes/font_size = 25
 text = "Creation"
+
+[node name="Option_button_7" type="Button" parent="Options_holder"]
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 400.0
+offset_right = 185.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 25
+text = "Travel"
 
 [node name="Option_button_6" type="Button" parent="Options_holder"]
 modulate = Color(0.848727, 0.471042, 0.0524029, 1)
@@ -108,6 +118,9 @@ show_percentage = false
 layout_mode = 0
 offset_right = 181.0
 offset_bottom = 27.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "Hp/MaxHp"
@@ -127,6 +140,8 @@ show_percentage = false
 layout_mode = 0
 offset_right = 181.0
 offset_bottom = 27.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "Hp/MaxHp"
@@ -146,6 +161,8 @@ show_percentage = false
 layout_mode = 0
 offset_right = 181.0
 offset_bottom = 27.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "Hp/MaxHp"
@@ -174,7 +191,10 @@ script = ExtResource("5_fp83u")
 offset_left = 845.0
 offset_top = 21.0
 offset_right = 1049.0
-offset_bottom = 86.0
+offset_bottom = 133.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 25
 bbcode_enabled = true
 text = "csdsdvsc"
 
@@ -183,6 +203,7 @@ text = "csdsdvsc"
 [connection signal="pressed" from="Options_holder/Option_button_3" to="." method="_on_option_button_3_pressed"]
 [connection signal="pressed" from="Options_holder/Option_button_4" to="." method="_on_option_button_4_pressed"]
 [connection signal="button_up" from="Options_holder/Option_button_5" to="." method="_on_option_button_5_button_up"]
+[connection signal="button_up" from="Options_holder/Option_button_7" to="." method="_on_option_button_7_button_up"]
 [connection signal="button_up" from="Options_holder/Option_button_6" to="." method="_on_option_button_6_button_up"]
 [connection signal="button_up" from="Options_Toggle" to="Options_Toggle" method="_on_button_up"]
 [connection signal="button_up" from="Inventory_Button" to="Inventory_Button" method="_on_button_up"]

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c20h7u20guwkd"]
+[gd_scene load_steps=3 format=3 uid="uid://c20h7u20guwkd"]
 
 [ext_resource type="Script" path="res://Scripts/Menus_Scripts/skills_menu.gd" id="1_jxqlk"]
 [ext_resource type="Texture2D" uid="uid://n4a8htoqdqyf" path="res://Assets/Skills_art/Unknown_Button.png" id="1_pyhlf"]
-[ext_resource type="Script" path="res://Scripts/Go_Back_Button.gd" id="3_t16fg"]
 
 [node name="Skills_Menu" type="Control"]
 layout_mode = 3
@@ -62,6 +61,14 @@ offset_right = 615.0
 offset_bottom = 175.0
 theme_override_font_sizes/font_size = 25
 text = "Physical"
+
+[node name="Button_5" type="Button" parent="Main_buttons"]
+offset_left = 623.0
+offset_top = 100.0
+offset_right = 773.0
+offset_bottom = 175.0
+theme_override_font_sizes/font_size = 25
+text = "Magic"
 
 [node name="Skill_Buttons" type="Node" parent="."]
 
@@ -261,15 +268,17 @@ offset_right = 1139.0
 offset_bottom = 65.0
 theme_override_font_sizes/font_size = 40
 text = "X"
-script = ExtResource("3_t16fg")
 
 [connection signal="pressed" from="Main_buttons/Button_1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Main_buttons/Button_2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Main_buttons/Button_3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Main_buttons/Button_4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Main_buttons/Button_5" to="." method="_on_button_5_pressed"]
 [connection signal="button_up" from="Skill_Buttons/GridContainer/Skill_Button_1" to="." method="_on_skill_button_1_button_up"]
 [connection signal="button_up" from="Skill_Buttons/GridContainer/Skill_Button_2" to="." method="_on_skill_button_2_button_up"]
 [connection signal="button_up" from="Skill_Buttons/GridContainer/Skill_Button_3" to="." method="_on_skill_button_3_button_up"]
-[connection signal="pressed" from="Skill_Buttons/GridContainer/Skill_Button_4" to="." method="_on_skill_button_4_pressed"]
-[connection signal="pressed" from="Skill_Buttons/GridContainer/Skill_Button_5" to="." method="_on_skill_button_5_pressed"]
-[connection signal="button_up" from="Go_Back_Button" to="Go_Back_Button" method="_on_button_up"]
+[connection signal="button_up" from="Skill_Buttons/GridContainer/Skill_Button_4" to="." method="_on_skill_button_4_button_up"]
+[connection signal="button_up" from="Skill_Buttons/GridContainer/Skill_Button_5" to="." method="_on_skill_button_5_button_up"]
+[connection signal="button_up" from="Skill_Buttons/GridContainer/Skill_Button_6" to="." method="_on_skill_button_6_button_up"]
+[connection signal="button_up" from="Skill_Buttons/GridContainer/Skill_Button_7" to="." method="_on_skill_button_7_button_up"]
+[connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]

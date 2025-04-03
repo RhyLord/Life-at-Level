@@ -5,11 +5,12 @@ extends Control
 @export var Lowest_Level_Slime_Dungeon_1_1: PackedScene = preload("res://Scenes/Battles/Slime_Dungeons/Lowest_Slime_Dungeons/lowest_slime_dungeon_1_1.tscn")
 
 @onready var details = $Details
+@onready var ItemTxT = $ItemGainTXT
 
 func _ready():
-	Player.XP += PostBattleData.XP
-	Player.level_up_player()
-	details.text = "[center]You defeated all enemies. You gained " + str(PostBattleData.XP) + " XP.[/center]"
+	PostBattleData.update()
+	details.text = PostBattleData.VictoryText
+	ItemTxT.text = "[center]" + str(PostBattleData.ItemGainText) + "[/center]"
 	BattleMech.Set_Default()
 	PreBattleData.Set_Default()
 	Enemy1Data.Set_Default()
@@ -17,6 +18,8 @@ func _ready():
 	Enemy3Data.Set_Default()
 	Enemy4Data.Set_Default()
 	Enemy5Data.Set_Default()
+	PostBattleData.reset_data()
+	Skill.Skill_Unlock_Check()
 
 func _on_go_back_button_button_up():
 	DungeonData.Reset_Data()
@@ -28,34 +31,21 @@ func _on_return_button_button_up():
 
 func _on_next_button_button_up():
 	DungeonData.Next_lvl()
-	
-	# Check the `next_scene` string and switch accordingly
-	match DungeonData.next_scene:
-		"Lowest_Level_Slime_Dungeon_1_2":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_2)
-		"Lowest_Level_Slime_Dungeon_1_3":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_1)
-		"Lowest_Level_Slime_Dungeon_1_4":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_2)
-		"Lowest_Level_Slime_Dungeon_1_5":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_1)
-		"Lowest_Level_Slime_Dungeon_1_6":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_2)
-		"Lowest_Level_Slime_Dungeon_1_7":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_1)
-		"Lowest_Level_Slime_Dungeon_1_8":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_2)
-		"Lowest_Level_Slime_Dungeon_1_9":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_1)
-		"Lowest_Level_Slime_Dungeon_1_10":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_2)
-		"Lowest_Level_Slime_Dungeon_1_11":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_1)
-		"Lowest_Level_Slime_Dungeon_1_12":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_2)
-		"Lowest_Level_Slime_Dungeon_1_13":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_1)
-		"Lowest_Level_Slime_Dungeon_1_14":
-			get_tree().change_scene_to_packed(Lowest_Level_Slime_Dungeon_1_2)
-		_:
-			print("Error: Unknown scene -", DungeonData.next_scene)
+	if DungeonData.lowest_level_slime == 1:
+		Lowest_Level_Slime_Dungeons()
+
+func Lowest_Level_Slime_Dungeons():
+	if DungeonData.lowest_level_slime == 1:
+		var dungeon_map = {}
+		
+		# Assign alternating dungeons
+		for i in range(2, 51):  # 1_2 to 1_50
+			dungeon_map["Lowest_Level_Slime_Dungeon_1_" + str(i)] = (
+				Lowest_Level_Slime_Dungeon_1_2 if i % 2 == 0 else Lowest_Level_Slime_Dungeon_1_1
+			)
+
+		var scene = dungeon_map.get(DungeonData.next_scene, null)
+		if scene:
+			get_tree().change_scene_to_packed(scene)
+		
+		

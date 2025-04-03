@@ -26,6 +26,9 @@ offset_left = 294.0
 offset_top = 142.0
 offset_right = 847.0
 offset_bottom = 258.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 40
 text = "Lowest Level Slime Dungeon"
 
@@ -35,6 +38,7 @@ offset_left = 1067.0
 offset_top = 7.0
 offset_right = 1139.0
 offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 40
 text = "X"
 script = ExtResource("1_0s80q")

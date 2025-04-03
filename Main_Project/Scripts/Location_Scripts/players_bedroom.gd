@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var Creation_Scene = "res://Scenes/creation_menu.tscn"
+@onready var House_Scene = "res://Scenes/Locations/house_scene.tscn"
 
 #Sprites for Bg
 var bedroom_bg_textures = [
@@ -54,7 +55,7 @@ func _on_option_button_2_pressed():
 	update_and_refresh(Skill.Active_PushUp)
 
 func _on_option_button_3_pressed():
-	update_and_refresh(Skill.Active_Run)
+	update_and_refresh(Skill.Active_Meditate)
 
 func _on_option_button_4_pressed():
 	update_and_refresh(Skill.Active_Study)
@@ -66,3 +67,8 @@ func _on_option_button_5_button_up():
 
 func _on_option_button_6_button_up():
 	update_and_refresh(Skill.Active_Squat)
+
+
+func _on_option_button_7_button_up():
+	Global.Map = 2
+	get_tree().change_scene_to_file(House_Scene)

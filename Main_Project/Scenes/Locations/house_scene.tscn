@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://orir26nx33fp"]
+
+[ext_resource type="Texture2D" uid="uid://bdni5s3wy5f3p" path="res://Assets/Map_Art/House_Bg_Morning.png" id="1_42780"]
+[ext_resource type="Script" path="res://Scripts/Location_Scripts/house_scene.gd" id="1_hbhhk"]
+[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="3_n6c27"]
+[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="4_lhwto"]
+[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="5_0g3e3"]
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Skill_Button.gd" id="6_ww7bq"]
+
+[node name="House_Scene" type="Node2D"]
+script = ExtResource("1_hbhhk")
+
+[node name="Day_Text" type="RichTextLabel" parent="."]
+offset_left = 845.0
+offset_top = 14.0
+offset_right = 1049.0
+offset_bottom = 107.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "csdsdvsc"
+
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(601, 337)
+scale = Vector2(0.67474, 0.665398)
+texture = ExtResource("1_42780")
+
+[node name="Inventory_Button" type="TextureButton" parent="."]
+offset_left = 1052.0
+offset_top = 15.0
+offset_right = 1330.0
+offset_bottom = 293.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_n6c27")
+texture_pressed = ExtResource("4_lhwto")
+texture_hover = ExtResource("5_0g3e3")
+script = ExtResource("6_ww7bq")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 37.0
+offset_top = 150.0
+offset_right = 393.0
+offset_bottom = 221.0
+theme_override_constants/v_separation = 20
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Player Bedroom"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Garden"
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Bathroom"
+
+[connection signal="button_up" from="Inventory_Button" to="Inventory_Button" method="_on_button_up"]
+[connection signal="button_up" from="GridContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="GridContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="GridContainer/Button3" to="." method="_on_button_3_button_up"]

@@ -83,4 +83,5 @@ func _on_ready_button_button_up():
 	Ready_button.hide()
 	PreBattleData.Player_position_x = Player_Card.global_position.x
 	PreBattleData.Player_position_y = Player_Card.global_position.y
-	get_tree().change_scene_to_file(Lowest_Slime_1_1)
+	if DungeonData.lowest_level_slime > 0:
+		get_tree().change_scene_to_file(Lowest_Slime_1_1)

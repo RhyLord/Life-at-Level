@@ -2,8 +2,13 @@ extends Node2D
 
 
 @export var Victory = load("res://Scenes/Battles/enemy_defeated_scene.tscn") as PackedScene
+@export var Faliure = load("res://Scenes/Battles/player_dead.tscn") as PackedScene
 
 var Green_Slime_Texture = preload("res://Assets/Card_art/GreenSlime_Card.png")
+var Acid_Slime_Texture = preload("res://Assets/Card_art/AcidSlime_Card.png")
+var Poison_Slime_Texture = preload("res://Assets/Card_art/PoisonSlime_Card.png")
+var Lava_Slime_Texture = preload("res://Assets/Card_art/LavaSlime_Card.png")
+var Aqua_Slime_Texture = preload("res://Assets/Card_art/AquaSlime_Card.png")
 
 @onready var Enemy_Cards = [
 	$Enemy_Card_1,
@@ -66,11 +71,15 @@ func _ready():
 	BattleMech.Player_Card_Position(Player_Card)
 	BattleMech.assign_multiple_enemy_positions(Enemy_Cards, buttons)
 
-
+func player_dead():
+	if Player.HP <= 0:
+		var falire_scn = Faliure.instantiate()
+		get_tree().current_scene.add_child(falire_scn)
 
 func _physics_process(delta):
 	if PreBattleData.Refresh_Active:
 		Set_Core_Stats()
+		player_dead()
 		PreBattleData.Refresh_Active = false
 	
 	if BattleMech.turn_order == 1:
@@ -199,25 +208,27 @@ func Enemy_Attack_Check():
 	Option_Holder.visible = true
 
 func Set_Enemy_Image():
-	if Enemy1Data.type == "green_slime":
-		Enemy_Image1.texture_normal = Green_Slime_Texture
-	
-	if Enemy2Data.type == "green_slime":
-		Enemy_Image2.texture_normal = Green_Slime_Texture
-	
-	if Enemy3Data.type == "green_slime":
-		Enemy_Image3.texture_normal = Green_Slime_Texture
-	
-	if Enemy4Data.type == "green_slime":
-		Enemy_Image4.texture_normal = Green_Slime_Texture
-	
-	if Enemy5Data.type == "green_slime":
-		Enemy_Image5.texture_normal = Green_Slime_Texture
+	var slime_textures = {
+		"green_slime": Green_Slime_Texture,
+		"acid_slime": Acid_Slime_Texture,
+		"poison_slime": Poison_Slime_Texture,
+		"lava_slime": Lava_Slime_Texture,
+		"aqua_slime": Aqua_Slime_Texture
+	}
 
+	var enemies = [Enemy1Data, Enemy2Data, Enemy3Data, Enemy4Data, Enemy5Data]
+	var images = [Enemy_Image1, Enemy_Image2, Enemy_Image3, Enemy_Image4, Enemy_Image5]
+
+	for i in range(enemies.size()):
+		if enemies[i].type in slime_textures:
+			images[i].texture_normal = slime_textures[enemies[i].type]
+		
+		
 func _on_enemy_image_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 1
 		BattleMech.Perform_Stored_func()
+		Player.reset_all_dmg()
 		BattleMech.turn_order = 2
 
 
@@ -225,6 +236,7 @@ func _on_enemy_image_2_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 2
 		BattleMech.Perform_Stored_func()
+		Player.reset_all_dmg()
 		BattleMech.turn_order = 2
 
 
@@ -232,6 +244,7 @@ func _on_enemy_image_3_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 3
 		BattleMech.Perform_Stored_func()
+		Player.reset_all_dmg()
 		BattleMech.turn_order = 2
 
 
@@ -239,6 +252,7 @@ func _on_enemy_image_4_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 4
 		BattleMech.Perform_Stored_func()
+		Player.reset_all_dmg()
 		BattleMech.turn_order = 2
 
 
@@ -246,4 +260,5 @@ func _on_enemy_image_5_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 5
 		BattleMech.Perform_Stored_func()
+		Player.reset_all_dmg()
 		BattleMech.turn_order = 2.

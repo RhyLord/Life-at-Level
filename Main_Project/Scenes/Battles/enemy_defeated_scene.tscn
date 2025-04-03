@@ -33,7 +33,20 @@ layout_mode = 0
 offset_left = 283.0
 offset_top = 72.0
 offset_right = 876.0
-offset_bottom = 375.0
+offset_bottom = 213.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "data"
+
+[node name="ItemGainTXT" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 283.0
+offset_top = 255.0
+offset_right = 876.0
+offset_bottom = 396.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5

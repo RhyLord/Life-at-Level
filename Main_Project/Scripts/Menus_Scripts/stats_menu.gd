@@ -1,8 +1,12 @@
 extends Control
 
+@export var Stat_add_Scene = "res://Scenes/stat_allocation_menu.tscn"
+@export var Catalogue_Scene = "res://Scenes/catalogue_menu.tscn"
+
 @onready var Level_txt = $Leveltxt
 @onready var Nxt_Level_txt = $Nxt_Lvl_Txt
 @onready var desc = $Description
+@onready var alloc_desc = $Panel/Allocation_Text
 
 var stats_text =   "[center][b][font_size=24]== Player Stats ==[/font_size][/b][/center]\n\n" + \
 					 "[color=red][b]HP (Health Points): " + str(Player.HP) + " / " + str(Player.MAX_HP) + "[/b][/color] - Determines how much damage the player can take.\n" + \
@@ -23,8 +27,18 @@ var stats_text =   "[center][b][font_size=24]== Player Stats ==[/font_size][/b][
 					 "[b]LUK (Luck): " + str(Player.LUK) + "[/b] - Affects loot drops and random effects.\n" + \
 					 "[b]CTRL (Control): " + str(Player.CTRL) + "[/b] - Governs precision in abilities, summoning, creation, and advanced magic."
 
+var alloc_text = "Available Allocation points [" + str(Player.Allocation_points) + "]."
 
 func _ready():
 	Level_txt.text = "Level : " + str(Player.LVL) 
 	Nxt_Level_txt.text = "Progress to Next Level : " + str(Player.XP) + " / " + str(Player.XP_NXT)
 	desc.text = stats_text
+	alloc_desc.text = alloc_text
+
+
+func _on_allocation_button_button_up():
+	get_tree().change_scene_to_file(Stat_add_Scene)
+
+
+func _on_go_back_button_button_up():
+	get_tree().change_scene_to_file(Catalogue_Scene)

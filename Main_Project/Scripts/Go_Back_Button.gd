@@ -4,6 +4,7 @@ extends Button
 
 
 func _on_button_up():
+	Global.Map = 1
 	get_tree().change_scene_to_file(Previous_Scene)
 
 

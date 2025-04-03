@@ -1,0 +1,153 @@
+[gd_scene load_steps=10 format=3 uid="uid://d00na5s5tp36k"]
+
+[ext_resource type="Script" path="res://Scripts/Location_Scripts/garden_scene.gd" id="1_t33x4"]
+[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="2_7uxvb"]
+[ext_resource type="Texture2D" uid="uid://dc6te1ml4ump0" path="res://Assets/Map_Art/Garden/Garden_Bg_Morning.png" id="2_m72cb"]
+[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="3_fs707"]
+[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="4_ogq7c"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0pbd"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnos3"]
+bg_color = Color(1, 0.127268, 0.24005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dancc"]
+bg_color = Color(0.305318, 0.598754, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj1fw"]
+bg_color = Color(0.650045, 0.000170864, 0.601295, 1)
+
+[node name="Garden_Scene" type="Node2D"]
+script = ExtResource("1_t33x4")
+
+[node name="Day_Text" type="RichTextLabel" parent="."]
+offset_left = 845.0
+offset_top = 14.0
+offset_right = 1049.0
+offset_bottom = 107.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "csdsdvsc"
+
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(601, 337)
+scale = Vector2(0.67474, 0.665398)
+texture = ExtResource("2_m72cb")
+
+[node name="Inventory_Button" type="TextureButton" parent="."]
+offset_left = 1052.0
+offset_top = 15.0
+offset_right = 1330.0
+offset_bottom = 293.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_7uxvb")
+texture_pressed = ExtResource("3_fs707")
+texture_hover = ExtResource("4_ogq7c")
+
+[node name="Options_holder" type="ColorRect" parent="."]
+offset_right = 200.0
+offset_bottom = 700.0
+color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[node name="Option_button_1" type="Button" parent="Options_holder"]
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 31.0
+offset_right = 185.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 25
+text = "Travel"
+
+[node name="Option_button_2" type="Button" parent="Options_holder"]
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 185.0
+offset_bottom = 157.0
+theme_override_font_sizes/font_size = 25
+text = "Rest"
+
+[node name="Option_button_3" type="Button" parent="Options_holder"]
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 169.0
+offset_right = 185.0
+offset_bottom = 226.0
+theme_override_font_sizes/font_size = 25
+text = "Go For a Run"
+
+[node name="HealthBar" type="ProgressBar" parent="Options_holder"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 514.0
+offset_right = 189.0
+offset_bottom = 541.0
+theme_override_styles/background = SubResource("StyleBoxFlat_w0pbd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_mnos3")
+value = 50.0
+show_percentage = false
+
+[node name="HPTXTLabel" type="RichTextLabel" parent="Options_holder/HealthBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="ManaBar" type="ProgressBar" parent="Options_holder"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 550.0
+offset_right = 189.0
+offset_bottom = 577.0
+theme_override_styles/background = SubResource("StyleBoxFlat_w0pbd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dancc")
+value = 50.0
+show_percentage = false
+
+[node name="MPTXTLabel" type="RichTextLabel" parent="Options_holder/ManaBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[node name="ENBar" type="ProgressBar" parent="Options_holder"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 585.0
+offset_right = 189.0
+offset_bottom = 612.0
+theme_override_styles/background = SubResource("StyleBoxFlat_w0pbd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fj1fw")
+value = 50.0
+show_percentage = false
+
+[node name="ENTXTLabel" type="RichTextLabel" parent="Options_holder/ENBar"]
+layout_mode = 0
+offset_right = 181.0
+offset_bottom = 27.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+text = "Hp/MaxHp"
+
+[connection signal="button_up" from="Inventory_Button" to="." method="_on_inventory_button_button_up"]
+[connection signal="button_up" from="Options_holder/Option_button_1" to="." method="_on_option_button_1_button_up"]
+[connection signal="button_up" from="Options_holder/Option_button_2" to="." method="_on_option_button_2_button_up"]
+[connection signal="button_up" from="Options_holder/Option_button_3" to="." method="_on_option_button_3_button_up"]

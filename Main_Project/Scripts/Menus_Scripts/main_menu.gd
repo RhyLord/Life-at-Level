@@ -1,6 +1,6 @@
 extends Control
 
-@export var Play_to_Scene = "res://Scenes/Locations/players_bedroom.tscn"
+@export var Play_to_Scene = "res://Scenes/new_game_or_continue.tscn"
 
 func _on_exit_button_button_up():
 	get_tree().quit()

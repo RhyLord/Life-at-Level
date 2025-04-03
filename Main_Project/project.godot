@@ -29,6 +29,7 @@ Enemy3Data="*res://Scripts/Global_Scripts/Enemy_3_data.gd"
 Enemy4Data="*res://Scripts/Global_Scripts/Enemy_4_data.gd"
 Enemy5Data="*res://Scripts/Global_Scripts/Enemy_5_data.gd"
 DungeonData="*res://Scripts/Global_Scripts/DungeonData.gd"
+Inventory="*res://Scripts/Global_Scripts/Inventory.gd"
 
 [display]
 
@@ -41,3 +42,4 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true

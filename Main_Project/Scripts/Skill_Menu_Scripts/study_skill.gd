@@ -12,6 +12,6 @@ func _ready():
 	desc.text = "Studying enhances intelligence, improving problem-solving and critical thinking. It is essential for mastering knowledge-based tasks and unlocking greater understanding over time."
 	
 	var en_cost = ceil(0.05 * Player.MAX_EN)
-	Off_combat_desc.text = "Active: Consumes [" + str(en_cost) + "] EN, and grants [" + str(10 * Player.INT) + "] Study EXP."
+	Off_combat_desc.text = "Active: Consumes [" + str(en_cost) + "] EN, and grants [" + str(25 * Player.INT) + "] Study EXP."
 	Combat_desc.text = "Passive: Grants [" + str(1 * Skill.Study_LVL) + "] INT. Current INT = " + str(Player.INT)
 

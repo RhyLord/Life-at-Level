@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcwqd5w0nochv"]
+
+[ext_resource type="Script" path="res://Scripts/Battle_Scripts/player_dead.gd" id="1_0chxj"]
+
+[node name="Player_Dead" type="Control"]
+z_index = 100
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0chxj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -23.0
+offset_top = -11.0
+offset_right = 1173.0
+offset_bottom = 678.0
+color = Color(0.372549, 0.113725, 0, 0.639216)
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 92.0
+offset_right = 1152.0
+offset_bottom = 253.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_outline_size = 10
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center]You Were Defeated[/center]"
+
+[node name="Respawn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 287.0
+offset_right = 699.0
+offset_bottom = 403.0
+theme_override_colors/font_color = Color(0.87988, 0.811713, 0.818236, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Respawn"
+
+[connection signal="button_up" from="Respawn" to="." method="_on_respawn_button_up"]
