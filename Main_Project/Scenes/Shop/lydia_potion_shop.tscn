@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6qg3nxkg5ct7"]
+
+[ext_resource type="Script" path="res://Scripts/Shop_Scripts/lydia_potion_shop.gd" id="1_54bne"]
+
+[node name="lydia_potion_shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_54bne")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.220615, 0.175828, 0.235278, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 150.0
+offset_right = 393.0
+offset_bottom = 221.0
+theme_override_constants/v_separation = 20
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Buy"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Sell"
+
+[node name="Button3" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Leave Shop"
+
+[connection signal="button_up" from="GridContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="GridContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="GridContainer/Button3" to="." method="_on_button_3_button_up"]

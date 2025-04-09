@@ -143,7 +143,7 @@ theme_override_font_sizes/font_size = 50
 text = "+"
 
 [node name="Player_Card" type="Sprite2D" parent="."]
-position = Vector2(96, 282)
+position = Vector2(-116, 241)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_w0r74")
 

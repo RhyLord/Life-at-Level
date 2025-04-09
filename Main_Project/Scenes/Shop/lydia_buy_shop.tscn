@@ -1,0 +1,217 @@
+[gd_scene load_steps=6 format=3 uid="uid://7y0oxjjuonip"]
+
+[ext_resource type="Script" path="res://Scripts/Shop_Scripts/lydia_buy_shop.gd" id="1_cdrn6"]
+[ext_resource type="Texture2D" uid="uid://lvtxd4roawfo" path="res://Assets/Effects_art/panel_rect.png" id="1_thfo1"]
+[ext_resource type="Texture2D" uid="uid://dchafcfr3jn4y" path="res://Assets/Items_Art/MinorHealthPotion_Item.png" id="2_bsnf1"]
+[ext_resource type="Texture2D" uid="uid://dtx2mwtqn0010" path="res://Assets/Items_Art/MinorManaPotion_Item.png" id="4_5ovki"]
+[ext_resource type="Texture2D" uid="uid://dnu0w372hq0i" path="res://Assets/Items_Art/AcidPotion_Item.png" id="5_7hfq7"]
+
+[node name="Lydia_Buy_Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cdrn6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.220615, 0.175828, 0.235278, 1)
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 6.0
+offset_right = 657.0
+offset_bottom = 115.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Purchase Menu"
+
+[node name="Coin" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_right = 1036.0
+offset_bottom = 109.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Coin"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 121.0
+offset_right = 1118.0
+offset_bottom = 624.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel1" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_thfo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel1"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("2_bsnf1")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel1"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 521.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Minor Health Potion
+Price = 100"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel1"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 100.0
+offset_right = 374.0
+offset_bottom = 146.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button1" type="Button" parent="ScrollContainer/VBoxContainer/Panel1"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 859.0
+offset_top = 26.0
+offset_right = 1027.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 60
+text = "Buy 1"
+
+[node name="Panel2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_thfo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel2"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("4_5ovki")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 521.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Minor Mana Potion
+Price = 1000"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 100.0
+offset_right = 374.0
+offset_bottom = 146.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/Panel2"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 859.0
+offset_top = 26.0
+offset_right = 1027.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 60
+text = "Buy 1"
+
+[node name="Panel3" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_thfo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel3"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("5_7hfq7")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 521.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Acid Potion
+Price = 200"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 100.0
+offset_right = 374.0
+offset_bottom = 146.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/Panel3"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 859.0
+offset_top = 26.0
+offset_right = 1027.0
+offset_bottom = 117.0
+theme_override_font_sizes/font_size = 60
+text = "Buy 1"
+
+[node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1067.0
+offset_top = 7.0
+offset_right = 1139.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel1/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel2/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel3/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]

@@ -2,31 +2,47 @@ extends Node
 
 var XP = 0
 var VictoryText = "[center]You defeated all enemies. You gained " + str(XP) + " XP.[/center]"
+
+var lowest_slime = 0
+
 var greenslime = 0
 var acidslime = 0
 var poisonslime = 0
 var lavaslime = 0
 var aquaslime = 0
+var magicslime = 0
+var metallicslime = 0
 var ItemGainText = "You Got no Items"
 var no_item = "You Got no Items"
 
 func reset_data():
 	XP = 0
+	lowest_slime = 0
+	
 	greenslime = 0
 	acidslime = 0
 	poisonslime = 0
 	lavaslime = 0
 	aquaslime = 0
+	magicslime = 0
+	metallicslime = 0
+	
 	ItemGainText = str(no_item)
 
 func update():
 	Player.XP += XP
 	Player.level_up_player()
+	Lowest_Level_Slime_1_10()
+	Lowest_Level_Slime_11_30()
+	Lowest_Level_Slime_31_40()
+	
 	green_slime()
 	acid_slime()
 	poison_slime()
 	lava_slime()
 	aqua_slime()
+	magic_slime()
+	metallic_slime()
 	VictoryText = "[center]You defeated all enemies. You gained " + str(XP) + " XP.[/center]"
 
 func green_slime():
@@ -226,6 +242,17 @@ func acid_slime():
 		else:
 			Inventory.Acid_Slime += 5
 			ItemGainText = "You Got 5 Acidic Slime"
+	
+	if acidslime == 7:
+		if Player.LUK > 10:
+			Inventory.Acid_Slime += 30
+			ItemGainText = "You Got 30 Acidic Slime"
+		elif Player.LUK > 5:
+			Inventory.Acid_Slime += 15
+			ItemGainText = "You Got 15 Acidic Slime"
+		else:
+			Inventory.Acid_Slime += 8
+			ItemGainText = "You Got 8 Acidic Slime"
 
 func poison_slime():
 	if poisonslime == 1:
@@ -381,3 +408,332 @@ func aqua_slime():
 		else:
 			Inventory.Aqua_Slime += 5
 			ItemGainText = "You Got 5 Aqua Slime"
+			
+	if aquaslime == 6:
+		if Player.LUK > 10:
+			Inventory.Aqua_Slime += 40
+			ItemGainText = "You Got 40 Aqua Slime"
+		elif Player.LUK > 5:
+			Inventory.Aqua_Slime += 20
+			ItemGainText = "You Got 20 Aqua Slime"
+		else:
+			Inventory.Aqua_Slime += 10
+			ItemGainText = "You Got 10 Aqua Slime"
+
+func magic_slime():
+	if magicslime == 1:
+		if Player.LUK > 10:
+			Inventory.Magic_Slime += 3
+			ItemGainText = "You Got 3 Magic Slime"
+		elif Player.LUK > 5:
+			Inventory.Magic_Slime += 2
+			ItemGainText = "You Got 2 Magic Slime"
+		else:
+			Inventory.Magic_Slime += 1
+			ItemGainText = "You Got 1 Magic Slime"
+			
+	if magicslime == 2:
+		if Player.LUK > 10:
+			Inventory.Magic_Slime += 5
+			ItemGainText = "You Got 5 Magic Slime"
+		elif Player.LUK > 5:
+			Inventory.Magic_Slime += 3
+			ItemGainText = "You Got 3 Magic Slime"
+		else:
+			Inventory.Magic_Slime += 2
+			ItemGainText = "You Got 2 Magic Slime"
+			
+	if magicslime == 3:
+		if Player.LUK > 10:
+			Inventory.Magic_Slime += 20
+			ItemGainText = "You Got 20 Magic Slime"
+		elif Player.LUK > 5:
+			Inventory.Magic_Slime += 10
+			ItemGainText = "You Got 10 Magic Slime"
+		else:
+			Inventory.Magic_Slime += 5
+			ItemGainText = "You Got 5 Magic Slime"
+	
+	if magicslime == 4:
+		if Player.LUK > 10:
+			Inventory.Magic_Slime += 40
+			ItemGainText = "You Got 40 Magic Slime"
+		elif Player.LUK > 5:
+			Inventory.Magic_Slime += 20
+			ItemGainText = "You Got 20 Magic Slime"
+		else:
+			Inventory.Magic_Slime += 10
+			ItemGainText = "You Got 10 Magic Slime"
+
+func metallic_slime():
+	if metallicslime == 1:
+		if Player.LUK > 10:
+			Inventory.Metallic_Slime += 10
+			ItemGainText = "You Got 10 Metallic Slime"
+		elif Player.LUK > 5:
+			Inventory.Metallic_Slime += 5
+			ItemGainText = "You Got 5 Metallic Slime"
+		else:
+			Inventory.Metallic_Slime += 1
+			ItemGainText = "You Got 1 Metallic Slime"
+
+func Lowest_Level_Slime_1_10():
+	if lowest_slime == 1:
+		if Player.LUK > 30:
+			Inventory.Green_Slime += 2
+			ItemGainText = "You Got 2 Green Slime"
+		elif Player.LUK > 15:
+			Inventory.Green_Slime += 1
+			ItemGainText = "You Got 1 Green Slime"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_slime == 2:
+		if Player.LUK > 20:
+			Inventory.Green_Slime += 3
+			ItemGainText = "You Got 3 Green Slime"
+		elif Player.LUK > 10:
+			Inventory.Green_Slime += 2
+			ItemGainText = "You Got 2 Green Slime"
+		else:
+			Inventory.Green_Slime += 1
+			ItemGainText = "You Got 1 Green Slime"
+			
+	if lowest_slime == 3:
+		if Player.LUK > 18:
+			Inventory.Green_Slime += 3
+			ItemGainText = "You Got 3 Green Slime"
+		elif Player.LUK > 7:
+			Inventory.Green_Slime += 2
+			ItemGainText = "You Got 2 Green Slime"
+		else:
+			Inventory.Green_Slime += 1
+			ItemGainText = "You Got 1 Green Slime"
+	
+	if lowest_slime == 4:
+		if Player.LUK > 15:
+			Inventory.Green_Slime += 2
+			Inventory.Acid_Slime += 2
+			ItemGainText = "You Got 2 Green Slime and 2 Acid Slime"
+		elif Player.LUK > 7:
+			Inventory.Green_Slime += 1
+			Inventory.Acid_Slime += 1
+			ItemGainText = "You Got 1 Green Slime and 1 Acid Slime"
+		else:
+			ItemGainText = str(no_item)
+			
+	if lowest_slime == 5:
+		if Player.LUK > 15:
+			Inventory.Green_Slime += 2
+			Inventory.Poison_Slime += 2
+			ItemGainText = "You Got 2 Green Slime and 2 Poisonous Slime"
+		elif Player.LUK > 7:
+			Inventory.Green_Slime += 1
+			Inventory.Poison_Slime += 1
+			ItemGainText = "You Got 1 Green Slime and 1 Poisonous Slime"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_slime == 6:
+		if Player.LUK > 12:
+			Inventory.Acid_Slime += 2
+			Inventory.Poison_Slime += 2
+			ItemGainText = "You Got 2 Acid Slime and 2 Poisonous Slime"
+		elif Player.LUK > 4:
+			Inventory.Acid_Slime += 1
+			Inventory.Poison_Slime += 1
+			ItemGainText = "You Got 1 Acid Slime and 1 Poisonous Slime"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_slime == 7:
+		if Player.LUK > 12:
+			Inventory.Aqua_Slime += 2
+			Inventory.Green_Slime += 3
+			ItemGainText = "You Got 2 Aqua Slime and 3 Green Slime"
+		elif Player.LUK > 4:
+			Inventory.Aqua_Slime += 1
+			Inventory.Green_Slime += 2
+			ItemGainText = "You Got 1 Aqua Slime and 2 Green Slime"
+		else:
+			Inventory.Green_Slime += 1
+			ItemGainText = "You Got 1 Green Slime"
+
+func Lowest_Level_Slime_11_30():
+	if lowest_slime == 8:
+		if Player.LUK > 10:
+			Inventory.Green_Slime += 3
+			ItemGainText = "You Got 3 Green Slime"
+		elif Player.LUK > 4:
+			Inventory.Green_Slime += 2
+			ItemGainText = "You Got 2 Green Slime"
+		else:
+			Inventory.Green_Slime += 1
+			ItemGainText = "You Got 1 Green Slime"
+	
+	if lowest_slime == 9:
+		if Player.LUK > 10:
+			Inventory.Lava_Slime += 2
+			Inventory.Metallic_Slime += 1
+			ItemGainText = "You Got 2 lava Slime and 1 Metallic Slime"
+		elif Player.LUK > 4:
+			Inventory.Lava_Slime += 1
+			ItemGainText = "You Got 1 Lava Slime"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_slime == 10:
+		if Player.LUK > 10:
+			Inventory.Poison_Slime += 3
+			ItemGainText = "You Got 3 Poisonous Slime"
+		elif Player.LUK > 4:
+			Inventory.Poison_Slime += 2
+			ItemGainText = "You Got 2 Poisonous Slime"
+		else:
+			Inventory.Poison_Slime += 1
+			ItemGainText = "You Got 1 Poisonous Slime"
+			
+	if lowest_slime == 11:
+		if Player.LUK > 10:
+			Inventory.Green_Slime += 5
+			Inventory.Aqua_Slime += 2
+			Inventory.Metallic_Slime += 1
+			ItemGainText = "You Got 5 Green Slime, 2 Aqua Slime and 1 Metallic Slime."
+		elif Player.LUK > 4:
+			Inventory.Green_Slime += 3
+			Inventory.Aqua_Slime += 1
+			ItemGainText = "You Got 3 Green Slime and 1 Aqua Slime."
+		else:
+			Inventory.Green_Slime += 2
+			ItemGainText = "You Got 2 Green Slime"
+			
+	if lowest_slime == 12:
+		if Player.LUK > 10:
+			Inventory.Acid_Slime += 5
+			Inventory.Aqua_Slime += 2
+			ItemGainText = "You Got 5 Acid Slime and 2 Aqua Slime."
+		elif Player.LUK > 4:
+			Inventory.Acid_Slime += 3
+			Inventory.Aqua_Slime += 1
+			ItemGainText = "You Got 3 Acid Slime and 1 Aqua Slime."
+		else:
+			Inventory.Acid_Slime += 2
+			ItemGainText = "You Got 2 Acid Slime"
+			
+	if lowest_slime == 13:
+		if Player.LUK > 10:
+			Inventory.Green_Slime += 8
+			Inventory.Magic_Slime += 1
+			ItemGainText = "You Got 8 Green Slime and 1 Magic Slime."
+		elif Player.LUK > 4:
+			Inventory.Green_Slime += 5
+			ItemGainText = "You Got 5 Green Slime."
+		else:
+			Inventory.Green_Slime += 3
+			ItemGainText = "You Got 3 Green Slime"
+	
+	if lowest_slime == 14:
+		if Player.LUK > 10:
+			Inventory.Acid_Slime += 5
+			Inventory.Poison_Slime += 5
+			ItemGainText = "You Got 5 Acid Slime and 5 Poisonous Slime."
+		elif Player.LUK > 4:
+			Inventory.Acid_Slime += 3
+			Inventory.Poison_Slime += 3
+			ItemGainText = "You Got 3 Acid Slime and 3 Poisonous Slime."
+		else:
+			Inventory.Acid_Slime += 1
+			Inventory.Poison_Slime += 1
+			ItemGainText = "You Got 1 Acid Slime and 1 Poisonous Slime."
+			
+	if lowest_slime == 15:
+		if Player.LUK > 10:
+			Inventory.Acid_Slime += 2
+			Inventory.Lava_Slime += 4
+			ItemGainText = "You Got 2 Acid Slime and 4 Lava Slime."
+		elif Player.LUK > 4:
+			Inventory.Acid_Slime += 1
+			Inventory.Lava_Slime += 2
+			ItemGainText = "You Got 1 Acid Slime and 2 LavaSlime."
+		else:
+			Inventory.Lava_Slime += 1
+			ItemGainText = "You Got 1 Lava Slime."
+			
+	if lowest_slime == 16:
+		if Player.LUK >= 10:
+			Inventory.Acid_Slime += 8
+			Inventory.Metallic_Slime += 2
+			ItemGainText = "You Got 8 Acid Slime and 2 Metallic Slime."
+		elif Player.LUK > 4:
+			Inventory.Acid_Slime += 5
+			Inventory.Metallic_Slime += 1
+			ItemGainText = "You Got 5 Acid Slime and 1 Metallic Slime."
+		else:
+			Inventory.Acid_Slime += 2
+			ItemGainText = "You Got 2 Acid Slime."
+			
+	if lowest_slime == 17:
+		if Player.LUK >= 10:
+			Inventory.Green_Slime += 12
+			Inventory.Magic_Slime += 2
+			ItemGainText = "You Got 12 Green Slime and 2 Magic Slime."
+		elif Player.LUK > 4:
+			Inventory.Green_Slime  += 10
+			Inventory.Magic_Slime += 1
+			ItemGainText = "You Got 10 Green Slime and 1 Magic Slime."
+		else:
+			Inventory.Green_Slime += 5
+			ItemGainText = "You Got 5 Green Slime."
+			
+	if lowest_slime == 18:
+		if Player.LUK >= 10:
+			Inventory.Poison_Slime += 8
+			Inventory.Aqua_Slime += 5
+			ItemGainText = "You Got 8 Poisonous Slime and 5 Aqua Slime."
+		elif Player.LUK > 4:
+			Inventory.Poison_Slime += 5
+			Inventory.Aqua_Slime += 3
+			ItemGainText = "You Got 5 Poisonous Slime and 3 Aqua Slime."
+		else:
+			Inventory.Poison_Slime += 3
+			Inventory.Aqua_Slime += 1
+			ItemGainText = "You Got 3 Poisonous Slime and 1 Aqua Slime."
+			
+	if lowest_slime == 19:
+		if Player.LUK >= 10:
+			Inventory.Lava_Slime += 10
+			Inventory.Aqua_Slime += 10
+			ItemGainText = "You Got 10 Lava Slime and 10 Aqua Slime."
+		elif Player.LUK > 4:
+			Inventory.Lava_Slime += 5
+			Inventory.Aqua_Slime += 5
+			ItemGainText = "You Got 5 lavaSlime and 5 Aqua Slime."
+		else:
+			Inventory.Lava_Slime += 3
+			Inventory.Aqua_Slime += 3
+			ItemGainText = "You Got 3 Lava Slime and 3 Aqua Slime."
+	
+	if lowest_slime == 20:
+		if Player.LUK >= 10:
+			Inventory.Metallic_Slime += 7
+			ItemGainText = "You Got 7 Metallic Slime."
+		elif Player.LUK > 4:
+			Inventory.Metallic_Slime += 4
+			ItemGainText = "You Got 4 Metallic Slime."
+		else:
+			Inventory.Metallic_Slime += 2
+			ItemGainText = "You Got 2 Metallic Slime."
+	
+	if lowest_slime == 21:
+		if Player.LUK >= 10:
+			Inventory.Green_Slime += 25
+			ItemGainText = "You Got 25 Green Slime."
+		elif Player.LUK > 4:
+			Inventory.Green_Slime  += 20
+			ItemGainText = "You Got 20 Green Slime."
+		else:
+			Inventory.Green_Slime  += 10
+			ItemGainText = "You Got 10 Green Slime."
+
+func Lowest_Level_Slime_31_40():
+	pass

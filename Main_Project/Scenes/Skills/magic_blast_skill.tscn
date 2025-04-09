@@ -14,6 +14,7 @@ grow_vertical = 2
 script = ExtResource("1_b75r2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -25.0
 offset_top = -17.0
 offset_right = 1164.0
@@ -21,6 +22,7 @@ offset_bottom = 667.0
 color = Color(0.492416, 0.658999, 0.893626, 1)
 
 [node name="Type_Text" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 30.0
 offset_top = 180.0
 offset_right = 742.0
@@ -32,6 +34,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Type: Combat and Magic"
 
 [node name="Leveltxt" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 30.0
 offset_top = 100.0
 offset_right = 742.0
@@ -43,6 +46,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Level"
 
 [node name="Nxt_Lvl_Txt" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 30.0
 offset_top = 135.0
 offset_right = 742.0
@@ -54,6 +58,7 @@ theme_override_font_sizes/normal_font_size = 25
 text = "EXP:"
 
 [node name="Description" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 299.0
 offset_right = 1123.0
@@ -64,6 +69,7 @@ theme_override_font_sizes/normal_font_size = 20
 text = "EXP:"
 
 [node name="Off-Combat_Desc" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 400.0
 offset_right = 1123.0
@@ -74,6 +80,7 @@ theme_override_font_sizes/normal_font_size = 20
 text = "EXP:"
 
 [node name="Combat_Desc" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 450.0
 offset_right = 1123.0
@@ -84,6 +91,7 @@ theme_override_font_sizes/normal_font_size = 20
 text = "EXP:"
 
 [node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 5.0
 offset_right = 644.0
@@ -102,6 +110,7 @@ position = Vector2(921, 149)
 texture = ExtResource("1_6eota")
 
 [node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1072.0
 offset_top = 6.0
 offset_right = 1144.0

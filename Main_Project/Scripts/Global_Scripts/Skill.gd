@@ -39,7 +39,7 @@ func Combat_Rest_XP():
 func Combat_Rest():
 	var restore_amount = (10 * Rest_LVL) + Player.END
 	Player.EN = min(Player.EN + restore_amount, Player.MAX_EN)
-	PreBattleData.desciption_txt = "You have restored [" + str(restore_amount) + "] EN"
+	PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] EN"
 	Combat_Rest_XP()
 
 # Push-Up Skill
@@ -52,7 +52,7 @@ func PushUp_stat_gain():
 	Player.STR += 1 
 
 func Active_PushUp_XP():
-	var xp_gain = 25 + Player.MAX_EN
+	var xp_gain = (10 * PushUp_LVL) + Player.MAX_EN
 	PushUp_XP += xp_gain
 	level_up_skill("PushUp_XP", "PushUp_LVL", "PushUp_NXT_XP", PushUp_stat_gain)
 
@@ -73,7 +73,7 @@ func Run_stat_gain():
 	Player.MAX_EN += 10
 
 func Active_Run_XP():
-	var xp_gain = 50 + ceil(0.25 * Player.MAX_EN)
+	var xp_gain = (10 * Run_LVL) + ceil(0.75 * Player.MAX_EN)
 	Run_XP += xp_gain
 	level_up_skill("Run_XP", "Run_LVL", "Run_NXT_XP", Run_stat_gain)
 	
@@ -97,13 +97,31 @@ func Active_Study_XP():
 	var xp_gain = 25 * Player.INT  
 	Study_XP += xp_gain
 	level_up_skill("Study_XP", "Study_LVL", "Study_NXT_XP", Study_stat_gain)
-	
+
 func Active_Study():
 	var en_cost = ceil(0.05 * Player.MAX_EN)   # Consumes 5% of EN
 	if Player.EN >= en_cost:
 		Player.EN -= en_cost
 		Global.cycle_time()
 		Active_Study_XP()
+			
+# **Speech Skill**		
+var Speech_Unlocked = true
+var Speech_LVL = 1
+var Speech_XP = 0
+var Speech_NXT_XP = calculate_xp_needed(Speech_LVL)
+
+func Speech_stat_gain():
+	Player.CHA += 1
+	
+func Active_Speech_XP():
+	if Player.EN >= (Player.MAX_EN * 0.05):
+		Player.EN -= Player.MAX_EN * 0.05
+		Global.cycle_time()
+		
+		var xp_gain = 50 + (25 * Player.CHA)
+		Speech_XP += xp_gain
+		level_up_skill("Speech_XP", "Speech_LVL", "Speech_NXT_XP", Speech_stat_gain)
 
 
 # **Punch Skill**		
@@ -137,12 +155,12 @@ func Squat_stat_gain():
 	Player.MAX_HP += 10
 
 func Active_Squat_XP():
-	var xp_gain = 50 + Player.MAX_EN  # XP formula: (50 + MAX_EN)
+	var xp_gain = (Squat_LVL * 10) + Player.MAX_EN
 	Squat_XP += xp_gain
 	level_up_skill("Squat_XP", "Squat_LVL", "Squat_NXT_XP", Squat_stat_gain)
 
 func Active_Squat():
-	var en_cost = ceil(0.25 * Player.MAX_EN)  # Consumes 25% of MAX_EN
+	var en_cost = ceil(0.25 * Player.MAX_EN)
 	if Player.EN >= en_cost:
 		Player.EN -= en_cost
 		Global.cycle_time()
@@ -172,7 +190,6 @@ func Kick_XP_gain():
 	var xp_gain = (50 * Kick_LVL) + (10 * Player.STR)
 	Kick_XP += xp_gain
 	
-
 func Kick():
 	var en_cost = 25
 	if Player.EN >= en_cost:
@@ -182,6 +199,26 @@ func Kick():
 
 		Kick_XP_gain()
 		level_up_skill("Kick_XP", "Kick_LVL", "Kick_NXT_XP")
+
+# **Strong Punch Skill**		
+var Strong_Punch_Unlocked = false
+var Strong_Punch_LVL = 1
+var Strong_Punch_XP = 0
+var Strong_Punch_NXT_XP = calculate_xp_needed(Strong_Punch_LVL)
+
+func Strong_Punch_XP_gain():
+	var xp_gain = (75 * Strong_Punch_LVL) + (15 * Player.STR)
+	Strong_Punch_XP += xp_gain
+
+func Strong_Punch():
+	var en_cost = 100
+	if Player.EN >= en_cost:
+		Player.EN -= en_cost
+
+		Player.PHYSICAL_DMG = (5 * Strong_Punch_LVL) + (5 * Player.STR)
+
+		Strong_Punch_XP_gain()
+		level_up_skill("Strong_Punch_XP", "Strong_Punch_LVL", "Strong_Punch_NXT_XP")
 
 #Minor Regen Skill
 var Minor_Regen_Unlocked = false
@@ -196,12 +233,33 @@ func Active_Minor_Regen():
 		var restore_amount = (10 * Minor_Regen_LVL) + Player.VIT
 		Player.HP += restore_amount
 		Player.Health_Check()
-		PreBattleData.desciption_txt = "You have restored [" + str(restore_amount) + "] HP"
+		PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] HP"
 		
 		var xp_gain = ceil((25 * Player.VIT) + (Minor_Regen_LVL * 25))
 		Minor_Regen_XP += xp_gain
 		level_up_skill("Minor_Regen_XP", "Minor_Regen_LVL", "Minor_Regen_NXT_XP")
 	
+
+# Lowly Mana Regen Skill
+var Lowly_Mana_Regen_Unlocked = false
+var Lowly_Mana_Regen_LVL = 1
+var Lowly_Mana_Regen_XP = 0
+var Lowly_Mana_Regen_NXT_XP = calculate_xp_needed(Lowly_Mana_Regen_LVL)
+
+func Active_Lowly_Mana_Regen():
+	var en_cost = 50
+	if Player.EN >= en_cost:
+		Player.EN -= en_cost
+		var restore_amount = (5 * Lowly_Mana_Regen_LVL) + Player.WIS
+		Player.MP += restore_amount
+		Player.Mana_Check()
+		PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] MP"
+
+		var xp_gain = ceil((25 * Player.WIS) + (Lowly_Mana_Regen_LVL * 25))
+		Lowly_Mana_Regen_XP += xp_gain
+		level_up_skill("Lowly_Mana_Regen_XP", "Lowly_Mana_Regen_LVL", "Lowly_Mana_Regen_NXT_XP")
+
+
 
 # **Magic Blast Skill**		
 var Magic_Blast_Unlocked = false
@@ -234,7 +292,7 @@ func Meditate_stat_gain():
 	Player.MAX_MP += 10
 
 func Active_Meditate_XP():
-	var xp_gain = 50 + Player.MAX_MP
+	var xp_gain = (10 * Meditate_LVL) + Player.MAX_MP
 	Meditate_XP += xp_gain
 	level_up_skill("Meditate_XP", "Meditate_LVL", "Meditate_NXT_XP", Meditate_stat_gain)
 
@@ -267,6 +325,101 @@ func Active_Shower():
 	Global.cycle_time()
 	Active_Shower_XP()
 
+# **Potion Proficiency Skill**
+var Potion_Proficiency_Unlocked = true
+var Potion_Proficiency_LVL = 1
+var Potion_Proficiency_XP = 0
+var Potion_Proficiency_NXT_XP = calculate_xp_needed(Potion_Proficiency_LVL)
+
+func Gain_Potion_Proficiency_XP():
+	var xp_gain = 50 + (Player.DEX * Potion_Proficiency_LVL)
+	Potion_Proficiency_XP += xp_gain
+	level_up_skill("Potion_Proficiency_XP", "Potion_Proficiency_LVL", "Potion_Proficiency_NXT_XP")
+
+# **Health Potion Skill**
+var Health_Potion_Unlocked = false
+var Health_Potion_LVL = 1
+var Health_Potion_XP = 0
+var Health_Potion_NXT_XP = calculate_xp_needed(Health_Potion_LVL)
+
+func Gain_Health_Potion_XP():
+	var xp_gain = (Player.DEX * 10) + (Health_Potion_LVL * 10)
+	Health_Potion_XP += xp_gain
+	level_up_skill("Health_Potion_XP", "Health_Potion_LVL", "Health_Potion_NXT_XP")
+
+func Use_Health_Potion():
+	if Inventory.minor_health_potion > 0:
+		Inventory.minor_health_potion -= 1
+		
+		var restore_amount = 500 + (10 * Potion_Proficiency_LVL) + (Health_Potion_LVL * 10)
+		Player.HP = min(Player.HP + restore_amount, Player.MAX_HP)
+		PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] HP"
+
+		Gain_Health_Potion_XP()
+		Gain_Potion_Proficiency_XP()
+
+# **Mana Potion Skill**
+var Mana_Potion_Unlocked = false
+var Mana_Potion_LVL = 1
+var Mana_Potion_XP = 0
+var Mana_Potion_NXT_XP = calculate_xp_needed(Mana_Potion_LVL)
+
+func Gain_Mana_Potion_XP():
+	var xp_gain = (Player.DEX * 10) + (Mana_Potion_LVL * 10)
+	Mana_Potion_XP += xp_gain
+	level_up_skill("Mana_Potion_XP", "Mana_Potion_LVL", "Mana_Potion_NXT_XP")
+
+func Use_Mana_Potion():
+	if Inventory.minor_mana_potion > 0:
+		Inventory.minor_mana_potion -= 1
+
+		var restore_amount = 1000 + (10 * Potion_Proficiency_LVL) + (Mana_Potion_LVL * 10)
+		Player.MP = min(Player.MP + restore_amount, Player.MAX_MP)
+		PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] MP"
+
+		Gain_Mana_Potion_XP()
+		Gain_Potion_Proficiency_XP()
+
+# **Acid Potion Skill**
+var Acid_Potion_Unlocked = false
+var Acid_Potion_LVL = 1
+var Acid_Potion_XP = 0
+var Acid_Potion_NXT_XP = calculate_xp_needed(Acid_Potion_LVL)
+
+func Gain_Acid_Potion_XP():
+	var xp_gain = (Player.DEX * 10) + (Acid_Potion_LVL * 20)
+	Acid_Potion_XP += xp_gain
+	level_up_skill("Acid_Potion_XP", "Acid_Potion_LVL", "Acid_Potion_NXT_XP")
+
+func Use_Acid_Potion():
+	if Inventory.Acid_potion > 0:
+		Inventory.Acid_potion -= 1
+
+		Player.ACID_DMG = 100 + (10 * Acid_Potion_LVL) + (5 * Player.DEX)
+		Gain_Acid_Potion_XP()
+		Gain_Potion_Proficiency_XP()
+
+
+# **Magic Seeker Skill**		
+var Magic_Seeker_Unlocked = false
+var Magic_Seeker_LVL = 1
+var Magic_Seeker_XP = 0
+var Magic_Seeker_NXT_XP = calculate_xp_needed(Magic_Seeker_LVL)
+
+func Magic_Seeker_XP_gain():
+	var xp_gain = (100 * Magic_Seeker_LVL) + (20 * Player.INT)
+	Magic_Seeker_XP += xp_gain
+	
+func Active_Magic_Seeker():
+	var mp_cost = 500
+	if Player.MP >= mp_cost:
+		Player.MP -= mp_cost
+	
+		Player.MAGIC_DMG = (10 * Magic_Blast_LVL) + (1 * Player.INT)
+
+		Magic_Seeker_XP_gain()
+		level_up_skill("Magic_Seeker_XP", "Magic_Seeker_LVL", "Magic_Seeker_NXT_XP")
+
 
 
 func Skill_Unlock_Check():
@@ -276,8 +429,17 @@ func Skill_Unlock_Check():
 	if Player.STR >= 10:
 		Skill.Kick_Unlocked = true
 		
+	if Player.STR >= 100:
+		Skill.Strong_Punch_Unlocked = true
+		
 	if Player.VIT >= 10:
 		Skill.Minor_Regen_Unlocked = true
 		
 	if Player.INT >= 10:
 		Skill.Magic_Blast_Unlocked = true
+		
+	if Player.INT >= 100:
+		Skill.Magic_Seeker_Unlocked = true
+		
+	if Player.WIS >= 10:
+		Skill.Lowly_Mana_Regen_Unlocked = true

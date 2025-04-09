@@ -3,6 +3,7 @@ extends Node2D
 @onready var Bedroom_Scene = "res://Scenes/Locations/players_bedroom.tscn"
 @onready var Garden_Scene = "res://Scenes/Locations/garden_scene.tscn"
 @onready var Bathroom_Scene = "res://Scenes/Locations/bathroom_scene.tscn"
+@onready var Potion_Scene = "res://Scenes/Shop/lydia_potion_shop.tscn"
 
 var bg_textures = [
 	preload("res://Assets/Map_Art/House_Bg_Morning.png"),
@@ -36,3 +37,7 @@ func _on_button_2_button_up():
 func _on_button_3_button_up():
 	Global.Map = 4
 	get_tree().change_scene_to_file(Bathroom_Scene)
+
+
+func _on_button_4_button_up():
+	get_tree().change_scene_to_file(Potion_Scene)

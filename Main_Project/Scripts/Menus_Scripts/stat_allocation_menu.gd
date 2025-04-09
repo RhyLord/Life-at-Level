@@ -1,6 +1,6 @@
 extends Control
 
-@export var Stat_Scene = "res://Scenes/stats_menu.tscn"
+@export var Stat_Scene = "res://Scenes/Menus/stats_menu.tscn"
 
 @onready var title = $Title
 @onready var TXT_STR = $Panel/TXT_STR
@@ -20,6 +20,11 @@ func _input(event):
 	if event is InputEventKey and event.pressed and event.keycode == KEY_Q:
 		Player.Allocation_points += 10
 		update_TXT()
+	
+	if event is InputEventKey and event.pressed and event.keycode == KEY_W:
+		Player.MAX_MP += 500
+		Player.MAX_HP += 500
+		update_TXT()
 
 func update_TXT():
 	
@@ -29,13 +34,13 @@ func update_TXT():
 	var STR_TXT = "STR [STRENGTH] : [" + str(Player.STR) + "]"
 	var DEX_TXT = "DEX [DEXTERITY] : [" + str(Player.DEX) + "]"
 	var AGI_TXT = "AGI [AGILITY] : [" + str(Player.AGI) + "]"
-	var INT_TXT = "INT [INTELLIGENCE] : [" + str(Player.INT) + "]"
-	var WIS_TXT = "WIS [WISDOM] : [" + str(Player.WIS) + "]"
+	var INT_TXT = "INT [INTELLIGENCE] : [" + str(Player.INT) + "] Increases Max Mana by 10"
+	var WIS_TXT = "WIS [WISDOM] : [" + str(Player.WIS) + "] Increases Max Mana by 25"
 	var CHA_TXT = "CHA [CHARISMA] : [" + str(Player.CHA) + "]"
 	var LUK_TXT = "LUK [LUCK] : [" + str(Player.LUK) + "]"
 	var CTRL_TXT = "CTRL [CONTROL] : [" + str(Player.CTRL) + "]"
-	var END_TXT = "END [ENDURANCE] : [" + str(Player.END) + "]"
-	var VIT_TXT = "VIT [VITALITY] : [" + str(Player.VIT) + "]"
+	var END_TXT = "END [ENDURANCE] : [" + str(Player.END) + "] Increases Max Energy by 10"
+	var VIT_TXT = "VIT [VITALITY] : [" + str(Player.VIT) + "] Increases Max Health by 10"
 	
 	
 	title.text = title_text
@@ -114,7 +119,7 @@ func _on_adder_button_cha_button_up():
 func _on_adder_button_wis_button_up():
 	if Player.Allocation_points > 0:
 		Player.WIS += 1
-		Player.MAX_MP += 20
+		Player.MAX_MP += 25
 		Player.Allocation_points -= 1
 		update_TXT()
 

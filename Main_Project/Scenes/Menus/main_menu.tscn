@@ -1,0 +1,115 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhed71hm4rhkv"]
+
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/main_menu.gd" id="1_toi0x"]
+[ext_resource type="AudioStream" uid="uid://ddca0ju4jcjn6" path="res://Music/IntoMusic1.wav" id="2_34qnl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s02hk"]
+bg_color = Color(0.331114, 0.1009, 0.119573, 1)
+border_width_left = 40
+border_width_top = 20
+border_width_right = 40
+border_width_bottom = 20
+border_color = Color(0.329412, 0.101961, 0.117647, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_detail = 10
+
+[sub_resource type="Theme" id="Theme_1e2wd"]
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_s02hk")
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_toi0x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00376734, 0.00351385, 0.00288111, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 27.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme = SubResource("Theme_1e2wd")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.430939, 0.0426641, 1.20327e-07, 1)
+theme_override_colors/font_outline_color = Color(0.996945, 6.23293e-06, 1.54018e-06, 1)
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 50
+theme_override_font_sizes/font_size = 100
+text = "Life At Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play_Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.886926, 0, 0.160764, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "Play"
+
+[node name="Settings_Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+
+[node name="Test_Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "Test"
+
+[node name="Exit_Button" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.972549, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "Exit"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_34qnl")
+volume_db = 10.0
+pitch_scale = 0.7
+autoplay = true
+
+[connection signal="button_up" from="CenterContainer/PanelContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="CenterContainer/PanelContainer/VBoxContainer/Exit_Button" to="." method="_on_exit_button_button_up"]

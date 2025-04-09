@@ -1,0 +1,55 @@
+[gd_scene load_steps=2 format=3 uid="uid://qiawuit7o5s4"]
+
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/exit_to_main_menu_confirm.gd" id="1_dwqhg"]
+
+[node name="Exit_To_MainMenu_Confirm" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dwqhg")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -17.0
+offset_right = 1164.0
+offset_bottom = 667.0
+color = Color(0.492416, 0.658999, 0.893626, 1)
+
+[node name="Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 61.0
+offset_right = 1108.0
+offset_bottom = 206.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 43
+bbcode_enabled = true
+text = "[center]Are you sure you want to exit to the menu?
+Any unsaved progress will be lost.[/center]"
+
+[node name="Yes_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 157.0
+offset_top = 425.0
+offset_right = 348.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 50
+text = "Yes"
+
+[node name="No_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 757.0
+offset_top = 425.0
+offset_right = 948.0
+offset_bottom = 502.0
+theme_override_font_sizes/font_size = 50
+text = "No"
+
+[connection signal="button_up" from="Yes_Button" to="." method="_on_yes_button_button_up"]
+[connection signal="button_up" from="No_Button" to="." method="_on_no_button_button_up"]

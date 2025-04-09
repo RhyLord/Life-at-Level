@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Location_Scripts/players_bedroom.gd" id="1_d226b"]
 [ext_resource type="Texture2D" uid="uid://ca3karudjt3kj" path="res://Assets/Player_bedroom/Player_Bedroom_Morning.png" id="1_hk1kx"]
-[ext_resource type="Script" path="res://Scripts/Options_Toggle_Bedroom.gd" id="3_hf5eu"]
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Options_Toggle_Bedroom.gd" id="3_rercb"]
 [ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="4_ogc7n"]
 [ext_resource type="Script" path="res://Scripts/Menus_Scripts/Skill_Button.gd" id="5_fp83u"]
 [ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="5_ipb21"]
@@ -37,21 +37,11 @@ color = Color(0.114897, 0.114897, 0.114897, 1)
 modulate = Color(0.848727, 0.471042, 0.0524029, 1)
 layout_mode = 0
 offset_left = 10.0
-offset_top = 10.0
-offset_right = 185.0
-offset_bottom = 67.0
-theme_override_font_sizes/font_size = 25
-text = "Rest"
-
-[node name="Option_button_2" type="Button" parent="Options_holder"]
-modulate = Color(0.848727, 0.471042, 0.0524029, 1)
-layout_mode = 0
-offset_left = 10.0
 offset_top = 75.0
 offset_right = 185.0
 offset_bottom = 132.0
 theme_override_font_sizes/font_size = 25
-text = "Push Up"
+text = "Rest"
 
 [node name="Option_button_3" type="Button" parent="Options_holder"]
 modulate = Color(0.848727, 0.471042, 0.0524029, 1)
@@ -77,9 +67,9 @@ text = "Study"
 modulate = Color(0.848727, 0.471042, 0.0524029, 1)
 layout_mode = 0
 offset_left = 10.0
-offset_top = 335.0
+offset_top = 270.0
 offset_right = 185.0
-offset_bottom = 392.0
+offset_bottom = 327.0
 theme_override_font_sizes/font_size = 25
 text = "Creation"
 
@@ -87,21 +77,11 @@ text = "Creation"
 modulate = Color(0.848727, 0.471042, 0.0524029, 1)
 layout_mode = 0
 offset_left = 10.0
-offset_top = 400.0
+offset_top = 10.0
 offset_right = 185.0
-offset_bottom = 457.0
+offset_bottom = 67.0
 theme_override_font_sizes/font_size = 25
 text = "Travel"
-
-[node name="Option_button_6" type="Button" parent="Options_holder"]
-modulate = Color(0.848727, 0.471042, 0.0524029, 1)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 270.0
-offset_right = 185.0
-offset_bottom = 327.0
-theme_override_font_sizes/font_size = 25
-text = "Squat"
 
 [node name="HealthBar" type="ProgressBar" parent="Options_holder"]
 layout_mode = 0
@@ -174,7 +154,7 @@ offset_right = 264.0
 offset_bottom = 277.0
 theme_override_font_sizes/font_size = 50
 text = "<"
-script = ExtResource("3_hf5eu")
+script = ExtResource("3_rercb")
 
 [node name="Inventory_Button" type="TextureButton" parent="."]
 offset_left = 1052.0
@@ -199,11 +179,9 @@ bbcode_enabled = true
 text = "csdsdvsc"
 
 [connection signal="button_up" from="Options_holder/Option_button_1" to="." method="_on_option_button_1_button_up"]
-[connection signal="pressed" from="Options_holder/Option_button_2" to="." method="_on_option_button_2_pressed"]
 [connection signal="pressed" from="Options_holder/Option_button_3" to="." method="_on_option_button_3_pressed"]
 [connection signal="pressed" from="Options_holder/Option_button_4" to="." method="_on_option_button_4_pressed"]
 [connection signal="button_up" from="Options_holder/Option_button_5" to="." method="_on_option_button_5_button_up"]
 [connection signal="button_up" from="Options_holder/Option_button_7" to="." method="_on_option_button_7_button_up"]
-[connection signal="button_up" from="Options_holder/Option_button_6" to="." method="_on_option_button_6_button_up"]
 [connection signal="button_up" from="Options_Toggle" to="Options_Toggle" method="_on_button_up"]
 [connection signal="button_up" from="Inventory_Button" to="Inventory_Button" method="_on_button_up"]

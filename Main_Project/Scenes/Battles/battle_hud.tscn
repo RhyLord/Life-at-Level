@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkd068viwcaxf"]
+[gd_scene load_steps=14 format=3 uid="uid://dkd068viwcaxf"]
 
 [ext_resource type="Script" path="res://Scripts/Battle_Scripts/Recovery_battle_button.gd" id="1_5uy33"]
 [ext_resource type="Script" path="res://Scripts/Battle_Scripts/BattleHUD.gd" id="1_sap45"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bbotkdixvyeub" path="res://Assets/Card_art/Card_base.png" id="3_dxqv2"]
 [ext_resource type="Texture2D" uid="uid://pccm33tv3ohh" path="res://Assets/Card_art/Player_Card.png" id="4_ulhow"]
 [ext_resource type="Texture2D" uid="uid://dm6dcxckg13v" path="res://Assets/Card_art/GreenSlime_Card.png" id="5_vq5fo"]
+[ext_resource type="AudioStream" uid="uid://cjgr3d3bnuqya" path="res://Music/SlimeBattleTrack.mp3" id="7_x4vty"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7iyq"]
 bg_color = Color(0, 0, 0, 1)
@@ -484,6 +485,11 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Data"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_x4vty")
+volume_db = 6.0
+autoplay = true
 
 [connection signal="button_up" from="Options_holder/Option_button_1" to="Options_holder/Option_button_1" method="_on_button_up"]
 [connection signal="button_up" from="Options_holder/Option_button_2" to="Options_holder/Option_button_2" method="_on_button_up"]

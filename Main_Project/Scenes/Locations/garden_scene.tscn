@@ -83,6 +83,26 @@ offset_bottom = 226.0
 theme_override_font_sizes/font_size = 25
 text = "Go For a Run"
 
+[node name="Option_button_4" type="Button" parent="Options_holder"]
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 234.0
+offset_right = 185.0
+offset_bottom = 291.0
+theme_override_font_sizes/font_size = 25
+text = "Push Up"
+
+[node name="Option_button_5" type="Button" parent="Options_holder"]
+modulate = Color(0.848727, 0.471042, 0.0524029, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 301.0
+offset_right = 185.0
+offset_bottom = 358.0
+theme_override_font_sizes/font_size = 25
+text = "Squat"
+
 [node name="HealthBar" type="ProgressBar" parent="Options_holder"]
 layout_mode = 0
 offset_left = 6.0
@@ -151,3 +171,5 @@ text = "Hp/MaxHp"
 [connection signal="button_up" from="Options_holder/Option_button_1" to="." method="_on_option_button_1_button_up"]
 [connection signal="button_up" from="Options_holder/Option_button_2" to="." method="_on_option_button_2_button_up"]
 [connection signal="button_up" from="Options_holder/Option_button_3" to="." method="_on_option_button_3_button_up"]
+[connection signal="button_up" from="Options_holder/Option_button_4" to="." method="_on_option_button_4_button_up"]
+[connection signal="button_up" from="Options_holder/Option_button_5" to="." method="_on_option_button_5_button_up"]

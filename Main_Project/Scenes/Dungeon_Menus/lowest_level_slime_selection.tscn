@@ -107,6 +107,15 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 30
 text = "51-60"
 
+[node name="Button_61_70" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.901442, 0, 0.151654, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 30
+text = "61-70"
+
 [connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]
 [connection signal="button_up" from="GridContainer/Button_1_10" to="." method="_on_button_1_10_button_up"]
 [connection signal="button_up" from="GridContainer/Button_11_20" to="." method="_on_button_11_20_button_up"]
@@ -114,3 +123,4 @@ text = "51-60"
 [connection signal="button_up" from="GridContainer/Button_31_40" to="." method="_on_button_31_40_button_up"]
 [connection signal="button_up" from="GridContainer/Button_41_50" to="." method="_on_button_41_50_button_up"]
 [connection signal="button_up" from="GridContainer/Button_51_60" to="." method="_on_button_51_60_button_up"]
+[connection signal="button_up" from="GridContainer/Button_61_70" to="." method="_on_button_61_70_button_up"]

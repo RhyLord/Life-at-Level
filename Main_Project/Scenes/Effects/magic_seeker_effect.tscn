@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3fhvbwyylebw"]
+
+[ext_resource type="Texture2D" uid="uid://dgg0uwoex8v1t" path="res://Assets/Effects_art/White_Triangle.png" id="1_ykxxf"]
+[ext_resource type="AudioStream" uid="uid://cpk5xqdkkflso" path="res://Sound_Effects/magic_seeker_sfx.ogg" id="2_d46nq"]
+
+[sub_resource type="Gradient" id="Gradient_p6n08"]
+colors = PackedColorArray(1, 1, 1, 1, 0.724643, 0.724643, 0.724643, 1)
+
+[sub_resource type="Curve" id="Curve_aujgx"]
+min_value = -1.0
+_data = [Vector2(0.0364964, 1), 0.0, 0.0, 0, 0, Vector2(0.981752, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="magic_seeker_effect" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 75
+lifetime = 2.0
+one_shot = true
+speed_scale = 1.5
+explosiveness = 0.9
+texture = ExtResource("1_ykxxf")
+emission_shape = 2
+emission_sphere_radius = 128.0
+spread = 10.0
+gravity = Vector2(1200, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 800.0
+angle_min = 90.0
+angle_max = 120.0
+scale_amount_min = 0.05
+scale_amount_max = 0.4
+color = Color(0.21177, 0.512719, 0.840641, 1)
+color_ramp = SubResource("Gradient_p6n08")
+hue_variation_min = -0.06
+hue_variation_max = 0.06
+hue_variation_curve = SubResource("Curve_aujgx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_d46nq")
+volume_db = 20.0
+pitch_scale = 0.8
+autoplay = true

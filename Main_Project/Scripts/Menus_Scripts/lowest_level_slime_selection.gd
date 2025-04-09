@@ -1,6 +1,6 @@
 extends Control
 
-@export var Previous_Scene = "res://Scenes/creation_menu.tscn"
+@export var Previous_Scene = "res://Scenes/Menus/creation_menu.tscn"
 
 @export var Battle_Setup = "res://Scenes/Battles/battle_setup.tscn"
 
@@ -8,6 +8,8 @@ extends Control
 @onready var button_3 = $GridContainer/Button_21_30
 @onready var button_4 = $GridContainer/Button_31_40
 @onready var button_5 = $GridContainer/Button_41_50
+@onready var button_6 = $GridContainer/Button_51_60
+@onready var button_7 = $GridContainer/Button_61_70
 
 
 func _on_go_back_button_button_up():
@@ -22,7 +24,10 @@ func _ready():
 		button_4.visible = false
 	if DungeonData.lowest_level_slime_41_50 == false:
 		button_5.visible = false
-		
+	if DungeonData.lowest_level_slime_51_60 == false:
+		button_6.visible = false
+	if DungeonData.lowest_level_slime_61_70 == false:
+		button_7.visible = false
 
 func _on_button_1_10_button_up():
 	if DungeonData.lowest_level_slime_1_10 == true:
@@ -73,5 +78,14 @@ func _on_button_51_60_button_up():
 		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
 		DungeonData.lowest_level_slime = 1
 		DungeonData.dungeon_lvl = 50
+		DungeonData.Next_lvl()
+		get_tree().change_scene_to_file(Battle_Setup)
+
+
+func _on_button_61_70_button_up():
+	if DungeonData.lowest_level_slime_61_70 == true:
+		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
+		DungeonData.lowest_level_slime = 1
+		DungeonData.dungeon_lvl = 60
 		DungeonData.Next_lvl()
 		get_tree().change_scene_to_file(Battle_Setup)

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://yig8calaluti"]
+
+[ext_resource type="Texture2D" uid="uid://dr47wrdbmkqmk" path="res://Assets/Effects_art/White_Circle.png" id="1_1fex0"]
+[ext_resource type="Gradient" uid="uid://bihrh1tppigxt" path="res://Scenes/Effects/aquaslime_effect.tres" id="2_ytwpy"]
+[ext_resource type="AudioStream" uid="uid://c17ttvllhfy08" path="res://Sound_Effects/magicslime_SFX.wav" id="3_q6m4c"]
+
+[sub_resource type="Curve" id="Curve_ndk5d"]
+min_value = -10.0
+max_value = 1024.0
+_data = [Vector2(0.0283019, -1), 0.0, 0.0, 0, 0, Vector2(0.589623, -1), 0.0, 0.0, 0, 0, Vector2(1, -0.318681), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="magicslime_effect" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.9
+one_shot = true
+explosiveness = 0.9
+texture = ExtResource("1_1fex0")
+emission_shape = 1
+emission_sphere_radius = 100.0
+spread = 90.0
+gravity = Vector2(0, 0)
+orbit_velocity_max = 1.0
+radial_accel_min = 200.0
+radial_accel_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.8
+color_ramp = ExtResource("2_ytwpy")
+hue_variation_min = -0.05
+hue_variation_max = 0.05
+hue_variation_curve = SubResource("Curve_ndk5d")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_q6m4c")
+volume_db = 15.0
+autoplay = true

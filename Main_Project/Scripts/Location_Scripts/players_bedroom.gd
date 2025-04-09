@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var Creation_Scene = "res://Scenes/creation_menu.tscn"
+@onready var Creation_Scene = "res://Scenes/Menus/creation_menu.tscn"
 @onready var House_Scene = "res://Scenes/Locations/house_scene.tscn"
 
 #Sprites for Bg
@@ -51,8 +51,6 @@ func update_and_refresh(func_ref):
 func _on_option_button_1_button_up():
 	update_and_refresh(Skill.Off_Combat_Rest)
 
-func _on_option_button_2_pressed():
-	update_and_refresh(Skill.Active_PushUp)
 
 func _on_option_button_3_pressed():
 	update_and_refresh(Skill.Active_Meditate)
@@ -64,9 +62,6 @@ func _on_option_button_4_pressed():
 func _on_option_button_5_button_up():
 	get_tree().change_scene_to_file(Creation_Scene)
 
-
-func _on_option_button_6_button_up():
-	update_and_refresh(Skill.Active_Squat)
 
 
 func _on_option_button_7_button_up():

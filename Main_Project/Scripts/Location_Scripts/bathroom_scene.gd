@@ -2,7 +2,7 @@ extends Node2D
 
 
 @onready var House_Scene = "res://Scenes/Locations/house_scene.tscn"
-@onready var Catalogue_Scene = "res://Scenes/catalogue_menu.tscn"
+@onready var Catalogue_Scene = "res://Scenes/Menus/catalogue_menu.tscn"
 
 var bg_textures = [
 	preload("res://Assets/Map_Art/Bathroom/Bathroom_Bg_Morning.png"),
@@ -62,3 +62,7 @@ func _on_option_button_2_button_up():
 
 func _on_option_button_3_button_up():
 	update_and_refresh(Skill.Active_Shower)
+
+
+func _on_option_button_4_button_up():
+	update_and_refresh(Skill.Active_Speech_XP)

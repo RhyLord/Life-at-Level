@@ -1,0 +1,563 @@
+[gd_scene load_steps=10 format=3 uid="uid://dleaa4kv6c4c4"]
+
+[ext_resource type="Texture2D" uid="uid://lvtxd4roawfo" path="res://Assets/Effects_art/panel_rect.png" id="1_3rcm6"]
+[ext_resource type="Script" path="res://Scripts/Shop_Scripts/lydia_sell_shop.gd" id="1_32jaj"]
+[ext_resource type="Texture2D" uid="uid://bbbdxq7l5h4ay" path="res://Assets/Items_Art/GreenSlime_Item.png" id="2_k7jkq"]
+[ext_resource type="Texture2D" uid="uid://cc73e14sui08a" path="res://Assets/Items_Art/AcidicSlime_Item.png" id="4_kscg8"]
+[ext_resource type="Texture2D" uid="uid://5bhcjous3n8p" path="res://Assets/Items_Art/PoisonousSlime_Item.png" id="5_enahx"]
+[ext_resource type="Texture2D" uid="uid://bjry5pehhfnl4" path="res://Assets/Items_Art/LavaSlime_Item.png" id="6_4tx3p"]
+[ext_resource type="Texture2D" uid="uid://404kglpu24qu" path="res://Assets/Items_Art/AquaSlime_Item.png" id="7_npu2m"]
+[ext_resource type="Texture2D" uid="uid://ccdn6u76m80kd" path="res://Assets/Items_Art/MagicSlime_Item.png" id="8_ydu2p"]
+[ext_resource type="Texture2D" uid="uid://85xm50k48gs8" path="res://Assets/Items_Art/MetallicSlime_Item.png" id="9_8jtka"]
+
+[node name="Lydia_Sell_Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_32jaj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.220615, 0.175828, 0.235278, 1)
+
+[node name="Title" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 6.0
+offset_right = 570.0
+offset_bottom = 115.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "Sell Menu"
+
+[node name="Coin" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 816.0
+offset_right = 1036.0
+offset_bottom = 109.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Coin"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 121.0
+offset_right = 1118.0
+offset_bottom = 624.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel1" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3rcm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel1"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("2_k7jkq")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel1"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Green Slime
+Sell value = 1"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel1"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button1" type="Button" parent="ScrollContainer/VBoxContainer/Panel1"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 727.0
+offset_top = 5.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 1"
+
+[node name="Button2" type="Button" parent="ScrollContainer/VBoxContainer/Panel1"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 10"
+
+[node name="Button3" type="Button" parent="ScrollContainer/VBoxContainer/Panel1"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 5.0
+offset_right = 1072.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell All"
+
+[node name="Panel2" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3rcm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel2"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("4_kscg8")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Acidic Slime
+Sell value = 10"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button4" type="Button" parent="ScrollContainer/VBoxContainer/Panel2"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 727.0
+offset_top = 5.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 1"
+
+[node name="Button5" type="Button" parent="ScrollContainer/VBoxContainer/Panel2"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 10"
+
+[node name="Button6" type="Button" parent="ScrollContainer/VBoxContainer/Panel2"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 5.0
+offset_right = 1072.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell All"
+
+[node name="Panel3" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3rcm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel3"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("5_enahx")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Poisonous Slime
+Sell value = 10"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button7" type="Button" parent="ScrollContainer/VBoxContainer/Panel3"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 727.0
+offset_top = 5.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 1"
+
+[node name="Button8" type="Button" parent="ScrollContainer/VBoxContainer/Panel3"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 10"
+
+[node name="Button9" type="Button" parent="ScrollContainer/VBoxContainer/Panel3"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 5.0
+offset_right = 1072.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell All"
+
+[node name="Panel4" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3rcm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel4"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("6_4tx3p")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel4"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Lava Slime
+Sell value = 20"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel4"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 727.0
+offset_top = 5.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 1"
+
+[node name="Button11" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 10"
+
+[node name="Button12" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 5.0
+offset_right = 1072.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell All"
+
+[node name="Panel5" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3rcm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel5"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("7_npu2m")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel5"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Aqua Slime
+Sell value = 10"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel5"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button13" type="Button" parent="ScrollContainer/VBoxContainer/Panel5"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 727.0
+offset_top = 5.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 1"
+
+[node name="Button14" type="Button" parent="ScrollContainer/VBoxContainer/Panel5"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 10"
+
+[node name="Button15" type="Button" parent="ScrollContainer/VBoxContainer/Panel5"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 5.0
+offset_right = 1072.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell All"
+
+[node name="Panel6" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3rcm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel6"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("8_ydu2p")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel6"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Magic Slime
+Sell value = 50"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel6"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button16" type="Button" parent="ScrollContainer/VBoxContainer/Panel6"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 727.0
+offset_top = 5.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 1"
+
+[node name="Button17" type="Button" parent="ScrollContainer/VBoxContainer/Panel6"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 10"
+
+[node name="Button18" type="Button" parent="ScrollContainer/VBoxContainer/Panel6"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 5.0
+offset_right = 1072.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell All"
+
+[node name="Panel7" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3rcm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel7"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("9_8jtka")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel7"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Metallic Slime
+Sell value = 50"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel7"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button19" type="Button" parent="ScrollContainer/VBoxContainer/Panel7"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 727.0
+offset_top = 5.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 1"
+
+[node name="Button20" type="Button" parent="ScrollContainer/VBoxContainer/Panel7"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 10"
+
+[node name="Button21" type="Button" parent="ScrollContainer/VBoxContainer/Panel7"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 5.0
+offset_right = 1072.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell All"
+
+[node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1067.0
+offset_top = 7.0
+offset_right = 1139.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel1/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel1/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel1/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel2/Button4" to="." method="_on_button_4_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel2/Button5" to="." method="_on_button_5_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel2/Button6" to="." method="_on_button_6_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel3/Button7" to="." method="_on_button_7_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel3/Button8" to="." method="_on_button_8_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel3/Button9" to="." method="_on_button_9_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button10" to="." method="_on_button_10_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button11" to="." method="_on_button_11_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button12" to="." method="_on_button_12_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel5/Button13" to="." method="_on_button_13_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel5/Button14" to="." method="_on_button_14_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel5/Button15" to="." method="_on_button_15_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel6/Button16" to="." method="_on_button_16_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel6/Button17" to="." method="_on_button_17_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel6/Button18" to="." method="_on_button_18_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel7/Button19" to="." method="_on_button_19_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel7/Button20" to="." method="_on_button_20_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel7/Button21" to="." method="_on_button_21_button_up"]
+[connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvlx7n7wvo2rw"]
+
+[ext_resource type="Texture2D" uid="uid://dr47wrdbmkqmk" path="res://Assets/Effects_art/White_Circle.png" id="1_7aa4e"]
+[ext_resource type="AudioStream" uid="uid://chrea3dhh00ms" path="res://Sound_Effects/Magic_blast_sfx.ogg" id="2_rurlj"]
+
+[sub_resource type="Gradient" id="Gradient_nmcl2"]
+offsets = PackedFloat32Array(0, 0.520325, 1)
+colors = PackedColorArray(2.5028e-06, 0.689853, 0.84109, 1, 0, 0.577575, 0.717546, 1, 0.610517, 0.940457, 1, 1)
+
+[node name="magic_blast_effect" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 50
+one_shot = true
+explosiveness = 0.5
+randomness = 0.5
+texture = ExtResource("1_7aa4e")
+emission_shape = 2
+emission_sphere_radius = 100.0
+gravity = Vector2(0, 0)
+angular_velocity_min = 70.0
+angular_velocity_max = 800.0
+orbit_velocity_max = 0.3
+radial_accel_min = -200.0
+scale_amount_min = 0.05
+scale_amount_max = 0.5
+color = Color(0.693168, 0.894789, 1, 1)
+color_ramp = SubResource("Gradient_nmcl2")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_rurlj")
+volume_db = 20.0
+pitch_scale = 0.2
+autoplay = true

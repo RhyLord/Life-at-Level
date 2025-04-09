@@ -1,6 +1,6 @@
 extends TextureButton
 
-@export var Catalogue_Scene = "res://Scenes/catalogue_menu.tscn"
+@export var Catalogue_Scene = "res://Scenes/Menus/catalogue_menu.tscn"
 
 
 func _on_button_up():

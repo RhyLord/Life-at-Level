@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3vil0g8mu7o0"]
+
+[ext_resource type="Texture2D" uid="uid://dr47wrdbmkqmk" path="res://Assets/Effects_art/White_Circle.png" id="1_orabo"]
+[ext_resource type="Gradient" uid="uid://bihrh1tppigxt" path="res://Scenes/Effects/aquaslime_effect.tres" id="2_u2rlx"]
+[ext_resource type="AudioStream" uid="uid://bsw2h8765v0k2" path="res://Sound_Effects/aquaslime_sfx.wav" id="3_k3f8c"]
+
+[node name="aquaslime_effect" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 20
+lifetime = 0.9
+one_shot = true
+explosiveness = 0.9
+texture = ExtResource("1_orabo")
+emission_shape = 1
+emission_sphere_radius = 100.0
+spread = 90.0
+radial_accel_min = 200.0
+radial_accel_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.8
+color_ramp = ExtResource("2_u2rlx")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_k3f8c")
+volume_db = 15.0
+autoplay = true

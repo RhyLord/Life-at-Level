@@ -6,6 +6,7 @@ extends Control
 
 @onready var details = $Details
 @onready var ItemTxT = $ItemGainTXT
+@onready var Nxt_Button = $Next_Button
 
 func _ready():
 	PostBattleData.update()
@@ -36,16 +37,22 @@ func _on_next_button_button_up():
 
 func Lowest_Level_Slime_Dungeons():
 	if DungeonData.lowest_level_slime == 1:
+		if DungeonData.next_scene == "Lowest_Level_Slime_Dungeon_1_101":
+			Nxt_Button.visible = false
+			return
+
 		var dungeon_map = {}
-		
-		# Assign alternating dungeons
-		for i in range(2, 51):  # 1_2 to 1_50
-			dungeon_map["Lowest_Level_Slime_Dungeon_1_" + str(i)] = (
+
+		for i in range(2, 101):  # Dungeon_1_2 to Dungeon_1_100
+			var key = "Lowest_Level_Slime_Dungeon_1_" + str(i)
+			dungeon_map[key] = (
 				Lowest_Level_Slime_Dungeon_1_2 if i % 2 == 0 else Lowest_Level_Slime_Dungeon_1_1
 			)
 
-		var scene = dungeon_map.get(DungeonData.next_scene, null)
+		var scene = dungeon_map.get(DungeonData.next_scene)
 		if scene:
 			get_tree().change_scene_to_packed(scene)
+		else:
+			push_error("Invalid next_scene: " + str(DungeonData.next_scene))
 		
 		

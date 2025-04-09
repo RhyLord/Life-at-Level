@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://khl1jasmndxa"]
+
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Go_Back_Button.gd" id="1_0s80q"]
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/creation_menu.gd" id="1_b4hhw"]
+
+[node name="Creation_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b4hhw")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -25.0
+offset_top = -17.0
+offset_right = 1164.0
+offset_bottom = 667.0
+color = Color(0.492416, 0.658999, 0.893626, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 142.0
+offset_right = 847.0
+offset_bottom = 258.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Lowest Level Slime Dungeon"
+
+[node name="Go_Back_Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1067.0
+offset_top = 7.0
+offset_right = 1139.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "X"
+script = ExtResource("1_0s80q")
+
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Go_Back_Button" to="Go_Back_Button" method="_on_button_up"]

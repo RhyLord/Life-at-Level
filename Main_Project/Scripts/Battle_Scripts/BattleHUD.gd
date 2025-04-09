@@ -1,14 +1,24 @@
 extends Node2D
 
 
-@export var Victory = load("res://Scenes/Battles/enemy_defeated_scene.tscn") as PackedScene
-@export var Faliure = load("res://Scenes/Battles/player_dead.tscn") as PackedScene
+@onready var Victory = load("res://Scenes/Battles/enemy_defeated_scene.tscn") as PackedScene
+@export var Faliure = "res://Scenes/Battles/player_dead.tscn"
+
+#Effects
+@onready var Hit_FX = preload("res://Scenes/Effects/basic_hit_effect.tscn")
+@onready var Magic_Blast_FX = preload("res://Scenes/Effects/magic_blast_effect.tscn")
+@onready var Magic_Seeker_FX = preload("res://Scenes/Effects/magic_seeker_effect.tscn")
+@onready var Acid_Potion_FX = preload("res://Scenes/Effects/acidpotion_effect.tscn")
+
+
 
 var Green_Slime_Texture = preload("res://Assets/Card_art/GreenSlime_Card.png")
 var Acid_Slime_Texture = preload("res://Assets/Card_art/AcidSlime_Card.png")
 var Poison_Slime_Texture = preload("res://Assets/Card_art/PoisonSlime_Card.png")
 var Lava_Slime_Texture = preload("res://Assets/Card_art/LavaSlime_Card.png")
 var Aqua_Slime_Texture = preload("res://Assets/Card_art/AquaSlime_Card.png")
+var Magic_Slime_Texture = preload("res://Assets/Card_art/MagicSlime_Card.png")
+var Metallic_Slime_Texture = preload("res://Assets/Card_art/MetallicSlime_Card.png")
 
 @onready var Enemy_Cards = [
 	$Enemy_Card_1,
@@ -31,6 +41,9 @@ var Aqua_Slime_Texture = preload("res://Assets/Card_art/AquaSlime_Card.png")
 @onready var MP_TXT = $Stat_Holder/ManaBar/MPTXTLabel
 @onready var EN_Bar = $Stat_Holder/ENBar
 @onready var EN_TXT = $Stat_Holder/ENBar/ENTXTLabel
+
+@onready var music_player = $AudioStreamPlayer2D
+
 
 @onready var Enemy_HP_Bar_1 = $Enemy_Card_1/HealthBar
 @onready var Enemy_HP_TXT_1 = $Enemy_Card_1/HealthBar/HPTXTLabel
@@ -73,8 +86,8 @@ func _ready():
 
 func player_dead():
 	if Player.HP <= 0:
-		var falire_scn = Faliure.instantiate()
-		get_tree().current_scene.add_child(falire_scn)
+		music_player.stop()
+		get_tree().change_scene_to_file(Faliure)
 
 func _physics_process(delta):
 	if PreBattleData.Refresh_Active:
@@ -85,6 +98,15 @@ func _physics_process(delta):
 	if BattleMech.turn_order == 1:
 		Option_Holder.visible = false
 		Desc_txt.text = "Select Target"
+		
+	if BattleMech.turn_order == -1:
+		Option_Holder.visible = false
+		BattleMech.Perform_Stored_func()
+		effects_on_enemy()
+		Player.reset_all_dmg()
+		BattleMech.turn_order = 2
+		
+
 
 func Set_Core_Stats():
 	HP_Bar.max_value = Player.MAX_HP
@@ -101,7 +123,7 @@ func Set_Core_Stats():
 
 	Title_TXT.text = "[center][b][outline_size=3][outline_color=#000000][font_size=40]" + PreBattleData.Dungeon_start_name + "[/font_size][/outline_color][/outline_size][/b][/center]"
 		
-	Desc_txt.text = PreBattleData.desciption_txt
+	Desc_txt.text = PreBattleData.description_txt
 	
 	Enemy_HP_Bar_1.max_value = Enemy1Data.MAX_HP
 	Enemy_HP_Bar_1.value = Enemy1Data.HP
@@ -213,7 +235,9 @@ func Set_Enemy_Image():
 		"acid_slime": Acid_Slime_Texture,
 		"poison_slime": Poison_Slime_Texture,
 		"lava_slime": Lava_Slime_Texture,
-		"aqua_slime": Aqua_Slime_Texture
+		"aqua_slime": Aqua_Slime_Texture,
+		"magic_slime": Magic_Slime_Texture,
+		"metallic_slime": Metallic_Slime_Texture
 	}
 
 	var enemies = [Enemy1Data, Enemy2Data, Enemy3Data, Enemy4Data, Enemy5Data]
@@ -222,19 +246,22 @@ func Set_Enemy_Image():
 	for i in range(enemies.size()):
 		if enemies[i].type in slime_textures:
 			images[i].texture_normal = slime_textures[enemies[i].type]
-		
-		
+
+
 func _on_enemy_image_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 1
+		BattleMech.Enemypos = Enemy_Cards[0].global_position
+		effects_on_enemy()
 		BattleMech.Perform_Stored_func()
 		Player.reset_all_dmg()
 		BattleMech.turn_order = 2
 
-
 func _on_enemy_image_2_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 2
+		BattleMech.Enemypos = Enemy_Cards[1].global_position
+		effects_on_enemy()
 		BattleMech.Perform_Stored_func()
 		Player.reset_all_dmg()
 		BattleMech.turn_order = 2
@@ -243,6 +270,8 @@ func _on_enemy_image_2_button_up():
 func _on_enemy_image_3_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 3
+		BattleMech.Enemypos = Enemy_Cards[2].global_position
+		effects_on_enemy()
 		BattleMech.Perform_Stored_func()
 		Player.reset_all_dmg()
 		BattleMech.turn_order = 2
@@ -251,6 +280,8 @@ func _on_enemy_image_3_button_up():
 func _on_enemy_image_4_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 4
+		BattleMech.Enemypos = Enemy_Cards[3].global_position
+		effects_on_enemy()
 		BattleMech.Perform_Stored_func()
 		Player.reset_all_dmg()
 		BattleMech.turn_order = 2
@@ -259,6 +290,62 @@ func _on_enemy_image_4_button_up():
 func _on_enemy_image_5_button_up():
 	if BattleMech.turn_order == 1:
 		BattleMech.Enemy_Selected = 5
+		BattleMech.Enemypos = Enemy_Cards[4].global_position
+		effects_on_enemy()
 		BattleMech.Perform_Stored_func()
 		Player.reset_all_dmg()
 		BattleMech.turn_order = 2.
+
+func effects_on_enemy():
+	if BattleMech.Player_Skill_Effect == "basic_hit":
+		spawn_hit_effect()
+	if BattleMech.Player_Skill_Effect == "magic_blast":
+		spawn_magic_blast_effect()
+	if BattleMech.Player_Skill_Effect == "magic_seeker":
+		spawn_magic_seeker_effect()
+	if BattleMech.Player_Skill_Effect == "acid_potion":
+		spawn_acid_potion_effect()
+
+func spawn_hit_effect():
+	var hit_effect = Hit_FX.instantiate()
+	hit_effect.global_position = BattleMech.Enemypos
+	hit_effect.z_index = 201
+	add_child(hit_effect)
+	var particles = hit_effect.get_node("CPUParticles2D")
+	if particles:
+		particles.emitting = true
+	await get_tree().create_timer(0.7).timeout
+	hit_effect.queue_free()
+
+func spawn_magic_blast_effect():
+	var hit_effect = Magic_Blast_FX.instantiate()
+	hit_effect.global_position = BattleMech.Enemypos
+	hit_effect.z_index = 201
+	add_child(hit_effect)
+	var particles = hit_effect.get_node("CPUParticles2D")
+	if particles:
+		particles.emitting = true
+	await get_tree().create_timer(1).timeout
+	hit_effect.queue_free()
+
+func spawn_magic_seeker_effect():
+	var hit_effect = Magic_Seeker_FX.instantiate()
+	hit_effect.global_position = Enemy_Cards[0].global_position
+	hit_effect.z_index = 201
+	add_child(hit_effect)
+	var particles = hit_effect.get_node("CPUParticles2D")
+	if particles:
+		particles.emitting = true
+	await get_tree().create_timer(1.5).timeout
+	hit_effect.queue_free()
+	
+func spawn_acid_potion_effect():
+	var hit_effect = Acid_Potion_FX.instantiate()
+	hit_effect.global_position = BattleMech.Enemypos
+	hit_effect.z_index = 201
+	add_child(hit_effect)
+	var particles = hit_effect.get_node("CPUParticles2D")
+	if particles:
+		particles.emitting = true
+	await get_tree().create_timer(1).timeout
+	hit_effect.queue_free()
