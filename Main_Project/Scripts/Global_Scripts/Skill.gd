@@ -73,7 +73,7 @@ func Run_stat_gain():
 	Player.MAX_EN += 10
 
 func Active_Run_XP():
-	var xp_gain = (10 * Run_LVL) + ceil(0.75 * Player.MAX_EN)
+	var xp_gain = (10 * Run_LVL) + (Player.MAX_EN)
 	Run_XP += xp_gain
 	level_up_skill("Run_XP", "Run_LVL", "Run_NXT_XP", Run_stat_gain)
 	

@@ -4,6 +4,8 @@ extends Node2D
 @onready var Garden_Scene = "res://Scenes/Locations/garden_scene.tscn"
 @onready var Bathroom_Scene = "res://Scenes/Locations/bathroom_scene.tscn"
 @onready var Potion_Scene = "res://Scenes/Shop/lydia_potion_shop.tscn"
+@onready var Tavern_Scene = "res://Scenes/Locations/tavern_scene.tscn"
+@onready var Claire_Scene = "res://Scenes/Locations/claires_room.tscn"
 
 var bg_textures = [
 	preload("res://Assets/Map_Art/House_Bg_Morning.png"),
@@ -25,19 +27,35 @@ func Set_Core_Stats():
 
 
 func _on_button_button_up():
+	GlobalButtonClick.button_click()
 	Global.Map = 1
 	get_tree().change_scene_to_file(Bedroom_Scene)
 
 
 func _on_button_2_button_up():
+	GlobalButtonClick.button_click()
 	Global.Map = 3
 	get_tree().change_scene_to_file(Garden_Scene)
 
 
 func _on_button_3_button_up():
+	GlobalButtonClick.button_click()
 	Global.Map = 4
 	get_tree().change_scene_to_file(Bathroom_Scene)
 
 
 func _on_button_4_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Potion_Scene)
+
+
+func _on_button_5_button_up():
+	Global.Map = 5
+	GlobalButtonClick.button_click()
+	get_tree().change_scene_to_file(Tavern_Scene)
+
+
+func _on_button_6_button_up():
+	Global.Map = 6
+	GlobalButtonClick.button_click()
+	get_tree().change_scene_to_file(Claire_Scene)

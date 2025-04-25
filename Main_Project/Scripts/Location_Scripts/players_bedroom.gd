@@ -3,6 +3,10 @@ extends Node2D
 @onready var Creation_Scene = "res://Scenes/Menus/creation_menu.tscn"
 @onready var House_Scene = "res://Scenes/Locations/house_scene.tscn"
 
+var Meditate_Scene = load("res://Scenes/PopUp_Windows/meditate_window.tscn") as PackedScene
+var Study_Scene = load("res://Scenes/PopUp_Windows/study_window.tscn") as PackedScene
+
+
 #Sprites for Bg
 var bedroom_bg_textures = [
 	preload("res://Assets/Player_bedroom/Player_Bedroom_Morning.png"),
@@ -49,21 +53,28 @@ func update_and_refresh(func_ref):
 
 
 func _on_option_button_1_button_up():
+	GlobalButtonClick.button_click()
 	update_and_refresh(Skill.Off_Combat_Rest)
 
 
 func _on_option_button_3_pressed():
-	update_and_refresh(Skill.Active_Meditate)
+	GlobalButtonClick.button_click()
+	var meditate_scene = Meditate_Scene.instantiate()
+	get_tree().current_scene.add_child(meditate_scene)
 
 func _on_option_button_4_pressed():
-	update_and_refresh(Skill.Active_Study)
+	GlobalButtonClick.button_click()
+	var study_scene = Study_Scene.instantiate()
+	get_tree().current_scene.add_child(study_scene)
 
 
 func _on_option_button_5_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Creation_Scene)
 
 
 
 func _on_option_button_7_button_up():
+	GlobalButtonClick.button_click()
 	Global.Map = 2
 	get_tree().change_scene_to_file(House_Scene)

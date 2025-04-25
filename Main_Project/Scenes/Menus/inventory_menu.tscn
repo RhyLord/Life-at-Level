@@ -66,6 +66,7 @@ bbcode_enabled = true
 text = "[right]coin[/right]"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 121.0
 offset_right = 1118.0

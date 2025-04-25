@@ -4,5 +4,5 @@ extends Control
 
 
 func _on_button_button_up():
-	
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Lowest_Slime)

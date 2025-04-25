@@ -1,0 +1,128 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1f7225nwgbc3"]
+
+[ext_resource type="Script" path="res://Scripts/Popup_Window_Scripts/squat_window.gd" id="1_dgf1q"]
+[ext_resource type="Texture2D" uid="uid://db52xme3mm8k5" path="res://Assets/Skills_art/Squat_button.png" id="1_xkist"]
+
+[node name="squat_window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dgf1q")
+
+[node name="Panel" type="ColorRect" parent="."]
+z_index = 200
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 1009.0
+offset_bottom = 482.0
+color = Color(0.543968, 0.676908, 0.916536, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(157, 156)
+texture = ExtResource("1_xkist")
+
+[node name="Action_Button" type="Button" parent="Panel"]
+z_index = 300
+layout_mode = 0
+offset_left = 627.0
+offset_top = 399.0
+offset_right = 987.0
+offset_bottom = 480.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Do Squats"
+
+[node name="Close_Button" type="Button" parent="Panel"]
+z_index = 300
+layout_mode = 0
+offset_left = 884.0
+offset_top = 7.0
+offset_right = 986.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="lvl" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 71.0
+offset_right = 647.0
+offset_bottom = 220.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Level"
+
+[node name="Title" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 10.0
+offset_right = 647.0
+offset_bottom = 159.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Squat"
+
+[node name="Nxt_Lvl_Txt" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 112.0
+offset_right = 992.0
+offset_bottom = 161.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+text = "EXP:"
+
+[node name="desc_txt" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 148.0
+offset_right = 988.0
+offset_bottom = 295.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 18
+text = "EXP:"
+
+[node name="Off_combat_desc" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 301.0
+offset_right = 991.0
+offset_bottom = 357.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+text = "EXP:"
+
+[node name="Combat_desc" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 337.0
+offset_right = 991.0
+offset_bottom = 393.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 25
+text = "EXP:"
+
+[connection signal="button_up" from="Panel/Action_Button" to="." method="_on_action_button_button_up"]
+[connection signal="button_up" from="Panel/Close_Button" to="." method="_on_close_button_button_up"]

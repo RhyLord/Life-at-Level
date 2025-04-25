@@ -10,3 +10,12 @@ func cycle_time():
 	if Time_of_day >= time_states.size():
 		Time_of_day = 0
 		Day += 1
+
+func update():
+	pass
+
+#NPC Dialogues
+var claire = 0
+
+#NPC Quests
+var claire_quest = 0

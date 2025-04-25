@@ -27,129 +27,151 @@ func update_text():
 
 func _on_button_1_button_up():
 	if Inventory.Green_Slime > 0:
+		GlobalButtonClick.button_click()
 		Player.coin += 1
 		Inventory.Green_Slime -= 1
 		update_text()
 
 func _on_button_2_button_up():
 	if Inventory.Green_Slime > 9:
+		GlobalButtonClick.button_click()
 		Player.coin += 10
 		Inventory.Green_Slime -= 10
 		update_text()
 
 func _on_button_3_button_up():
+	GlobalButtonClick.button_click()
 	var amount = Inventory.Green_Slime
 	Player.coin += (amount)
 	Inventory.Green_Slime -= amount
 	update_text()
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(previous_scene)
 
 func _on_button_4_button_up():
 	if Inventory.Acid_Slime > 0:
-		Player.coin += 10
+		GlobalButtonClick.button_click()
+		Player.coin += 5
 		Inventory.Acid_Slime -= 1
 		update_text()
 
 func _on_button_5_button_up():
 	if Inventory.Acid_Slime > 9:
-		Player.coin += 100
+		GlobalButtonClick.button_click()
+		Player.coin += 50
 		Inventory.Acid_Slime -= 10
 		update_text()
 
 func _on_button_6_button_up():
+	GlobalButtonClick.button_click()
 	var amount = Inventory.Acid_Slime
-	Player.coin += (amount * 10)
+	Player.coin += (amount * 5)
 	Inventory.Acid_Slime -= amount
 	update_text()
 
 func _on_button_7_button_up():
 	if Inventory.Poison_Slime > 0:
-		Player.coin += 10
+		GlobalButtonClick.button_click()
+		Player.coin += 5
 		Inventory.Poison_Slime -= 1
 		update_text()
 
 func _on_button_8_button_up():
 	if Inventory.Poison_Slime > 9:
-		Player.coin += 100
+		GlobalButtonClick.button_click()
+		Player.coin += 50
 		Inventory.Poison_Slime -= 10
 		update_text()
 
 func _on_button_9_button_up():
+	GlobalButtonClick.button_click()
 	var amount = Inventory.Poison_Slime
-	Player.coin += (amount * 10)
+	Player.coin += (amount * 5)
 	Inventory.Poison_Slime -= amount
 	update_text()
 
 func _on_button_10_button_up():
 	if Inventory.Lava_Slime > 0:
-		Player.coin += 20
+		GlobalButtonClick.button_click()
+		Player.coin += 10
 		Inventory.Lava_Slime -= 1
 		update_text()
 
 func _on_button_11_button_up():
 	if Inventory.Lava_Slime > 9:
-		Player.coin += 200
+		GlobalButtonClick.button_click()
+		Player.coin += 100
 		Inventory.Lava_Slime -= 10
 		update_text()
 
 func _on_button_12_button_up():
+	GlobalButtonClick.button_click()
 	var amount = Inventory.Lava_Slime
-	Player.coin += (amount * 20)
+	Player.coin += (amount * 10)
 	Inventory.Lava_Slime -= amount
 	update_text()
 
 func _on_button_13_button_up():
 	if Inventory.Aqua_Slime > 0:
-		Player.coin += 10
+		GlobalButtonClick.button_click()
+		Player.coin += 5
 		Inventory.Aqua_Slime -= 1
 		update_text()
 
 func _on_button_14_button_up():
 	if Inventory.Aqua_Slime > 9:
-		Player.coin += 100
+		GlobalButtonClick.button_click()
+		Player.coin += 50
 		Inventory.Aqua_Slime -= 10
 		update_text()
 
 func _on_button_15_button_up():
+	GlobalButtonClick.button_click()
 	var amount = Inventory.Aqua_Slime
-	Player.coin += (amount * 10)
+	Player.coin += (amount * 5)
 	Inventory.Aqua_Slime -= amount
 	update_text()
 
 func _on_button_16_button_up():
 	if Inventory.Magic_Slime > 0:
-		Player.coin += 50
+		GlobalButtonClick.button_click()
+		Player.coin += 15
 		Inventory.Magic_Slime -= 1
 		update_text()
 
 func _on_button_17_button_up():
 	if Inventory.Magic_Slime > 9:
-		Player.coin += 500
+		GlobalButtonClick.button_click()
+		Player.coin += 150
 		Inventory.Magic_Slime -= 10
 		update_text()
 
 func _on_button_18_button_up():
+	GlobalButtonClick.button_click()
 	var amount = Inventory.Magic_Slime
-	Player.coin += (amount * 50)
+	Player.coin += (amount * 15)
 	Inventory.Magic_Slime -= amount
 	update_text()
 
 func _on_button_19_button_up():
 	if Inventory.Metallic_Slime > 0:
-		Player.coin += 50
+		GlobalButtonClick.button_click()
+		Player.coin += 15
 		Inventory.Metallic_Slime -= 1
 		update_text()
 
 func _on_button_20_button_up():
 	if Inventory.Metallic_Slime> 9:
-		Player.coin += 500
+		GlobalButtonClick.button_click()
+		Player.coin += 150
 		Inventory.Metallic_Slime -= 10
 		update_text()
 
 func _on_button_21_button_up():
+	GlobalButtonClick.button_click()
 	var amount = Inventory.Metallic_Slime
-	Player.coin += (amount * 50)
+	Player.coin += (amount * 15)
 	Inventory.Metallic_Slime -= amount
 	update_text()

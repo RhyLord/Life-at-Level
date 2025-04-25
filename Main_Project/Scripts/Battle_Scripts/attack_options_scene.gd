@@ -56,6 +56,7 @@ func _on_go_back_button_button_up():
 
 func _on_skill_button_1_button_up():
 	if Player.EN >= 5:
+		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Punch.bind()
 		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
 		BattleMech.Player_Skill_Effect = "basic_hit"
@@ -64,6 +65,7 @@ func _on_skill_button_1_button_up():
 
 func _on_skill_button_2_button_up():
 	if (Player.EN >= 25) and (Skill.Kick_Unlocked == true):
+		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Kick.bind()
 		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
 		BattleMech.Player_Skill_Effect = "basic_hit"
@@ -72,6 +74,7 @@ func _on_skill_button_2_button_up():
 
 func _on_skill_button_3_button_up():
 	if (Player.MP >= 50) and (Skill.Magic_Blast_Unlocked == true):
+		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Active_Magic_Blast.bind()
 		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
 		BattleMech.Player_Skill_Effect = "magic_blast"
@@ -80,6 +83,7 @@ func _on_skill_button_3_button_up():
 
 func _on_skill_button_4_button_up():
 	if (Player.MP >= 500) and (Skill.Magic_Seeker_Unlocked == true):
+		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Active_Magic_Seeker.bind()
 		BattleMech.Selected_Action = BattleMech.Player_AOE_Attack_1.bind()
 		BattleMech.Player_Skill_Effect = "magic_seeker"

@@ -3,6 +3,11 @@ extends Node2D
 @onready var House_Scene = "res://Scenes/Locations/house_scene.tscn"
 @onready var Catalogue_Scene = "res://Scenes/Menus/catalogue_menu.tscn"
 
+var PushUp_Scene = load("res://Scenes/PopUp_Windows/push_up_window.tscn") as PackedScene
+var Squat_Scene = load("res://Scenes/PopUp_Windows/squat_window.tscn") as PackedScene
+var Run_Scene = load("res://Scenes/PopUp_Windows/run_window.tscn") as PackedScene
+
+
 var bg_textures = [
 	preload("res://Assets/Map_Art/Garden/Garden_Bg_Morning.png"),
 	preload("res://Assets/Map_Art/Garden/Garden_Bg_Noon.png"),
@@ -48,27 +53,36 @@ func update_and_refresh(func_ref):
 
 
 func _on_inventory_button_button_up():
+	GlobalButtonClick.button_click()
 	Global.Map = 3
 	get_tree().change_scene_to_file(Catalogue_Scene)
 
 
 func _on_option_button_1_button_up():
+	GlobalButtonClick.button_click()
 	Global.Map = 2
 	get_tree().change_scene_to_file(House_Scene)
 
 
 func _on_option_button_2_button_up():
+	GlobalButtonClick.button_click()
 	update_and_refresh(Skill.Off_Combat_Rest)
 
 
 
 func _on_option_button_3_button_up():
-	update_and_refresh(Skill.Active_Run)
+	GlobalButtonClick.button_click()
+	var run_scene = Run_Scene.instantiate()
+	get_tree().current_scene.add_child(run_scene)
 
 
 func _on_option_button_4_button_up():
-	update_and_refresh(Skill.Active_PushUp)
+	GlobalButtonClick.button_click()
+	var Pushup_scene = PushUp_Scene.instantiate()
+	get_tree().current_scene.add_child(Pushup_scene)
 
 
 func _on_option_button_5_button_up():
-	update_and_refresh(Skill.Active_Squat)
+	GlobalButtonClick.button_click()
+	var squat_scene = Squat_Scene.instantiate()
+	get_tree().current_scene.add_child(squat_scene)

@@ -112,4 +112,6 @@ pitch_scale = 0.7
 autoplay = true
 
 [connection signal="button_up" from="CenterContainer/PanelContainer/VBoxContainer/Play_Button" to="." method="_on_play_button_button_up"]
+[connection signal="button_up" from="CenterContainer/PanelContainer/VBoxContainer/Settings_Button" to="." method="_on_settings_button_button_up"]
+[connection signal="button_up" from="CenterContainer/PanelContainer/VBoxContainer/Test_Button" to="." method="_on_test_button_button_up"]
 [connection signal="button_up" from="CenterContainer/PanelContainer/VBoxContainer/Exit_Button" to="." method="_on_exit_button_button_up"]

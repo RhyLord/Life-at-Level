@@ -37,8 +37,10 @@ func _ready():
 
 
 func _on_allocation_button_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Stat_add_Scene)
 
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Catalogue_Scene)

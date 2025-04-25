@@ -82,7 +82,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Minor Health Potion
-Price = 100"
+Price = 50"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel1"]
 layout_mode = 0
@@ -128,7 +128,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Minor Mana Potion
-Price = 1000"
+Price = 300"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel2"]
 layout_mode = 0
@@ -174,7 +174,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Acid Potion
-Price = 200"
+Price = 90"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel3"]
 layout_mode = 0

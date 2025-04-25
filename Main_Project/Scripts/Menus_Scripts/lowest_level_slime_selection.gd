@@ -13,6 +13,7 @@ extends Control
 
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Previous_Scene)
 
 func _ready():
@@ -31,6 +32,7 @@ func _ready():
 
 func _on_button_1_10_button_up():
 	if DungeonData.lowest_level_slime_1_10 == true:
+		GlobalButtonClick.button_click()
 		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
 		DungeonData.lowest_level_slime = 1
 		DungeonData.Next_lvl()
@@ -39,6 +41,7 @@ func _on_button_1_10_button_up():
 
 func _on_button_11_20_button_up():
 	if DungeonData.lowest_level_slime_11_20 == true:
+		GlobalButtonClick.button_click()
 		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
 		DungeonData.lowest_level_slime = 1
 		DungeonData.dungeon_lvl = 10
@@ -48,6 +51,7 @@ func _on_button_11_20_button_up():
 
 func _on_button_21_30_button_up():
 	if DungeonData.lowest_level_slime_21_30 == true:
+		GlobalButtonClick.button_click()
 		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
 		DungeonData.lowest_level_slime = 1
 		DungeonData.dungeon_lvl = 20
@@ -57,6 +61,7 @@ func _on_button_21_30_button_up():
 
 func _on_button_31_40_button_up():
 	if DungeonData.lowest_level_slime_31_40 == true:
+		GlobalButtonClick.button_click()
 		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
 		DungeonData.lowest_level_slime = 1
 		DungeonData.dungeon_lvl = 30
@@ -66,6 +71,7 @@ func _on_button_31_40_button_up():
 
 func _on_button_41_50_button_up():
 	if DungeonData.lowest_level_slime_41_50 == true:
+		GlobalButtonClick.button_click()
 		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
 		DungeonData.lowest_level_slime = 1
 		DungeonData.dungeon_lvl = 40
@@ -75,6 +81,7 @@ func _on_button_41_50_button_up():
 
 func _on_button_51_60_button_up():
 	if DungeonData.lowest_level_slime_51_60 == true:
+		GlobalButtonClick.button_click()
 		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
 		DungeonData.lowest_level_slime = 1
 		DungeonData.dungeon_lvl = 50
@@ -84,6 +91,7 @@ func _on_button_51_60_button_up():
 
 func _on_button_61_70_button_up():
 	if DungeonData.lowest_level_slime_61_70 == true:
+		GlobalButtonClick.button_click()
 		PreBattleData.Dungeon_name = "Lowest LVL Slime Dungeon"
 		DungeonData.lowest_level_slime = 1
 		DungeonData.dungeon_lvl = 60

@@ -152,7 +152,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Acidic Slime
-Sell value = 10"
+Sell value = 5"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel2"]
 layout_mode = 0
@@ -218,7 +218,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Poisonous Slime
-Sell value = 10"
+Sell value = 5"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel3"]
 layout_mode = 0
@@ -263,72 +263,6 @@ offset_bottom = 46.0
 theme_override_font_sizes/font_size = 20
 text = "Sell All"
 
-[node name="Panel4" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("1_3rcm6")
-
-[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel4"]
-position = Vector2(59, 72)
-scale = Vector2(0.401111, 0.401111)
-texture = ExtResource("6_4tx3p")
-
-[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel4"]
-layout_mode = 0
-offset_left = 126.0
-offset_top = 17.0
-offset_right = 448.0
-offset_bottom = 128.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/normal_font_size = 30
-bbcode_enabled = true
-text = "Lava Slime
-Sell value = 20"
-
-[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel4"]
-layout_mode = 0
-offset_left = 127.0
-offset_top = 95.0
-offset_right = 374.0
-offset_bottom = 141.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 5
-theme_override_font_sizes/normal_font_size = 30
-bbcode_enabled = true
-text = "Owned[0]"
-
-[node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
-modulate = Color(0.954154, 0.535954, 1, 1)
-layout_mode = 0
-offset_left = 727.0
-offset_top = 5.0
-offset_right = 834.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 20
-text = "Sell 1"
-
-[node name="Button11" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
-modulate = Color(0.954154, 0.535954, 1, 1)
-layout_mode = 0
-offset_left = 845.0
-offset_top = 5.0
-offset_right = 952.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 20
-text = "Sell 10"
-
-[node name="Button12" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
-modulate = Color(0.954154, 0.535954, 1, 1)
-layout_mode = 0
-offset_left = 965.0
-offset_top = 5.0
-offset_right = 1072.0
-offset_bottom = 46.0
-theme_override_font_sizes/font_size = 20
-text = "Sell All"
-
 [node name="Panel5" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_3rcm6")
@@ -350,7 +284,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Aqua Slime
-Sell value = 10"
+Sell value = 5"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel5"]
 layout_mode = 0
@@ -395,6 +329,72 @@ offset_bottom = 46.0
 theme_override_font_sizes/font_size = 20
 text = "Sell All"
 
+[node name="Panel4" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_3rcm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel4"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("6_4tx3p")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel4"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Lava Slime
+Sell value = 10"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel4"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Button10" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 727.0
+offset_top = 5.0
+offset_right = 834.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 1"
+
+[node name="Button11" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 845.0
+offset_top = 5.0
+offset_right = 952.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell 10"
+
+[node name="Button12" type="Button" parent="ScrollContainer/VBoxContainer/Panel4"]
+modulate = Color(0.954154, 0.535954, 1, 1)
+layout_mode = 0
+offset_left = 965.0
+offset_top = 5.0
+offset_right = 1072.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 20
+text = "Sell All"
+
 [node name="Panel6" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 texture = ExtResource("1_3rcm6")
@@ -416,7 +416,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Magic Slime
-Sell value = 50"
+Sell value = 15"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel6"]
 layout_mode = 0
@@ -482,7 +482,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Metallic Slime
-Sell value = 50"
+Sell value = 15"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel7"]
 layout_mode = 0
@@ -548,12 +548,12 @@ text = "X"
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel3/Button7" to="." method="_on_button_7_button_up"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel3/Button8" to="." method="_on_button_8_button_up"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel3/Button9" to="." method="_on_button_9_button_up"]
-[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button10" to="." method="_on_button_10_button_up"]
-[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button11" to="." method="_on_button_11_button_up"]
-[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button12" to="." method="_on_button_12_button_up"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel5/Button13" to="." method="_on_button_13_button_up"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel5/Button14" to="." method="_on_button_14_button_up"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel5/Button15" to="." method="_on_button_15_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button10" to="." method="_on_button_10_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button11" to="." method="_on_button_11_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel4/Button12" to="." method="_on_button_12_button_up"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel6/Button16" to="." method="_on_button_16_button_up"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel6/Button17" to="." method="_on_button_17_button_up"]
 [connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel6/Button18" to="." method="_on_button_18_button_up"]

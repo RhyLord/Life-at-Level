@@ -3,6 +3,7 @@ extends Control
 @export var Bedroom: PackedScene = preload("res://Scenes/Locations/players_bedroom.tscn")
 
 func _on_respawn_button_up():
+	GlobalButtonClick.button_click()
 	BattleMech.Set_Default()
 	PreBattleData.Set_Default()
 	Enemy1Data.Set_Default()

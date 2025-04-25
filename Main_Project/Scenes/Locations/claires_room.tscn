@@ -1,0 +1,210 @@
+[gd_scene load_steps=6 format=3 uid="uid://due7duij2y3lx"]
+
+[ext_resource type="Script" path="res://Scripts/Location_Scripts/claires_room.gd" id="1_6sjq0"]
+[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="1_qplwg"]
+[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="2_kappf"]
+[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="3_msekn"]
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Skill_Button.gd" id="4_dojde"]
+
+[node name="Claires_Room" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6sjq0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.942639, 0.72295, 0.830904, 1)
+
+[node name="Grid1" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 150.0
+offset_right = 393.0
+offset_bottom = 221.0
+theme_override_constants/v_separation = 20
+
+[node name="Button" type="Button" parent="Grid1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Travel"
+
+[node name="Button2" type="Button" parent="Grid1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Talk to Claire"
+
+[node name="Grid2" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = -380.0
+offset_top = 150.0
+offset_right = -24.0
+offset_bottom = 312.0
+theme_override_constants/v_separation = 20
+
+[node name="Button10" type="Button" parent="Grid2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Help"
+
+[node name="Button11" type="Button" parent="Grid2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Talk"
+
+[node name="Button13" type="Button" parent="Grid2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Go Back"
+
+[node name="Button12" type="Button" parent="Grid2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Claire Quest #1"
+
+[node name="Grid3" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = -769.0
+offset_top = 150.0
+offset_right = -413.0
+offset_bottom = 403.0
+theme_override_constants/v_separation = 20
+
+[node name="Button21" type="Button" parent="Grid3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Stats"
+
+[node name="Button22" type="Button" parent="Grid3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Combat"
+
+[node name="Button23" type="Button" parent="Grid3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Claire"
+
+[node name="Button24" type="Button" parent="Grid3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Go Back"
+
+[node name="Grid4" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = -1166.0
+offset_top = 150.0
+offset_right = -810.0
+offset_bottom = 312.0
+theme_override_constants/v_separation = 20
+
+[node name="Button31" type="Button" parent="Grid4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Friendly"
+
+[node name="Button32" type="Button" parent="Grid4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Flirt"
+
+[node name="Button33" type="Button" parent="Grid4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Tell Joke"
+
+[node name="Button34" type="Button" parent="Grid4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Go Back"
+
+[node name="Day_Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 845.0
+offset_top = 14.0
+offset_right = 1049.0
+offset_bottom = 107.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "csdsdvsc"
+
+[node name="Inventory_Button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1052.0
+offset_top = 15.0
+offset_right = 1330.0
+offset_bottom = 293.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("1_qplwg")
+texture_pressed = ExtResource("2_kappf")
+texture_hover = ExtResource("3_msekn")
+script = ExtResource("4_dojde")
+
+[connection signal="button_up" from="Grid1/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="Grid1/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Grid2/Button10" to="." method="_on_button_10_button_up"]
+[connection signal="button_up" from="Grid2/Button11" to="." method="_on_button_11_button_up"]
+[connection signal="button_up" from="Grid2/Button13" to="." method="_on_button_13_button_up"]
+[connection signal="button_up" from="Grid2/Button12" to="." method="_on_button_12_button_up"]
+[connection signal="button_up" from="Grid3/Button21" to="." method="_on_button_21_button_up"]
+[connection signal="button_up" from="Grid3/Button22" to="." method="_on_button_22_button_up"]
+[connection signal="button_up" from="Grid3/Button23" to="." method="_on_button_23_button_up"]
+[connection signal="button_up" from="Grid3/Button24" to="." method="_on_button_24_button_up"]
+[connection signal="button_up" from="Grid4/Button31" to="." method="_on_button_31_button_up"]
+[connection signal="button_up" from="Grid4/Button32" to="." method="_on_button_32_button_up"]
+[connection signal="button_up" from="Grid4/Button33" to="." method="_on_button_33_button_up"]
+[connection signal="button_up" from="Grid4/Button34" to="." method="_on_button_34_button_up"]
+[connection signal="button_up" from="Inventory_Button" to="Inventory_Button" method="_on_button_up"]

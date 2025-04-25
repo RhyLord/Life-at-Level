@@ -43,10 +43,12 @@ func _ready():
 		Skill_TXT_5.text = "[center]Regen MP[/center]"
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	queue_free()
 
 
 func _on_skill_button_1_button_up():
+	GlobalButtonClick.button_click()
 	Skill.Combat_Rest()
 	BattleMech.Player_Action_1()
 	queue_free()
@@ -54,6 +56,7 @@ func _on_skill_button_1_button_up():
 
 func _on_skill_button_2_button_up():
 	if Inventory.minor_health_potion > 0:
+		GlobalButtonClick.button_click()
 		Skill.Use_Health_Potion()
 		BattleMech.Player_Action_1()
 		queue_free()
@@ -62,6 +65,7 @@ func _on_skill_button_2_button_up():
 func _on_skill_button_3_button_up():
 	if Skill.Minor_Regen_Unlocked == true:
 		if Player.EN >= 50:
+			GlobalButtonClick.button_click()
 			Skill.Active_Minor_Regen()
 			BattleMech.Player_Action_1()
 			queue_free()
@@ -69,6 +73,7 @@ func _on_skill_button_3_button_up():
 
 func _on_skill_button_4_button_up():
 	if Inventory.minor_mana_potion > 0:
+		GlobalButtonClick.button_click()
 		Skill.Use_Mana_Potion()
 		BattleMech.Player_Action_1()
 		queue_free()
@@ -77,6 +82,7 @@ func _on_skill_button_4_button_up():
 func _on_skill_button_5_button_up():
 	if Skill.Lowly_Mana_Regen_Unlocked == true:
 		if Player.EN >= 50:
+			GlobalButtonClick.button_click()
 			Skill.Active_Lowly_Mana_Regen()
 			BattleMech.Player_Action_1()
 			queue_free()

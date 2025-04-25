@@ -75,12 +75,14 @@ func assign_default_position():
 
 func _on_player_button_pressed(button):
 	"""Snaps Player_Card to the clicked button."""
+	GlobalButtonClick.button_click()
 	Player_Card.global_position = button.global_position
 
 func _on_ready_button_button_up():
 	"""Hides the Player Grid and Ready Button when clicked."""
 	Player_Grid.hide()
 	Ready_button.hide()
+	GlobalButtonClick.button_click()
 	PreBattleData.Player_position_x = Player_Card.global_position.x
 	PreBattleData.Player_position_y = Player_Card.global_position.y
 	if DungeonData.lowest_level_slime > 0:

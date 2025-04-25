@@ -23,14 +23,17 @@ func _ready():
 	Skill.Skill_Unlock_Check()
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	DungeonData.Reset_Data()
 	get_tree().change_scene_to_packed(Bedroom)
 
 func _on_return_button_button_up():
+	GlobalButtonClick.button_click()
 	DungeonData.Reset_Data()
 	get_tree().change_scene_to_packed(Bedroom)
 
 func _on_next_button_button_up():
+	GlobalButtonClick.button_click()
 	DungeonData.Next_lvl()
 	if DungeonData.lowest_level_slime == 1:
 		Lowest_Level_Slime_Dungeons()

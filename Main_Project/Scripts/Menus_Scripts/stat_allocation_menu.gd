@@ -25,6 +25,13 @@ func _input(event):
 		Player.MAX_MP += 500
 		Player.MAX_HP += 500
 		update_TXT()
+		
+	if event is InputEventKey and event.pressed and event.keycode == KEY_E:
+		Player.STR += 25
+		Player.INT += 25
+		Player.VIT += 25
+		Player.WIS += 25
+		update_TXT()
 
 func update_TXT():
 	
@@ -64,6 +71,7 @@ func _ready():
 	update_TXT()
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	Skill.Skill_Unlock_Check()
 	get_tree().change_scene_to_file(Stat_Scene)
 	
@@ -71,6 +79,7 @@ func _on_go_back_button_button_up():
 
 
 func _on_adder_button_str_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.STR += 1
 		Player.Allocation_points -= 1
@@ -78,12 +87,14 @@ func _on_adder_button_str_button_up():
 
 
 func _on_adder_button_agi_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.AGI += 1
 		Player.Allocation_points -= 1
 		update_TXT()
 
 func _on_adder_button_int_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.INT += 1
 		Player.MAX_MP += 10
@@ -91,6 +102,7 @@ func _on_adder_button_int_button_up():
 		update_TXT()
 
 func _on_adder_button_vit_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.VIT += 1
 		Player.MAX_HP += 10
@@ -98,12 +110,14 @@ func _on_adder_button_vit_button_up():
 		update_TXT()
 
 func _on_adder_button_dex_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.DEX += 1
 		Player.Allocation_points -= 1
 		update_TXT()
 
 func _on_adder_button_end_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.END += 1
 		Player.MAX_EN += 10
@@ -111,12 +125,14 @@ func _on_adder_button_end_button_up():
 		update_TXT()
 
 func _on_adder_button_cha_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.CHA += 1
 		Player.Allocation_points -= 1
 		update_TXT()
 
 func _on_adder_button_wis_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.WIS += 1
 		Player.MAX_MP += 25
@@ -124,12 +140,14 @@ func _on_adder_button_wis_button_up():
 		update_TXT()
 
 func _on_adder_button_luk_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.LUK += 1
 		Player.Allocation_points -= 1
 		update_TXT()
 
 func _on_adder_button_ctrl_button_up():
+	GlobalButtonClick.button_click()
 	if Player.Allocation_points > 0:
 		Player.CTRL += 1
 		Player.Allocation_points -= 1

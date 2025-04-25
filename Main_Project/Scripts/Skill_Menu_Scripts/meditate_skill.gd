@@ -9,7 +9,7 @@ extends Control
 func _ready():
 	Level_txt.text = "Level : " + str(Skill.Meditate_LVL)
 	Nxt_Level_txt.text = "Progress to Next Level : " + str(Skill.Meditate_XP) + " / " + str(Skill.Meditate_NXT_XP)
-	desc.text = "Meditation is a practice of mental clarity and focus, allowing for deep introspection and spiritual growth. With each level, practitioners enhance their ability to recover and expand their mana."
+	desc.text = "Meditation is a practice of mental clarity and focus, allowing for deep introspection and spiritual growth. With each level, practitioners enhance their ability to recover and expand their mana. You gain more xp with higher MP."
 	
 	var en_cost = ceil(0.25 * Player.MAX_EN)
 	var xp_gain = (10 * Skill.Meditate_LVL) + Player.MAX_MP

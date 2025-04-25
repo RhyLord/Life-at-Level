@@ -250,6 +250,7 @@ func Set_Enemy_Image():
 
 func _on_enemy_image_button_up():
 	if BattleMech.turn_order == 1:
+		GlobalButtonClick.button_click()
 		BattleMech.Enemy_Selected = 1
 		BattleMech.Enemypos = Enemy_Cards[0].global_position
 		effects_on_enemy()
@@ -259,6 +260,7 @@ func _on_enemy_image_button_up():
 
 func _on_enemy_image_2_button_up():
 	if BattleMech.turn_order == 1:
+		GlobalButtonClick.button_click()
 		BattleMech.Enemy_Selected = 2
 		BattleMech.Enemypos = Enemy_Cards[1].global_position
 		effects_on_enemy()
@@ -269,6 +271,7 @@ func _on_enemy_image_2_button_up():
 
 func _on_enemy_image_3_button_up():
 	if BattleMech.turn_order == 1:
+		GlobalButtonClick.button_click()
 		BattleMech.Enemy_Selected = 3
 		BattleMech.Enemypos = Enemy_Cards[2].global_position
 		effects_on_enemy()
@@ -279,6 +282,7 @@ func _on_enemy_image_3_button_up():
 
 func _on_enemy_image_4_button_up():
 	if BattleMech.turn_order == 1:
+		GlobalButtonClick.button_click()
 		BattleMech.Enemy_Selected = 4
 		BattleMech.Enemypos = Enemy_Cards[3].global_position
 		effects_on_enemy()
@@ -289,6 +293,7 @@ func _on_enemy_image_4_button_up():
 
 func _on_enemy_image_5_button_up():
 	if BattleMech.turn_order == 1:
+		GlobalButtonClick.button_click()
 		BattleMech.Enemy_Selected = 5
 		BattleMech.Enemypos = Enemy_Cards[4].global_position
 		effects_on_enemy()

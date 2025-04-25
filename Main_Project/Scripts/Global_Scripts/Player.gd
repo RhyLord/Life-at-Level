@@ -7,6 +7,8 @@ var XP = 0
 var XP_NXT = calculate_xp_needed(LVL)
 var Allocation_points = 0
 
+var new_game = 0
+
 var coin = 0
 
 func calculate_xp_needed(level: int) -> int:
@@ -62,6 +64,7 @@ var TOTAL_DMG = 0
 var PHYSICAL_DEF = 0
 var WATER_DEF = 0
 var TOTAL_DEF = 0
+
 
 func Set_Health():
 	HP = MAX_HP
@@ -161,6 +164,9 @@ func Save_Game():
 	# Time & Day
 	file.store_var(Global.Time_of_day)
 	file.store_var(Global.Day)
+	
+	# Quests
+	file.store_var(Global.claire_quest)
 
 	# Skills
 	# Rest
@@ -307,6 +313,8 @@ func Save_Game():
 	file.store_var(Inventory.minor_health_potion)
 	file.store_var(Inventory.minor_mana_potion)
 	file.store_var(Inventory.Acid_potion)
+	
+	file.close()
 
 func New_Game():
 		# Reset Player Stats
@@ -364,6 +372,9 @@ func New_Game():
 	# Time and Day
 	Global.Time_of_day = 0
 	Global.Day = 1
+	
+	#Quests
+	Global.claire_quest = 0
 	
 	# Skills
 	# Rest
@@ -571,6 +582,9 @@ func load_data():
 		# Time & Day
 		Global.Time_of_day = file.get_var(Global.Time_of_day)
 		Global.Day = file.get_var(Global.Day)
+		
+		#Quests
+		Global.claire_quest = file.get_var(Global.claire_quest)
 
 		# Skills
 		# Rest
@@ -719,6 +733,8 @@ func load_data():
 		Inventory.minor_health_potion = file.get_var(Inventory.minor_health_potion)
 		Inventory.minor_mana_potion = file.get_var(Inventory.minor_mana_potion)
 		Inventory.Acid_potion = file.get_var(Inventory.Acid_potion)
+		
+		file.close()
 		
 	else:
 		print("No save file found.")

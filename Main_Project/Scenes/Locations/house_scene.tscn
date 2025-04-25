@@ -40,9 +40,9 @@ script = ExtResource("6_ww7bq")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 offset_left = 37.0
-offset_top = 150.0
+offset_top = 105.0
 offset_right = 393.0
-offset_bottom = 221.0
+offset_bottom = 631.0
 theme_override_constants/v_separation = 20
 
 [node name="Button" type="Button" parent="GridContainer"]
@@ -61,6 +61,14 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 45
 text = "Garden"
 
+[node name="Button6" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Claire Room"
+
 [node name="Button3" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -77,8 +85,18 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 45
 text = "Potion Shop"
 
+[node name="Button5" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Tavern"
+
 [connection signal="button_up" from="Inventory_Button" to="Inventory_Button" method="_on_button_up"]
 [connection signal="button_up" from="GridContainer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="GridContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="GridContainer/Button6" to="." method="_on_button_6_button_up"]
 [connection signal="button_up" from="GridContainer/Button3" to="." method="_on_button_3_button_up"]
 [connection signal="button_up" from="GridContainer/Button4" to="." method="_on_button_4_button_up"]
+[connection signal="button_up" from="GridContainer/Button5" to="." method="_on_button_5_button_up"]

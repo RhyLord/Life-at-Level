@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://7dip0fh6rwb1"]
+
+[ext_resource type="AudioStream" uid="uid://bhhr1sa2emtnw" path="res://Sound_Effects/Button_SFX.wav" id="1_gpeg2"]
+[ext_resource type="Script" path="res://Scripts/Global_Scripts/button_click.gd" id="1_xbxn6"]
+
+[node name="GlobalButtonClick" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_gpeg2")
+volume_db = 2.0
+script = ExtResource("1_xbxn6")

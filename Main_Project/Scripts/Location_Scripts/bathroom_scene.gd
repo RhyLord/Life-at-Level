@@ -4,6 +4,9 @@ extends Node2D
 @onready var House_Scene = "res://Scenes/Locations/house_scene.tscn"
 @onready var Catalogue_Scene = "res://Scenes/Menus/catalogue_menu.tscn"
 
+var Shower_Scene = load("res://Scenes/PopUp_Windows/shower_window.tscn") as PackedScene
+var Speech_Scene = load("res://Scenes/PopUp_Windows/speech_window.tscn") as PackedScene
+
 var bg_textures = [
 	preload("res://Assets/Map_Art/Bathroom/Bathroom_Bg_Morning.png"),
 	preload("res://Assets/Map_Art/Bathroom/Bathroom_Bg_Noon.png"),
@@ -47,22 +50,29 @@ func update_and_refresh(func_ref):
 		Set_Core_Stats()
 
 func _on_inventory_button_button_up():
+	GlobalButtonClick.button_click()
 	Global.Map = 4
 	get_tree().change_scene_to_file(Catalogue_Scene)
 
 
 func _on_option_button_1_button_up():
+	GlobalButtonClick.button_click()
 	Global.Map = 2
 	get_tree().change_scene_to_file(House_Scene)
 
 
 func _on_option_button_2_button_up():
+	GlobalButtonClick.button_click()
 	update_and_refresh(Skill.Off_Combat_Rest)
 
 
 func _on_option_button_3_button_up():
-	update_and_refresh(Skill.Active_Shower)
+	GlobalButtonClick.button_click()
+	var shower_scene = Shower_Scene.instantiate()
+	get_tree().current_scene.add_child(shower_scene)
 
 
 func _on_option_button_4_button_up():
-	update_and_refresh(Skill.Active_Speech_XP)
+	GlobalButtonClick.button_click()
+	var speech_scene = Speech_Scene.instantiate()
+	get_tree().current_scene.add_child(speech_scene)

@@ -1,0 +1,93 @@
+[gd_scene load_steps=3 format=3 uid="uid://bg13b8y705wx3"]
+
+[ext_resource type="Texture2D" uid="uid://bcoh3kgwocv6k" path="res://Assets/Skills_art/Waiter_button.png" id="1_b8fsh"]
+[ext_resource type="Script" path="res://Scripts/Popup_Window_Scripts/waiter_work_window.gd" id="1_pst02"]
+
+[node name="Waiter_Work_Window" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pst02")
+
+[node name="Panel" type="ColorRect" parent="."]
+z_index = 200
+layout_mode = 0
+offset_left = 4.0
+offset_top = -3.0
+offset_right = 1009.0
+offset_bottom = 482.0
+color = Color(0.543968, 0.676908, 0.916536, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(150, 147)
+texture = ExtResource("1_b8fsh")
+
+[node name="Action_Button" type="Button" parent="Panel"]
+z_index = 300
+layout_mode = 0
+offset_left = 627.0
+offset_top = 399.0
+offset_right = 987.0
+offset_bottom = 480.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "Do Work"
+
+[node name="Close_Button" type="Button" parent="Panel"]
+z_index = 300
+layout_mode = 0
+offset_left = 884.0
+offset_top = 7.0
+offset_right = 986.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+text = "X"
+
+[node name="lvl" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 94.0
+offset_right = 869.0
+offset_bottom = 164.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Work as a Waiter and serve meals."
+
+[node name="Title" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 10.0
+offset_right = 647.0
+offset_bottom = 159.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "Waiter"
+
+[node name="Nxt_Lvl_Txt" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 165.0
+offset_right = 989.0
+offset_bottom = 382.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+text = "EXP:"
+
+[connection signal="button_up" from="Panel/Action_Button" to="." method="_on_action_button_button_up"]
+[connection signal="button_up" from="Panel/Close_Button" to="." method="_on_close_button_button_up"]

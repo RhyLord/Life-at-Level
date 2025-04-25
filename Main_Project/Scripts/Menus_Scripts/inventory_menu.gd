@@ -37,4 +37,5 @@ func _ready():
 	page_1()
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Previous_Scene)

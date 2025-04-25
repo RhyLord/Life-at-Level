@@ -30,6 +30,7 @@ Enemy4Data="*res://Scripts/Global_Scripts/Enemy_4_data.gd"
 Enemy5Data="*res://Scripts/Global_Scripts/Enemy_5_data.gd"
 DungeonData="*res://Scripts/Global_Scripts/DungeonData.gd"
 Inventory="*res://Scripts/Global_Scripts/Inventory.gd"
+GlobalButtonClick="*res://Sound_Effects/global_button_click.tscn"
 
 [display]
 

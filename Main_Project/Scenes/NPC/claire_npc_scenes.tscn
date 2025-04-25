@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl5tcbe72rape"]
+
+[ext_resource type="Script" path="res://Scripts/NPC_scripts/claire_npc_scenes.gd" id="1_7crhf"]
+[ext_resource type="Texture2D" uid="uid://cos6kdqp052b0" path="res://Assets/NPC_Art/Claire_Art/Claire_Body_1.png" id="1_kpt8v"]
+[ext_resource type="Texture2D" uid="uid://cvdb7bxymj66h" path="res://Assets/NPC_Art/Claire_Art/Claire_Face_01_Eyes_Open_Happy.png" id="2_7eojh"]
+[ext_resource type="AudioStream" uid="uid://twxkt0gmdfno" path="res://Music/Claire_music.mp3" id="3_mf22p"]
+
+[node name="Claire_NPC_Scenes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7crhf")
+
+[node name="Body_Claire" type="Sprite2D" parent="."]
+position = Vector2(-183, 380)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_kpt8v")
+
+[node name="Face_Claire" type="Sprite2D" parent="Body_Claire"]
+position = Vector2(39.9999, -367.143)
+texture = ExtResource("2_7eojh")
+
+[node name="Bg" type="ColorRect" parent="."]
+z_index = -100
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogueHolder" type="ColorRect" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 40.0
+offset_top = 396.0
+offset_right = 1104.0
+offset_bottom = 627.0
+color = Color(0.160784, 0.160784, 0.160784, 0.815686)
+
+[node name="Next_Button" type="Button" parent="DialogueHolder"]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 172.0
+offset_right = 1108.0
+offset_bottom = 253.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 46
+text = "Next"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueHolder"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 1056.0
+offset_bottom = 192.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "hiii"
+
+[node name="ClaireMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mf22p")
+volume_db = 18.0
+
+[connection signal="button_up" from="DialogueHolder/Next_Button" to="." method="_on_next_button_button_up"]

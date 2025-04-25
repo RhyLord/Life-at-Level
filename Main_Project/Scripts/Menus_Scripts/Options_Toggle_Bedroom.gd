@@ -5,6 +5,7 @@ extends Button
 var toggle_value = true
 
 func _on_button_up():
+	GlobalButtonClick.button_click()
 	toggle_value = !toggle_value  # Toggle the value
 
 	Toggle.text = "<" if toggle_value else ">"

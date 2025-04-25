@@ -4,4 +4,5 @@ extends TextureButton
 
 
 func _on_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Catalogue_Scene)

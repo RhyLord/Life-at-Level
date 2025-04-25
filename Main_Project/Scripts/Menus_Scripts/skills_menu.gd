@@ -194,6 +194,7 @@ func _on_button_7_pressed(): _on_button_pressed(6)
 
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Catalogue_Scene)
 
 

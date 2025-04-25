@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3cuo6kh73dtt"]
+
+[ext_resource type="Script" path="res://Scripts/Location_Scripts/tavern_scene.gd" id="1_5xcxu"]
+[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="2_1wnsf"]
+[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="3_7ncow"]
+[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="4_pp8kj"]
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Skill_Button.gd" id="5_df4r2"]
+
+[node name="tavern_scene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5xcxu")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.675846, 0.408095, 0.281543, 1)
+
+[node name="GridContainer" type="GridContainer" parent="."]
+offset_left = 37.0
+offset_top = 150.0
+offset_right = 393.0
+offset_bottom = 221.0
+theme_override_constants/v_separation = 20
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Travel"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Work as Waiter"
+
+[node name="Inventory_Button" type="TextureButton" parent="."]
+offset_left = 1052.0
+offset_top = 15.0
+offset_right = 1330.0
+offset_bottom = 293.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("2_1wnsf")
+texture_pressed = ExtResource("3_7ncow")
+texture_hover = ExtResource("4_pp8kj")
+script = ExtResource("5_df4r2")
+
+[connection signal="button_up" from="GridContainer/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="GridContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="Inventory_Button" to="Inventory_Button" method="_on_button_up"]

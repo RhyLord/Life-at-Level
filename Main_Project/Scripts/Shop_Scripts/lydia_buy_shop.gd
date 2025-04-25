@@ -19,28 +19,32 @@ func update_text():
 
 
 func _on_button_1_button_up():
-	if Player.coin >= 100:
+	if Player.coin >= 50:
+		GlobalButtonClick.button_click()
 		Skill.Health_Potion_Unlocked = true
 		Inventory.minor_health_potion += 1
-		Player.coin -= 100
+		Player.coin -= 50
 		update_text()
 		
 func _on_button_2_button_up():
-	if Player.coin >= 1000:
+	if Player.coin >= 300:
+		GlobalButtonClick.button_click()
 		Skill.Mana_Potion_Unlocked = true
 		Inventory.minor_mana_potion += 1
-		Player.coin -= 1000
+		Player.coin -= 300
 		update_text()
 
 func _on_button_3_button_up():
-	if Player.coin >= 200:
+	if Player.coin >= 90:
+		GlobalButtonClick.button_click()
 		Skill.Acid_Potion_Unlocked = true
 		Inventory.Acid_potion += 1
-		Player.coin -= 200
+		Player.coin -= 90
 		update_text()
 
 
 func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(previous_scene)
 
 
