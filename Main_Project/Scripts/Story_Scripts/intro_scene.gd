@@ -14,7 +14,6 @@ var face_value = unimpressed
 #Eternos
 @onready var Eternos_Music = $EternosMusic
 @onready var Body = $Body
-@onready var Face = $Body/Face
 
 #claire
 @onready var Claire_Music = $ClaireMusic
@@ -42,7 +41,9 @@ var face_value = unimpressed
 @export var Angry = preload("res://Assets/NPC_Art/Claire_Art/Claire_Face_08_Eyes_Angry.png")
 @export var Worrying = preload("res://Assets/NPC_Art/Claire_Art/Claire_Face_09_Eyes_Open_Worrying.png")
 
-
+#Bg textures
+@export var Void_Bg = preload("res://Assets/Location_Art/Static/VoidBg01.png")
+@export var Claire_Room = preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomMorning.png")
 
 
 func _on_next_button_button_up():
@@ -53,7 +54,8 @@ func _on_next_button_button_up():
 
 func update():
 	Txt.text = dialogue_text
-	Face.texture = face_value
+	Body.texture = face_value
+
 
 
 func _ready():
@@ -63,6 +65,7 @@ func _ready():
 	
 func story_progress():
 	if dialogue == 1:
+		Bg.texture = Void_Bg
 		Eternos_Music.play()
 		Bg.modulate = Color(0.15, 0.18, 0.25)
 		dialogue_text = "Summoner: Wake up. I don’t have all day."
@@ -150,6 +153,7 @@ func story_progress():
 		Claire.global_position.y = 380
 		Body.global_position.x = 2000
 		Body.global_position.y = 2500
+		Bg.texture = Claire_Room
 		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Eternos_Music.stop()
 		Claire_Music.play()

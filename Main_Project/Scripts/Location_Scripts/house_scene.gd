@@ -8,11 +8,11 @@ extends Node2D
 @onready var Claire_Scene = "res://Scenes/Locations/claires_room.tscn"
 
 var bg_textures = [
-	preload("res://Assets/Map_Art/House_Bg_Morning.png"),
-	preload("res://Assets/Map_Art/House_Bg_Noon.png"),
-	preload("res://Assets/Map_Art/House_Bg_Evening.png"),
-	preload("res://Assets/Map_Art/House_Bg_Night.png"),
-	preload("res://Assets/Map_Art/House_Bg_Midnight.png")
+	preload("res://Assets/Map_Art/House/House_Bg_Morning.png"),
+	preload("res://Assets/Map_Art/House/House_Bg_Noon.png"),
+	preload("res://Assets/Map_Art/House/House_Bg_Evening.png"),
+	preload("res://Assets/Map_Art/House/House_Bg_Night.png"),
+	preload("res://Assets/Map_Art/House/House_Bg_Midnight.png")
 ]
 
 @onready var Bg_Holder = $BG

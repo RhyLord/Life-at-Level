@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xi8d7lsfhp0"
-path="res://.godot/imported/House_Bg_Night.png-e38a74ee43d42e57a211b7a399605e3b.ctex"
+uid="uid://274pietux8c4"
+path="res://.godot/imported/VoidBg01.png-eed2bcee55d2be8d8bb1c370824bdb46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Art/House_Bg_Night.png"
-dest_files=["res://.godot/imported/House_Bg_Night.png-e38a74ee43d42e57a211b7a399605e3b.ctex"]
+source_file="res://Assets/Location_Art/Static/VoidBg01.png"
+dest_files=["res://.godot/imported/VoidBg01.png-eed2bcee55d2be8d8bb1c370824bdb46.ctex"]
 
 [params]
 

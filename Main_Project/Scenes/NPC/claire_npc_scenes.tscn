@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl5tcbe72rape"]
+[gd_scene load_steps=6 format=3 uid="uid://dl5tcbe72rape"]
 
 [ext_resource type="Script" path="res://Scripts/NPC_scripts/claire_npc_scenes.gd" id="1_7crhf"]
 [ext_resource type="Texture2D" uid="uid://cos6kdqp052b0" path="res://Assets/NPC_Art/Claire_Art/Claire_Body_1.png" id="1_kpt8v"]
 [ext_resource type="Texture2D" uid="uid://cvdb7bxymj66h" path="res://Assets/NPC_Art/Claire_Art/Claire_Face_01_Eyes_Open_Happy.png" id="2_7eojh"]
 [ext_resource type="AudioStream" uid="uid://twxkt0gmdfno" path="res://Music/Claire_music.mp3" id="3_mf22p"]
+[ext_resource type="Texture2D" uid="uid://ccdlhknginbyh" path="res://Assets/Map_Art/ClaireRoom/ClaireBedroomMorning.png" id="5_qw40y"]
 
 [node name="Claire_NPC_Scenes" type="Control"]
 layout_mode = 3
@@ -22,15 +23,6 @@ texture = ExtResource("1_kpt8v")
 [node name="Face_Claire" type="Sprite2D" parent="Body_Claire"]
 position = Vector2(39.9999, -367.143)
 texture = ExtResource("2_7eojh")
-
-[node name="Bg" type="ColorRect" parent="."]
-z_index = -100
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="DialogueHolder" type="ColorRect" parent="."]
 z_index = 10
@@ -69,5 +61,11 @@ text = "hiii"
 [node name="ClaireMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_mf22p")
 volume_db = 18.0
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(574, 324)
+scale = Vector2(0.904688, 0.936111)
+texture = ExtResource("5_qw40y")
 
 [connection signal="button_up" from="DialogueHolder/Next_Button" to="." method="_on_next_button_button_up"]

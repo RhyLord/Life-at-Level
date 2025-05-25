@@ -1,5 +1,6 @@
 extends Control
 
+@onready var Bg_Holder = $Bg
 @onready var Day_txt = $Day_Text
 @onready var House_Scene = "res://Scenes/Locations/house_scene.tscn"
 @onready var Claire_Scene = "res://Scenes/NPC/claire_npc_scenes.tscn"
@@ -10,11 +11,21 @@ extends Control
 @onready var grid4 = $Grid4
 
 
+var bg_textures = [
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomMorning.png"),
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomNoon.png"),
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomEvening.png"),
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomNight.png"),
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomMidnight.png")
+]
+
 func _ready():
 	Set_Core_Stats()
 
 func Set_Core_Stats():
 	Day_txt.bbcode_text = "[right]Day %d\nTime is %s[/right]" % [Global.Day, Global.time_states[Global.Time_of_day]]
+	Bg_Holder.texture = bg_textures[Global.Time_of_day]
+
 
 
 

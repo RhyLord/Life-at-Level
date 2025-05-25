@@ -2,6 +2,8 @@ extends Control
 
 @onready var Game_Scene = "res://Scenes/Locations/claires_room.tscn"
 
+@onready var Bg = $Bg
+
 #Claire
 @export var very_happy = preload("res://Assets/NPC_Art/Claire_Art/Claire_Face_00_Eyes_Close_Happy.png")
 @export var Happy = preload("res://Assets/NPC_Art/Claire_Art/Claire_Face_01_Eyes_Open_Happy.png")
@@ -23,10 +25,21 @@ extends Control
 @onready var Dialogue_Box = $DialogueHolder
 @onready var Next_Button = $DialogueHolder/Next_Button
 @onready var Txt = $DialogueHolder/RichTextLabel
-@onready var Bg = $Bg
+
 
 var dialogue = 0
 var dialogue_text =""
+
+var bg_textures = [
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomMorning.png"),
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomNoon.png"),
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomEvening.png"),
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomNight.png"),
+	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomMidnight.png")
+]
+
+func Set_Core_Stats():
+	Bg.texture = bg_textures[Global.Time_of_day]
 
 func _on_next_button_button_up():
 	dialogue += 1
@@ -38,6 +51,7 @@ func update():
 	Txt.text = dialogue_text
 
 func _ready():
+	Set_Core_Stats()
 	check_story()
 	story_progress()
 	update()
@@ -67,7 +81,6 @@ func story_progress():
 	if dialogue == 1:
 		Claire.global_position.x = 550
 		Claire.global_position.y = 380
-		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Claire_Music.play()
 		dialogue_text = "Player: Can you explain how stats work?"
 		Claire_Face.texture = Happy
@@ -161,7 +174,6 @@ func story_progress():
 	elif dialogue == 50:
 		Claire.global_position.x = 550
 		Claire.global_position.y = 380
-		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Claire_Music.play()
 		dialogue_text = "Player: Can you explain how combat works?"
 		Claire_Face.texture = Happy
@@ -206,7 +218,6 @@ func story_progress():
 	elif dialogue == 100:
 		Claire.global_position.x = 550
 		Claire.global_position.y = 380
-		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Claire_Music.play()
 		dialogue_text = "Player: Can you tell me about yourself?"
 		Claire_Face.texture = Happy
@@ -277,7 +288,6 @@ func story_progress():
 	elif dialogue == 150:
 		Claire.global_position.x = 550
 		Claire.global_position.y = 380
-		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Claire_Music.play()
 		dialogue_text = "Player: Hey Claire, do you have a minute? I kinda wanted to talk."
 		Claire_Face.texture = Happy
@@ -389,7 +399,6 @@ func story_progress():
 	elif dialogue == 200:
 		Claire.global_position.x = 550
 		Claire.global_position.y = 380
-		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Claire_Music.play()
 		dialogue_text = "Player: You know, I’ve been thinking… you’ve got a lot on your plate with working at the tavern, but if you ever need a break, I’d be happy to keep you company."
 		Claire_Face.texture = Happy
@@ -429,7 +438,6 @@ func story_progress():
 	elif dialogue == 230:
 		Claire.global_position.x = 550
 		Claire.global_position.y = 380
-		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Claire_Music.play()
 		dialogue_text = "Player: Hey, here’s a joke for you. You know when a slime asks another slime out on a date? It's called a... valenslime!"
 		Claire_Face.texture = Questioning
@@ -465,7 +473,6 @@ func story_progress():
 	elif dialogue == 250:
 		Claire.global_position.x = 550
 		Claire.global_position.y = 380
-		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Claire_Music.play()
 		dialogue_text = "Claire: Hey, I’ve got a task for you. Could you go and pick up a package from Lydia? She’s the alchemist who runs the potion shop downtown. Some people even call her a witch."
 		Claire_Face.texture = Questioning
@@ -499,7 +506,6 @@ func story_progress():
 	elif dialogue == 300:
 		Claire.global_position.x = 550
 		Claire.global_position.y = 380
-		Bg.modulate = Color(1.0, 0.74, 0.85)
 		Claire_Music.play()
 		dialogue_text = "Claire: Have you got the package?"
 		Claire_Face.texture = Questioning
@@ -514,8 +520,3 @@ func story_progress():
 		Claire_Face.texture = Pissed
 	elif dialogue == 304:
 		get_tree().change_scene_to_file(Game_Scene)
-
-
-
-
-

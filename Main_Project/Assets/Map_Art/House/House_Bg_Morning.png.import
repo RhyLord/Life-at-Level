@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://v1ucol683rvo"
-path="res://.godot/imported/Eternos_Body_1.png-1f592a4f51513c9ec6534702f3daea70.ctex"
+uid="uid://bdni5s3wy5f3p"
+path="res://.godot/imported/House_Bg_Morning.png-66c6ce845f04bebfc5068ee3363ecfe2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/NPC_Art/Eternos_Art/Eternos_Body_1.png"
-dest_files=["res://.godot/imported/Eternos_Body_1.png-1f592a4f51513c9ec6534702f3daea70.ctex"]
+source_file="res://Assets/Map_Art/House/House_Bg_Morning.png"
+dest_files=["res://.godot/imported/House_Bg_Morning.png-66c6ce845f04bebfc5068ee3363ecfe2.ctex"]
 
 [params]
 

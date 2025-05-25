@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://due7duij2y3lx"]
+[gd_scene load_steps=7 format=3 uid="uid://due7duij2y3lx"]
 
 [ext_resource type="Script" path="res://Scripts/Location_Scripts/claires_room.gd" id="1_6sjq0"]
 [ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="1_qplwg"]
 [ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="2_kappf"]
 [ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="3_msekn"]
 [ext_resource type="Script" path="res://Scripts/Menus_Scripts/Skill_Button.gd" id="4_dojde"]
+[ext_resource type="Texture2D" uid="uid://ccdlhknginbyh" path="res://Assets/Map_Art/ClaireRoom/ClaireBedroomMorning.png" id="6_5tovm"]
 
 [node name="Claires_Room" type="Control"]
 layout_mode = 3
@@ -14,16 +15,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6sjq0")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-z_index = -1
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.942639, 0.72295, 0.830904, 1)
 
 [node name="Grid1" type="GridContainer" parent="."]
 layout_mode = 0
@@ -192,6 +183,12 @@ texture_normal = ExtResource("1_qplwg")
 texture_pressed = ExtResource("2_kappf")
 texture_hover = ExtResource("3_msekn")
 script = ExtResource("4_dojde")
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(574, 324)
+scale = Vector2(0.904688, 0.936111)
+texture = ExtResource("6_5tovm")
 
 [connection signal="button_up" from="Grid1/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="Grid1/Button2" to="." method="_on_button_2_button_up"]

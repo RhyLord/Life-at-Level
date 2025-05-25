@@ -1,11 +1,11 @@
 [gd_scene load_steps=8 format=3 uid="uid://bwjq3ofoxjyws"]
 
-[ext_resource type="Texture2D" uid="uid://v1ucol683rvo" path="res://Assets/NPC_Art/Eternos_Art/Eternos_Body_1.png" id="1_2s37l"]
 [ext_resource type="Script" path="res://Scripts/Story_Scripts/intro_scene.gd" id="1_av3xs"]
 [ext_resource type="Texture2D" uid="uid://cos6kdqp052b0" path="res://Assets/NPC_Art/Claire_Art/Claire_Body_1.png" id="2_oma76"]
-[ext_resource type="Texture2D" uid="uid://bgsuym6vrftxf" path="res://Assets/NPC_Art/Eternos_Art/Eternos_Face_00_Unimpressed.png" id="2_rt4u4"]
 [ext_resource type="Texture2D" uid="uid://cvdb7bxymj66h" path="res://Assets/NPC_Art/Claire_Art/Claire_Face_01_Eyes_Open_Happy.png" id="3_2r4vx"]
+[ext_resource type="Texture2D" uid="uid://svkmewnyfoi5" path="res://Assets/NPC_Art/Eternos_Art/Eternos_Face_01_Normal.png" id="4_6mhfl"]
 [ext_resource type="AudioStream" uid="uid://b07iui4lnttug" path="res://Music/Eternos.mp3" id="6_ok1ul"]
+[ext_resource type="Texture2D" uid="uid://274pietux8c4" path="res://Assets/Location_Art/Static/VoidBg01.png" id="7_m53bl"]
 [ext_resource type="AudioStream" uid="uid://twxkt0gmdfno" path="res://Music/Claire_music.mp3" id="7_wcavx"]
 
 [node name="Intro_Scene" type="Control"]
@@ -25,15 +25,6 @@ texture = ExtResource("2_oma76")
 [node name="Face_Claire" type="Sprite2D" parent="Body_Claire"]
 position = Vector2(39.9999, -367.143)
 texture = ExtResource("3_2r4vx")
-
-[node name="Bg" type="ColorRect" parent="."]
-z_index = -100
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="DialogueHolder" type="ColorRect" parent="."]
 z_index = 10
@@ -72,11 +63,7 @@ text = "hiii"
 [node name="Body" type="Sprite2D" parent="."]
 position = Vector2(562, 286)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_2s37l")
-
-[node name="Face" type="Sprite2D" parent="Body"]
-position = Vector2(-68, -296)
-texture = ExtResource("2_rt4u4")
+texture = ExtResource("4_6mhfl")
 
 [node name="EternosMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ok1ul")
@@ -85,5 +72,10 @@ volume_db = 18.0
 [node name="ClaireMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_wcavx")
 volume_db = 18.0
+
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(564, 347)
+texture = ExtResource("7_m53bl")
 
 [connection signal="button_up" from="DialogueHolder/Next_Button" to="." method="_on_next_button_button_up"]

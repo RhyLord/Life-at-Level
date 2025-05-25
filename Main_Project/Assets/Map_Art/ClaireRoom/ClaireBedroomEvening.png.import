@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ugf4gvq4k6cs"
-path="res://.godot/imported/House_Bg_Noon.png-f2afb14460df9d4d6c8dbbfc9563d482.ctex"
+uid="uid://dw1ngip6geu0q"
+path="res://.godot/imported/ClaireBedroomEvening.png-1c01bf1e53f62f33f169815806521ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Art/House_Bg_Noon.png"
-dest_files=["res://.godot/imported/House_Bg_Noon.png-f2afb14460df9d4d6c8dbbfc9563d482.ctex"]
+source_file="res://Assets/Map_Art/ClaireRoom/ClaireBedroomEvening.png"
+dest_files=["res://.godot/imported/ClaireBedroomEvening.png-1c01bf1e53f62f33f169815806521ca2.ctex"]
 
 [params]
 
