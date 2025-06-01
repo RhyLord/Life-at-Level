@@ -39,7 +39,7 @@ func Combat_Rest_XP():
 func Combat_Rest():
 	var restore_amount = (10 * Rest_LVL) + Player.END
 	Player.EN = min(Player.EN + restore_amount, Player.MAX_EN)
-	PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] EN"
+	PreBattleData.description_txt = "You have restored [color=purple]" + str(restore_amount) + "[/color] EN"
 	Combat_Rest_XP()
 
 # Push-Up Skill
@@ -233,7 +233,7 @@ func Active_Minor_Regen():
 		var restore_amount = (10 * Minor_Regen_LVL) + Player.VIT
 		Player.HP += restore_amount
 		Player.Health_Check()
-		PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] HP"
+		PreBattleData.description_txt = "You have restored [color=#90EE90]" + str(restore_amount) + "[/color] HP"
 		
 		var xp_gain = ceil((25 * Player.VIT) + (Minor_Regen_LVL * 25))
 		Minor_Regen_XP += xp_gain
@@ -253,8 +253,7 @@ func Active_Lowly_Mana_Regen():
 		var restore_amount = (5 * Lowly_Mana_Regen_LVL) + Player.WIS
 		Player.MP += restore_amount
 		Player.Mana_Check()
-		PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] MP"
-
+		PreBattleData.description_txt = "You have restored [color=#ADD8E6]" + str(restore_amount) + "[/color] MP"
 		var xp_gain = ceil((25 * Player.WIS) + (Lowly_Mana_Regen_LVL * 25))
 		Lowly_Mana_Regen_XP += xp_gain
 		level_up_skill("Lowly_Mana_Regen_XP", "Lowly_Mana_Regen_LVL", "Lowly_Mana_Regen_NXT_XP")
@@ -353,7 +352,7 @@ func Use_Health_Potion():
 		
 		var restore_amount = 500 + (10 * Potion_Proficiency_LVL) + (Health_Potion_LVL * 10)
 		Player.HP = min(Player.HP + restore_amount, Player.MAX_HP)
-		PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] HP"
+		PreBattleData.description_txt = "You have restored [color=#90EE90]" + str(restore_amount) + "[/color] HP"
 
 		Gain_Health_Potion_XP()
 		Gain_Potion_Proficiency_XP()
@@ -375,7 +374,7 @@ func Use_Mana_Potion():
 
 		var restore_amount = 1000 + (10 * Potion_Proficiency_LVL) + (Mana_Potion_LVL * 10)
 		Player.MP = min(Player.MP + restore_amount, Player.MAX_MP)
-		PreBattleData.description_txt = "You have restored [" + str(restore_amount) + "] MP"
+		PreBattleData.description_txt = "You have restored [color=#ADD8E6]" + str(restore_amount) + "[/color] MP"
 
 		Gain_Mana_Potion_XP()
 		Gain_Potion_Proficiency_XP()

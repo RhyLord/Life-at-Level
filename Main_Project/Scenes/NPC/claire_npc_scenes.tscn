@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl5tcbe72rape"]
+[gd_scene load_steps=5 format=3 uid="uid://dl5tcbe72rape"]
 
 [ext_resource type="Script" path="res://Scripts/NPC_scripts/claire_npc_scenes.gd" id="1_7crhf"]
-[ext_resource type="Texture2D" uid="uid://cos6kdqp052b0" path="res://Assets/NPC_Art/Claire_Art/Claire_Body_1.png" id="1_kpt8v"]
 [ext_resource type="Texture2D" uid="uid://cvdb7bxymj66h" path="res://Assets/NPC_Art/Claire_Art/Claire_Face_01_Eyes_Open_Happy.png" id="2_7eojh"]
 [ext_resource type="AudioStream" uid="uid://twxkt0gmdfno" path="res://Music/Claire_music.mp3" id="3_mf22p"]
 [ext_resource type="Texture2D" uid="uid://ccdlhknginbyh" path="res://Assets/Map_Art/ClaireRoom/ClaireBedroomMorning.png" id="5_qw40y"]
@@ -16,12 +15,8 @@ grow_vertical = 2
 script = ExtResource("1_7crhf")
 
 [node name="Body_Claire" type="Sprite2D" parent="."]
-position = Vector2(-183, 380)
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("1_kpt8v")
-
-[node name="Face_Claire" type="Sprite2D" parent="Body_Claire"]
-position = Vector2(39.9999, -367.143)
+position = Vector2(-651, 388)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_7eojh")
 
 [node name="DialogueHolder" type="ColorRect" parent="."]

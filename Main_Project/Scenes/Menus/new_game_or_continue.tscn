@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b8uo3t6romngi"]
+[gd_scene load_steps=5 format=3 uid="uid://b8uo3t6romngi"]
 
 [ext_resource type="Script" path="res://Scripts/Menus_Scripts/new_game_or_continue.gd" id="1_be1oh"]
+[ext_resource type="Texture2D" uid="uid://1p0olltpdnsf" path="res://Assets/Location_Art/Static/IntroBG.png" id="2_64wxk"]
+[ext_resource type="StyleBox" uid="uid://lm1c5nqmktty" path="res://Assets/Effects_art/new_style_box_flatbuttonNewgamecontinue.tres" id="2_ionlm"]
+[ext_resource type="StyleBox" uid="uid://v4lwiakp0uqx" path="res://Assets/Effects_art/new_style_box_flatbuttonNewgamecontinuehover.tres" id="3_ue7ok"]
 
 [node name="NewGame_Or_Continue" type="Control"]
 layout_mode = 3
@@ -18,6 +21,8 @@ offset_top = 150.0
 offset_right = 748.0
 offset_bottom = 265.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("2_ionlm")
+theme_override_styles/hover = ExtResource("3_ue7ok")
 text = "New Game"
 
 [node name="Continue_Button" type="Button" parent="."]
@@ -27,6 +32,8 @@ offset_top = 321.0
 offset_right = 748.0
 offset_bottom = 436.0
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("2_ionlm")
+theme_override_styles/hover = ExtResource("3_ue7ok")
 text = "Continue"
 
 [node name="Go_Back_Button" type="Button" parent="."]
@@ -36,7 +43,15 @@ offset_top = 6.0
 offset_right = 1144.0
 offset_bottom = 69.0
 theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("2_ionlm")
+theme_override_styles/hover = ExtResource("3_ue7ok")
 text = "X"
+
+[node name="IntroBg" type="Sprite2D" parent="."]
+modulate = Color(0.699653, 0.699653, 0.699653, 1)
+z_index = -100
+position = Vector2(573, 335)
+texture = ExtResource("2_64wxk")
 
 [connection signal="button_up" from="New_Game_Button" to="." method="_on_new_game_button_button_up"]
 [connection signal="button_up" from="Continue_Button" to="." method="_on_continue_button_button_up"]

@@ -52,7 +52,7 @@ func Player_Attack_1():
 		var Total_DMG = Player.compute_total_dmg()
 		enemies[index].HP -= Total_DMG
 		enemies[index].Health_Check()
-		PreBattleData.description_txt = "You dealt [%d] damage to %s" % [Total_DMG, enemies[index].Enemy_name]
+		PreBattleData.description_txt = "You dealt [color=red]%d[/color] damage to %s" % [Total_DMG, enemies[index].Enemy_name]
 	else:
 		PreBattleData.description_txt = "No enemy selected!"
 
@@ -70,7 +70,7 @@ func Player_AOE_Attack_1():
 			enemy.HP -= Total_DMG
 			enemy.Health_Check()
 			
-	PreBattleData.description_txt = "You dealt [%d] damage to all enemies" % [Total_DMG]
+	PreBattleData.description_txt = "You dealt [color=red]%d[/color] damage to all enemies" % [Total_DMG]
 	turn_order = 1
 	PreBattleData.Refresh_Active = true		
 
@@ -84,7 +84,7 @@ func Enemy_Attack_1(): #primitive, fix later
 	Player.HP -= TOTAL_DMG
 	Player.Health_Check()
 	Enemy_attack_effect()
-	PreBattleData.description_txt = Enemy1Data.Enemy_name + " dealt [" + str(TOTAL_DMG) + "] damage to you."
+	PreBattleData.description_txt = Enemy1Data.Enemy_name + " dealt [color=red]" + str(TOTAL_DMG) + "[/color] damage to you."
 	turn_order = 3
 	PreBattleData.Refresh_Active = true
 
@@ -94,7 +94,7 @@ func Enemy_Attack_2(): #primitive, fix later
 	Player.HP -= TOTAL_DMG
 	Player.Health_Check()
 	Enemy_attack_effect()
-	PreBattleData.description_txt = Enemy2Data.Enemy_name + " dealt [" + str(TOTAL_DMG) + "] damage to you."
+	PreBattleData.description_txt = Enemy2Data.Enemy_name + " dealt [color=red]" + str(TOTAL_DMG) + "[/color] damage to you."
 	turn_order = 4
 	PreBattleData.Refresh_Active = true
 
@@ -104,7 +104,7 @@ func Enemy_Attack_3(): # primitive, fix later
 	Player.HP -= TOTAL_DMG
 	Player.Health_Check()
 	Enemy_attack_effect()
-	PreBattleData.description_txt = Enemy3Data.Enemy_name + " dealt [" + str(TOTAL_DMG) + "] damage to you."
+	PreBattleData.description_txt = Enemy3Data.Enemy_name + " dealt [color=red]" + str(TOTAL_DMG) + "[/color] damage to you."
 	turn_order = 5
 	PreBattleData.Refresh_Active = true
 
@@ -114,7 +114,7 @@ func Enemy_Attack_4(): # primitive, fix later
 	Player.HP -= TOTAL_DMG
 	Player.Health_Check()
 	Enemy_attack_effect()
-	PreBattleData.description_txt = Enemy4Data.Enemy_name + " dealt [" + str(TOTAL_DMG) + "] damage to you."
+	PreBattleData.description_txt = Enemy4Data.Enemy_name + " dealt [color=red]" + str(TOTAL_DMG) + "[/color] damage to you."
 	turn_order = 6
 	PreBattleData.Refresh_Active = true
 
@@ -124,7 +124,7 @@ func Enemy_Attack_5(): # primitive, fix later
 	Player.HP -= TOTAL_DMG
 	Player.Health_Check()
 	Enemy_attack_effect()
-	PreBattleData.description_txt = Enemy5Data.Enemy_name + " dealt [" + str(TOTAL_DMG) + "] damage to you."
+	PreBattleData.description_txt = Enemy5Data.Enemy_name + " dealt [color=red]" + str(TOTAL_DMG) + "[/color] damage to you."
 	turn_order = 0  # Reset to player's turn after last enemy attack
 	PreBattleData.Refresh_Active = true
 

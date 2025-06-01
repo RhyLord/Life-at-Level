@@ -17,8 +17,7 @@ var face_value = unimpressed
 
 #claire
 @onready var Claire_Music = $ClaireMusic
-@onready var Claire = $Body_Claire
-@onready var Claire_Face = $Body_Claire/Face_Claire
+@onready var Claire_Face = $Body_Claire
 
 #Eternos
 @export var unimpressed = preload("res://Assets/NPC_Art/Eternos_Art/Eternos_Face_00_Unimpressed.png") #unimpressed
@@ -149,8 +148,8 @@ func story_progress():
 		dialogue_text = "Summoner: You have 100 days to prepare before I send you into your first battle. Fail to prepare... and you already know what happens next."
 		face_value = angry
 	elif dialogue == 28:
-		Claire.global_position.x = 550
-		Claire.global_position.y = 380
+		Claire_Face.global_position.x = 550
+		Claire_Face.global_position.y = 380
 		Body.global_position.x = 2000
 		Body.global_position.y = 2500
 		Bg.texture = Claire_Room
