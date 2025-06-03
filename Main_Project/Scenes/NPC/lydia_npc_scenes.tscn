@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt711mds5e420"]
+
+[ext_resource type="Script" path="res://Scripts/NPC_scripts/lydia_npc_scenes.gd" id="1_2a8be"]
+[ext_resource type="Texture2D" uid="uid://bsfewvcmkfb2v" path="res://Assets/NPC_Art/Lydia_Art/Lydia_Face_00_Normal.png" id="1_st7qb"]
+[ext_resource type="Texture2D" uid="uid://brmwq0emldlt8" path="res://Assets/Location_Art/Static/Potion_Shop.png" id="2_sg7xm"]
+
+[node name="Lydia_npc_scenes" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2a8be")
+
+[node name="Body_Lydia" type="Sprite2D" parent="."]
+position = Vector2(-651, 388)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_st7qb")
+
+[node name="DialogueHolder" type="ColorRect" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 40.0
+offset_top = 396.0
+offset_right = 1104.0
+offset_bottom = 627.0
+color = Color(0.160784, 0.160784, 0.160784, 0.815686)
+
+[node name="Next_Button" type="Button" parent="DialogueHolder"]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 172.0
+offset_right = 1108.0
+offset_bottom = 253.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 46
+text = "Next"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueHolder"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 9.0
+offset_right = 1056.0
+offset_bottom = 192.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "hiii"
+
+[node name="PotionShop" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(571.5, 335.5)
+scale = Vector2(1.27108, 1.21718)
+texture = ExtResource("2_sg7xm")
+
+[connection signal="button_up" from="DialogueHolder/Next_Button" to="." method="_on_next_button_button_up"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Battle_Scripts/Slime_Dungeons/lowest_slime_dungeon_1_1.gd" id="1_e6vt6"]
 [ext_resource type="PackedScene" uid="uid://dkd068viwcaxf" path="res://Scenes/Battles/battle_hud.tscn" id="2_0xr46"]
-[ext_resource type="Texture2D" uid="uid://x5c1usdih7h7" path="res://Assets/Location_Art/Plains/Plains_Bg_Noon.png" id="3_8vauj"]
+[ext_resource type="Texture2D" uid="uid://8580pqxddfg3" path="res://Assets/Location_Art/Plains/SlimePlainsTexture.png" id="3_tw47x"]
 
 [node name="Lowest_Slime_Dungeon_1_2" type="Node2D"]
 script = ExtResource("1_e6vt6")
@@ -11,6 +11,6 @@ script = ExtResource("1_e6vt6")
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(592, 325)
-scale = Vector2(0.650231, 0.650231)
-texture = ExtResource("3_8vauj")
+position = Vector2(574, 325)
+scale = Vector2(0.9, 0.908333)
+texture = ExtResource("3_tw47x")

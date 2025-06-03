@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://due7duij2y3lx"]
 
 [ext_resource type="Script" path="res://Scripts/Location_Scripts/claires_room.gd" id="1_6sjq0"]
-[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="1_qplwg"]
-[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="2_kappf"]
-[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="3_msekn"]
+[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_1.png" id="1_qplwg"]
+[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_2.png" id="2_kappf"]
+[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_3.png" id="3_msekn"]
 [ext_resource type="Script" path="res://Scripts/Menus_Scripts/Skill_Button.gd" id="4_dojde"]
 [ext_resource type="Texture2D" uid="uid://ccdlhknginbyh" path="res://Assets/Map_Art/ClaireRoom/ClaireBedroomMorning.png" id="6_5tovm"]
 

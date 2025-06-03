@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca7nieysqe7a4"
-path="res://.godot/imported/Plains_Bg_Midnight.png-0687380bdb9abd4eec23e0cf26bcdeff.ctex"
+uid="uid://cdj0eqjg3gs6a"
+path="res://.godot/imported/Lydia_Face_03_EyesClose_Smile.png-1ac6cfcb7e3081e3fb597cac250b6ecc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Location_Art/Plains/Plains_Bg_Midnight.png"
-dest_files=["res://.godot/imported/Plains_Bg_Midnight.png-0687380bdb9abd4eec23e0cf26bcdeff.ctex"]
+source_file="res://Assets/NPC_Art/Lydia_Art/Lydia_Face_03_EyesClose_Smile.png"
+dest_files=["res://.godot/imported/Lydia_Face_03_EyesClose_Smile.png-1ac6cfcb7e3081e3fb597cac250b6ecc.ctex"]
 
 [params]
 

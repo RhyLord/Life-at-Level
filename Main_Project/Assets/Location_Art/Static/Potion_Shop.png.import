@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://defcn881mqhax"
-path="res://.godot/imported/Plains_Bg_Night.png-862c857e86989d99e1c5539fffe9bb9f.ctex"
+uid="uid://brmwq0emldlt8"
+path="res://.godot/imported/Potion_Shop.png-c42770b0ed8b2c86ef9e0717e1bc3d60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Location_Art/Plains/Plains_Bg_Night.png"
-dest_files=["res://.godot/imported/Plains_Bg_Night.png-862c857e86989d99e1c5539fffe9bb9f.ctex"]
+source_file="res://Assets/Location_Art/Static/Potion_Shop.png"
+dest_files=["res://.godot/imported/Potion_Shop.png-c42770b0ed8b2c86ef9e0717e1bc3d60.ctex"]
 
 [params]
 

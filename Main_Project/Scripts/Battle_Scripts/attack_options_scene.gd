@@ -1,23 +1,8 @@
 extends Control
 
 @onready var Grid_List = $GridContainer
-@onready var Skill_Button_1 = $GridContainer/Skill_Button_1
-@onready var Skill_Button_2 = $GridContainer/Skill_Button_2
-@onready var Skill_Button_3 = $GridContainer/Skill_Button_3
-@onready var Skill_Button_4 = $GridContainer/Skill_Button_4
-@onready var Skill_Button_5 = $GridContainer/Skill_Button_5
-@onready var Skill_Button_6 = $GridContainer/Skill_Button_6
 
-@onready var Skill_TXT_1 = $GridContainer/Skill_Button_1/Cost_TXT
-@onready var Skill_TXT_2 = $GridContainer/Skill_Button_2/Cost_TXT
-@onready var Skill_TXT_3 = $GridContainer/Skill_Button_3/Cost_TXT
-@onready var Skill_TXT_4 = $GridContainer/Skill_Button_4/Cost_TXT
-@onready var Skill_TXT_5 = $GridContainer/Skill_Button_5/Cost_TXT
-@onready var Skill_TXT_6 = $GridContainer/Skill_Button_6/Cost_TXT
-
-
-@onready var textures = {
-	"unknown": preload("res://Assets/Skills_art/Unknown_Button.png"),
+var textures = {
 	"punch": preload("res://Assets/Skills_art/Punch_button.png"),
 	"kick": preload("res://Assets/Skills_art/Kick_button.png"),
 	"magic_blast": preload("res://Assets/Skills_art/Magic_Blast_button.png"),
@@ -27,34 +12,32 @@ extends Control
 }
 
 func _ready():
-	Skill_Button_1.texture_normal = textures["punch"]
-	Skill_TXT_1.text = "[center][-5] EN [/center]"
-	
-	if Skill.Kick_Unlocked == true:
-		Skill_Button_2.texture_normal = textures["kick"]
-		Skill_TXT_2.text = "[center][-25] EN[/center]"
-	
-	if Skill.Magic_Blast_Unlocked == true:
-		Skill_Button_3.texture_normal = textures["magic_blast"]
-		Skill_TXT_3.text = "[center][-50] MP[/center]"
-		
-	if Skill.Magic_Seeker_Unlocked == true:
-		Skill_Button_4.texture_normal = textures["magic_seeker"]
-		Skill_TXT_4.text = "[center][-500] MP[/center]"
-		
-	if Skill.Acid_Potion_Unlocked == true:
-		Skill_Button_5.texture_normal = textures["acid_potion"]
-		Skill_TXT_5.text = "[center]Available [" + str(Inventory.Acid_potion) + "][/center]"
-		
-	if Skill.Strong_Punch_Unlocked == true:
-		Skill_Button_6.texture_normal = textures["strong_punch"]
-		Skill_TXT_6.text = "[center][-100] EN[/center]"
+	_add_skill_button("punch", _on_punch_pressed)
 
-func _on_go_back_button_button_up():
-	queue_free()
+	if Skill.Kick_Unlocked:
+		_add_skill_button("kick", _on_kick_pressed)
 
+	if Skill.Magic_Blast_Unlocked:
+		_add_skill_button("magic_blast", _on_magic_blast_pressed)
 
-func _on_skill_button_1_button_up():
+	if Skill.Magic_Seeker_Unlocked:
+		_add_skill_button("magic_seeker", _on_magic_seeker_pressed)
+
+	if Skill.Acid_Potion_Unlocked:
+		_add_skill_button("acid_potion", _on_acid_potion_pressed)
+
+	if Skill.Strong_Punch_Unlocked:
+		_add_skill_button("strong_punch", _on_strong_punch_pressed)
+
+func _add_skill_button(texture_key: String, callback: Callable):
+	var btn = TextureButton.new()
+	btn.texture_normal = textures[texture_key]
+	btn.connect("button_up", callback)
+	Grid_List.add_child(btn)
+
+# Skill button callbacks
+
+func _on_punch_pressed():
 	if Player.EN >= 5:
 		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Punch.bind()
@@ -63,8 +46,8 @@ func _on_skill_button_1_button_up():
 		BattleMech.turn_order = 1
 		queue_free()
 
-func _on_skill_button_2_button_up():
-	if (Player.EN >= 25) and (Skill.Kick_Unlocked == true):
+func _on_kick_pressed():
+	if Player.EN >= 25:
 		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Kick.bind()
 		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
@@ -72,8 +55,8 @@ func _on_skill_button_2_button_up():
 		BattleMech.turn_order = 1
 		queue_free()
 
-func _on_skill_button_3_button_up():
-	if (Player.MP >= 50) and (Skill.Magic_Blast_Unlocked == true):
+func _on_magic_blast_pressed():
+	if Player.MP >= 50:
 		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Active_Magic_Blast.bind()
 		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
@@ -81,27 +64,25 @@ func _on_skill_button_3_button_up():
 		BattleMech.turn_order = 1
 		queue_free()
 
-func _on_skill_button_4_button_up():
-	if (Player.MP >= 500) and (Skill.Magic_Seeker_Unlocked == true):
+func _on_magic_seeker_pressed():
+	if Player.MP >= 500:
 		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Active_Magic_Seeker.bind()
 		BattleMech.Selected_Action = BattleMech.Player_AOE_Attack_1.bind()
 		BattleMech.Player_Skill_Effect = "magic_seeker"
-		BattleMech.turn_order = -1 # -1 is for AOE attack
+		BattleMech.turn_order = -1
 		queue_free()
 
-
-func _on_skill_button_5_button_up():
-	if (Inventory.Acid_potion > 0) and (Skill.Acid_Potion_Unlocked == true):
+func _on_acid_potion_pressed():
+	if Inventory.Acid_potion > 0:
 		BattleMech.Selected_Skill = Skill.Use_Acid_Potion.bind()
 		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
 		BattleMech.Player_Skill_Effect = "acid_potion"
 		BattleMech.turn_order = 1
 		queue_free()
 
-
-func _on_skill_button_6_button_up():
-	if (Player.EN >= 100) and (Skill.Strong_Punch_Unlocked == true):
+func _on_strong_punch_pressed():
+	if Player.EN >= 100:
 		BattleMech.Selected_Skill = Skill.Strong_Punch.bind()
 		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
 		BattleMech.Player_Skill_Effect = "basic_hit"

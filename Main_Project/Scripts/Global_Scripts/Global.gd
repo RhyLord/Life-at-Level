@@ -16,6 +16,14 @@ func update():
 
 #NPC Dialogues
 var claire = 0
+var lydia = 0
+var veronica = 0
 
 #NPC Quests
 var claire_quest = 0
+var claire_sub_quest = 0
+var lydia_quest = 0
+var lydia_sub_quest = 0
+var veronica_quest = 0
+var veronica_sub_quest = 0
+

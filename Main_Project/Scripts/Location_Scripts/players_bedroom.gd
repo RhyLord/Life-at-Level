@@ -9,11 +9,11 @@ var Study_Scene = load("res://Scenes/PopUp_Windows/study_window.tscn") as Packed
 
 #Sprites for Bg
 var bedroom_bg_textures = [
-	preload("res://Assets/Player_bedroom/Player_Bedroom_Morning.png"),
-	preload("res://Assets/Player_bedroom/Player_Bedroom_Noon.png"),
-	preload("res://Assets/Player_bedroom/Player_Bedroom_Evening.png"),
-	preload("res://Assets/Player_bedroom/Player_Bedroom_Night.png"),
-	preload("res://Assets/Player_bedroom/Player_Bedroom_Midnight.png")
+	preload("res://Assets/Map_Art/Player_bedroom/Player_Bedroom_Morning.png"),
+	preload("res://Assets/Map_Art/Player_bedroom/Player_Bedroom_Noon.png"),
+	preload("res://Assets/Map_Art/Player_bedroom/Player_Bedroom_Evening.png"),
+	preload("res://Assets/Map_Art/Player_bedroom/Player_Bedroom_Night.png"),
+	preload("res://Assets/Map_Art/Player_bedroom/Player_Bedroom_Midnight.png")
 ]
 
 @onready var Bg_holder = $Bedroom_Bg

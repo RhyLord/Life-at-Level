@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://008eed0vc7aq"]
 
 [ext_resource type="Script" path="res://Scripts/Battle_Scripts/battle_setup.gd" id="1_ikuij"]
-[ext_resource type="Texture2D" uid="uid://x5c1usdih7h7" path="res://Assets/Location_Art/Plains/Plains_Bg_Noon.png" id="2_hig3t"]
+[ext_resource type="Texture2D" uid="uid://8580pqxddfg3" path="res://Assets/Location_Art/Plains/SlimePlainsTexture.png" id="2_btcx8"]
 [ext_resource type="Texture2D" uid="uid://bbotkdixvyeub" path="res://Assets/Card_art/Card_base.png" id="3_w0r74"]
 [ext_resource type="Texture2D" uid="uid://pccm33tv3ohh" path="res://Assets/Card_art/Player_Card.png" id="4_aiij7"]
 
@@ -32,9 +32,9 @@ text = "Dungeon Name"
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -10
-position = Vector2(592, 325)
-scale = Vector2(0.650231, 0.650231)
-texture = ExtResource("2_hig3t")
+position = Vector2(576.5, 326.5)
+scale = Vector2(0.902344, 0.9125)
+texture = ExtResource("2_btcx8")
 
 [node name="Ready_button" type="Button" parent="."]
 offset_left = 33.0

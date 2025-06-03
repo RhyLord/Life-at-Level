@@ -73,8 +73,13 @@ func check_story():
 	#Claire Quest
 	elif Global.claire == 7 and Global.claire_quest == 0: #Quest 1-1 Global.claire_quest should be set to 1
 		dialogue = 250
-	elif Global.claire == 7 and Global.claire_quest == 1: #Quest 1-1 Global.claire_quest should be set to 1
-		dialogue = 300
+	elif Global.claire == 7 and Global.claire_quest == 1: #Quest 1-1 when prevoious not complete
+		if Global.claire_sub_quest == 0:
+			dialogue = 300
+		if Global.claire_sub_quest == 1:
+			dialogue = 306
+		if Global.claire_sub_quest == 2:
+			dialogue = 325
 
 func story_progress():
 	if dialogue == 1:
@@ -488,11 +493,11 @@ func story_progress():
 		Claire_Face.texture = Sad
 
 	elif dialogue == 254:
-		dialogue_text = "Claire: Well, you’re staying here rent-free, aren’t you? At the very least, you can do whatever I ask. Consider it a small favor in exchange for all the room and board I’m providing."
+		dialogue_text = "Claire: Well, you’re staying here rent-free, aren’t you? At the very least, you can do whatever I ask. Consider it a small favor in exchange for all the room I’m providing."
 		Claire_Face.texture = Pissed
 
 	elif dialogue == 255:
-		dialogue_text = "Player: Fair enough. I’ll get the package for you. No hesitation."
+		dialogue_text = "Player: Fair enough. I’ll get the package for you."
 		Claire_Face.texture = very_happy
 
 	elif dialogue == 256:
@@ -518,4 +523,68 @@ func story_progress():
 		dialogue_text = "Player: I'll get the package from Lydia as soon as possible."
 		Claire_Face.texture = Pissed
 	elif dialogue == 304:
+		get_tree().change_scene_to_file(Game_Scene)
+	
+	elif dialogue == 306:
+		Claire_Face.global_position.x = 550
+		Claire_Face.global_position.y = 380
+		Claire_Music.play()
+		dialogue_text = "Player: I've secured the package."
+		Claire_Face.texture = Happy
+	elif dialogue == 307:
+		dialogue_text = "Claire: Well done."
+		Claire_Face.texture = Pissed
+	elif dialogue == 308:
+		dialogue_text = "Player: If you don’t mind me asking… what’s inside?"
+		Claire_Face.texture = Happy
+	elif dialogue == 309:
+		dialogue_text = "Claire: Mana potions."
+		Claire_Face.texture = Open_Mouth_Happy
+	elif dialogue == 310:
+		dialogue_text = "Player: Impressive."
+		Claire_Face.texture = very_happy
+	elif dialogue == 311:
+		dialogue_text = "Claire: I’ve even mastered a few rare spells from Eternos. They're not of this world."
+		Claire_Face.texture = Happy
+	elif dialogue == 312:
+		dialogue_text = "Player: Could I learn them too?"
+		Claire_Face.texture = Uninterested
+	elif dialogue == 313:
+		dialogue_text = "Claire: Only if Eternos deems you worthy."
+		Claire_Face.texture = Questioning
+	elif dialogue == 314:
+		dialogue_text = "Player: I see..."
+		Claire_Face.texture = Happy
+	elif dialogue == 315:
+		dialogue_text = "Claire: As a reward, I suppose it’s only fair you receive a starting weapon."
+		Claire_Face.texture = Happy
+	elif dialogue == 316:
+		dialogue_text = "Player: That sounds great."
+		Claire_Face.texture = Open_Mouth_Happy
+	elif dialogue == 317:
+		dialogue_text = "Claire: Speak with Veronica at the soldier barracks. She’ll equip you."
+		Claire_Face.texture = very_happy
+	elif dialogue == 318:
+		dialogue_text = "Player: Got it."
+		Claire_Face.texture = Happy
+	elif dialogue == 319:
+		Global.claire_sub_quest = 2
+		get_tree().change_scene_to_file(Game_Scene)
+		
+	elif dialogue == 325:
+		Claire_Face.global_position.x = 550
+		Claire_Face.global_position.y = 380
+		Claire_Music.play()
+		dialogue_text = "Player: What do I do again?."
+		Claire_Face.texture = Questioning
+	elif dialogue == 326:
+		dialogue_text = "Claire: Meet Veronica. She stays at the barracks"
+		Claire_Face.texture = Happy
+	elif dialogue == 327:
+		dialogue_text = "Claire: She will provide you with your starting weapon."
+		Claire_Face.texture = Happy
+	elif dialogue == 328:
+		dialogue_text = "Player: Got it."
+		Claire_Face.texture = Happy
+	elif dialogue == 329:
 		get_tree().change_scene_to_file(Game_Scene)

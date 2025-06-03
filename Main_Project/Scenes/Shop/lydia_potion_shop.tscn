@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6qg3nxkg5ct7"]
+[gd_scene load_steps=3 format=3 uid="uid://b6qg3nxkg5ct7"]
 
 [ext_resource type="Script" path="res://Scripts/Shop_Scripts/lydia_potion_shop.gd" id="1_54bne"]
+[ext_resource type="Texture2D" uid="uid://brmwq0emldlt8" path="res://Assets/Location_Art/Static/Potion_Shop.png" id="2_hdtsm"]
 
 [node name="lydia_potion_shop" type="Control"]
 layout_mode = 3
@@ -11,14 +12,23 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_54bne")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.220615, 0.175828, 0.235278, 1)
+[node name="Day_Text" type="RichTextLabel" parent="."]
+z_index = 10
+layout_mode = 0
+offset_left = 906.0
+offset_top = 29.0
+offset_right = 1110.0
+offset_bottom = 122.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "csdsdvsc"
+
+[node name="PotionShop" type="Sprite2D" parent="."]
+position = Vector2(571.5, 335.5)
+scale = Vector2(1.27108, 1.21718)
+texture = ExtResource("2_hdtsm")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
@@ -44,6 +54,14 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 45
 text = "Sell"
 
+[node name="Button4" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Talk to Lydia"
+
 [node name="Button3" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -52,6 +70,80 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 45
 text = "Leave Shop"
 
+[node name="Grid2" type="GridContainer" parent="."]
+layout_mode = 0
+offset_left = -380.0
+offset_top = 150.0
+offset_right = -24.0
+offset_bottom = 312.0
+theme_override_constants/v_separation = 20
+
+[node name="Button10" type="Button" parent="Grid2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Talk"
+
+[node name="Button11" type="Button" parent="Grid2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Unavailable"
+
+[node name="Button12" type="Button" parent="Grid2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Back"
+
+[node name="Grid3" type="GridContainer" parent="."]
+offset_left = -1166.0
+offset_top = 150.0
+offset_right = -810.0
+offset_bottom = 312.0
+theme_override_constants/v_separation = 20
+
+[node name="Button31" type="Button" parent="Grid3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Friendly"
+
+[node name="Button32" type="Button" parent="Grid3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Flirt"
+
+[node name="Button33" type="Button" parent="Grid3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Tell Joke"
+
+[node name="Button34" type="Button" parent="Grid3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Go Back"
+
 [connection signal="button_up" from="GridContainer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="GridContainer/Button2" to="." method="_on_button_2_button_up"]
+[connection signal="button_up" from="GridContainer/Button4" to="." method="_on_button_4_button_up"]
 [connection signal="button_up" from="GridContainer/Button3" to="." method="_on_button_3_button_up"]
+[connection signal="button_up" from="Grid2/Button11" to="." method="_on_button_11_button_up"]
+[connection signal="button_up" from="Grid2/Button12" to="." method="_on_button_12_button_up"]

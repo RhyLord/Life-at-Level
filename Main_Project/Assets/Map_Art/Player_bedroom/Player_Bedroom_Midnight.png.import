@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcs1cok0ly0u6"
-path="res://.godot/imported/Inventory_Button_3.png-f22d0f6e84278cbd6a2a2826b4eede19.ctex"
+uid="uid://c4oy8hc20nh3u"
+path="res://.godot/imported/Player_Bedroom_Midnight.png-22a71aed7f3c536510de37b5452c5830.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player_bedroom/Inventory_Button_3.png"
-dest_files=["res://.godot/imported/Inventory_Button_3.png-f22d0f6e84278cbd6a2a2826b4eede19.ctex"]
+source_file="res://Assets/Map_Art/Player_bedroom/Player_Bedroom_Midnight.png"
+dest_files=["res://.godot/imported/Player_Bedroom_Midnight.png-22a71aed7f3c536510de37b5452c5830.ctex"]
 
 [params]
 

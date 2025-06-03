@@ -4,14 +4,7 @@ extends Node2D
 
 var Bg_Texture = null
 
-var Plain_Textures = [
-	preload("res://Assets/Location_Art/Plains/Plains_Bg_Morning.png"),
-	preload("res://Assets/Location_Art/Plains/Plains_Bg_Noon.png"),
-	preload("res://Assets/Location_Art/Plains/Plains_Bg_Evening.png"),
-	preload("res://Assets/Location_Art/Plains/Plains_Bg_Night.png"),
-	preload("res://Assets/Location_Art/Plains/Plains_Bg_Midnight.png")
-]
-
+var Plain_Texture = preload("res://Assets/Location_Art/Plains/SlimePlainsTexture.png")
 
 @onready var Player_Card = $Player_Card
 @onready var Player_Grid = $GridContainer
@@ -36,7 +29,7 @@ func _ready():
 
 func set_bg_texture():
 	if PreBattleData.bg_textures == "Plains":
-		Bg_Texture = Plain_Textures[Global.Time_of_day]
+		Bg_Texture = Plain_Texture
 	else:
 		Bg_Texture = null
 	

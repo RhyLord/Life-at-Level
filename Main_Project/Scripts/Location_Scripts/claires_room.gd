@@ -10,6 +10,8 @@ extends Control
 @onready var grid3 = $Grid3
 @onready var grid4 = $Grid4
 
+@onready var quest_button = $Grid2/Button12
+
 
 var bg_textures = [
 	preload("res://Assets/Map_Art/ClaireRoom/ClaireBedroomMorning.png"),
@@ -25,6 +27,10 @@ func _ready():
 func Set_Core_Stats():
 	Day_txt.bbcode_text = "[right]Day %d\nTime is %s[/right]" % [Global.Day, Global.time_states[Global.Time_of_day]]
 	Bg_Holder.texture = bg_textures[Global.Time_of_day]
+	
+	if Global.claire_quest == 1:
+		if Global.claire_sub_quest == 1:
+			quest_button.text = "Claire Quest #1"
 
 
 

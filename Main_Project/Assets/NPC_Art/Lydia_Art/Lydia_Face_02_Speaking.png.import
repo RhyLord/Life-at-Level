@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw64m385urkbd"
-path="res://.godot/imported/Inventory_Button_2.png-15fa39f7c9de9611c0a87acbc90ff4a5.ctex"
+uid="uid://cx2r3mgx58owp"
+path="res://.godot/imported/Lydia_Face_02_Speaking.png-1669686ad05860555cd1eeda052a55bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player_bedroom/Inventory_Button_2.png"
-dest_files=["res://.godot/imported/Inventory_Button_2.png-15fa39f7c9de9611c0a87acbc90ff4a5.ctex"]
+source_file="res://Assets/NPC_Art/Lydia_Art/Lydia_Face_02_Speaking.png"
+dest_files=["res://.godot/imported/Lydia_Face_02_Speaking.png-1669686ad05860555cd1eeda052a55bf.ctex"]
 
 [params]
 

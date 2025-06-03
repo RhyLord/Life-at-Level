@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://boxevvwtr84bw"
-path="res://.godot/imported/Plains_Bg_Evening.png-7fe5b947d0efcab24661ff0b4d67d325.ctex"
+uid="uid://ca3karudjt3kj"
+path="res://.godot/imported/Player_Bedroom_Morning.png-a623751b547df6bf5fce19bd7824d7e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Location_Art/Plains/Plains_Bg_Evening.png"
-dest_files=["res://.godot/imported/Plains_Bg_Evening.png-7fe5b947d0efcab24661ff0b4d67d325.ctex"]
+source_file="res://Assets/Map_Art/Player_bedroom/Player_Bedroom_Morning.png"
+dest_files=["res://.godot/imported/Player_Bedroom_Morning.png-a623751b547df6bf5fce19bd7824d7e4.ctex"]
 
 [params]
 

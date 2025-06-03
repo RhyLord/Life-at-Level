@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bdni5s3wy5f3p" path="res://Assets/Map_Art/House/House_Bg_Morning.png" id="1_42780"]
 [ext_resource type="Script" path="res://Scripts/Location_Scripts/house_scene.gd" id="1_hbhhk"]
-[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="3_n6c27"]
-[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="4_lhwto"]
-[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="5_0g3e3"]
+[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_1.png" id="3_n6c27"]
+[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_2.png" id="4_lhwto"]
+[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_3.png" id="5_0g3e3"]
 [ext_resource type="Script" path="res://Scripts/Menus_Scripts/Skill_Button.gd" id="6_ww7bq"]
 
 [node name="House_Scene" type="Node2D"]
@@ -23,8 +23,8 @@ text = "csdsdvsc"
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(601, 337)
-scale = Vector2(0.67474, 0.665398)
+position = Vector2(580, 324)
+scale = Vector2(0.925781, 0.947222)
 texture = ExtResource("1_42780")
 
 [node name="Inventory_Button" type="TextureButton" parent="."]

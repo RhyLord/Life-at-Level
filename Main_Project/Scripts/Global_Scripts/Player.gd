@@ -167,6 +167,11 @@ func Save_Game():
 	
 	# Quests
 	file.store_var(Global.claire_quest)
+	file.store_var(Global.claire_sub_quest)
+	file.store_var(Global.lydia_quest)
+	file.store_var(Global.lydia_sub_quest)
+	file.store_var(Global.veronica_quest)
+	file.store_var(Global.veronica_sub_quest)
 
 	# Skills
 	# Rest
@@ -375,6 +380,12 @@ func New_Game():
 	
 	#Quests
 	Global.claire_quest = 0
+	Global.claire_sub_quest = 0
+	Global.lydia_quest = 0
+	Global.lydia_sub_quest = 0
+	Global.veronica_quest = 0
+	Global.veronica_sub_quest = 0
+	
 	
 	# Skills
 	# Rest
@@ -585,6 +596,11 @@ func load_data():
 		
 		#Quests
 		Global.claire_quest = file.get_var(Global.claire_quest)
+		Global.claire_sub_quest = file.get_var(Global.claire_sub_quest)
+		Global.lydia_quest = file.get_var(Global.lydia_quest)
+		Global.lydia_sub_quest = file.get_var(Global.lydia_sub_quest)
+		Global.veronica_quest = file.get_var(Global.veronica_quest)
+		Global.veronica_sub_quest = file.get_var(Global.veronica_sub_quest)
 
 		# Skills
 		# Rest

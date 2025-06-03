@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca3karudjt3kj"
-path="res://.godot/imported/Player_Bedroom_Morning.png-0796c2fef51cf35f329cf49391067d27.ctex"
+uid="uid://bigluql68l0md"
+path="res://.godot/imported/Lydia_Face_01_Smile.png-b51133159efc68f15d9ce48b792450d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Player_bedroom/Player_Bedroom_Morning.png"
-dest_files=["res://.godot/imported/Player_Bedroom_Morning.png-0796c2fef51cf35f329cf49391067d27.ctex"]
+source_file="res://Assets/NPC_Art/Lydia_Art/Lydia_Face_01_Smile.png"
+dest_files=["res://.godot/imported/Lydia_Face_01_Smile.png-b51133159efc68f15d9ce48b792450d0.ctex"]
 
 [params]
 
