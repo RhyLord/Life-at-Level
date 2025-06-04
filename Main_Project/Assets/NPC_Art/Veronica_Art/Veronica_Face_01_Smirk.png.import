@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c47n774r7cvar"
-path="res://.godot/imported/Bathroom_Bg_Noon.png-4f5f09749b10a7fa41e630595d7f6e4b.ctex"
+uid="uid://by7881g40oyoj"
+path="res://.godot/imported/Veronica_Face_01_Smirk.png-e9304d996bc038028a1d18e0abd334f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Art/Bathroom/Bathroom_Bg_Noon.png"
-dest_files=["res://.godot/imported/Bathroom_Bg_Noon.png-4f5f09749b10a7fa41e630595d7f6e4b.ctex"]
+source_file="res://Assets/NPC_Art/Veronica_Art/Veronica_Face_01_Smirk.png"
+dest_files=["res://.godot/imported/Veronica_Face_01_Smirk.png-e9304d996bc038028a1d18e0abd334f2.ctex"]
 
 [params]
 

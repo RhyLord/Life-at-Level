@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://d00na5s5tp36k"]
 
 [ext_resource type="Script" path="res://Scripts/Location_Scripts/garden_scene.gd" id="1_t33x4"]
-[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="2_7uxvb"]
+[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_1.png" id="2_7uxvb"]
 [ext_resource type="Texture2D" uid="uid://dc6te1ml4ump0" path="res://Assets/Map_Art/Garden/Garden_Bg_Morning.png" id="2_m72cb"]
-[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="3_fs707"]
-[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="4_ogq7c"]
+[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_2.png" id="3_fs707"]
+[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_3.png" id="4_ogq7c"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0pbd"]
 bg_color = Color(0, 0, 0, 1)
@@ -34,8 +34,8 @@ text = "csdsdvsc"
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(601, 337)
-scale = Vector2(0.67474, 0.665398)
+position = Vector2(578.5, 326.5)
+scale = Vector2(0.905469, 0.909722)
 texture = ExtResource("2_m72cb")
 
 [node name="Inventory_Button" type="TextureButton" parent="."]

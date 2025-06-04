@@ -7,14 +7,6 @@ extends Node2D
 var Shower_Scene = load("res://Scenes/PopUp_Windows/shower_window.tscn") as PackedScene
 var Speech_Scene = load("res://Scenes/PopUp_Windows/speech_window.tscn") as PackedScene
 
-var bg_textures = [
-	preload("res://Assets/Map_Art/Bathroom/Bathroom_Bg_Morning.png"),
-	preload("res://Assets/Map_Art/Bathroom/Bathroom_Bg_Noon.png"),
-	preload("res://Assets/Map_Art/Bathroom/Bathroom_Bg_Evening.png"),
-	preload("res://Assets/Map_Art/Bathroom/Bathroom_Bg_Night.png"),
-	preload("res://Assets/Map_Art/Bathroom/Bathroom_Bg_Midnight.png")
-]
-
 @onready var Bg_Holder = $BG
 @onready var Day_txt = $Day_Text
 @onready var HP_Bar = $Options_holder/HealthBar
@@ -41,7 +33,6 @@ func Set_Core_Stats():
 	EN_Bar.value = Player.EN
 	EN_TXT.bbcode_text = "[center]%d / %d[/center]" % [Player.EN, Player.MAX_EN]
 	
-	Bg_Holder.texture = bg_textures[Global.Time_of_day]
 	Day_txt.bbcode_text = "[right]Day %d\nTime is %s[/right]" % [Global.Day, Global.time_states[Global.Time_of_day]]
 
 func update_and_refresh(func_ref):

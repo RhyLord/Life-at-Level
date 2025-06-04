@@ -79,7 +79,7 @@ func story_progress():
 		dialogue_text = "Player: Seriously, where am I?"
 		face_value = normal
 	elif dialogue == 5:
-		dialogue_text = "Summoner: You died. In your original world. So… I bought your soul."
+		dialogue_text = "Summoner: You [color=red]died[/color]. In your original world. So… I bought your soul."
 		face_value = unimpressed
 	elif dialogue == 6:
 		dialogue_text = "Player: You bought my soul?!"
@@ -91,7 +91,7 @@ func story_progress():
 		dialogue_text = "Player: Huh?"
 		face_value = wacky
 	elif dialogue == 9:
-		dialogue_text = "Summoner: Long story short—I am Eternos, a divine being. I’m creating warriors. Strong ones."
+		dialogue_text = "Summoner: Long story short—I am [color=lightblue]Eternos[/color], a divine being. I’m creating warriors. Strong ones."
 		face_value = normal
 	elif dialogue == 10:
 		dialogue_text = "Player: Warriors?"
@@ -145,7 +145,7 @@ func story_progress():
 		dialogue_text = "Player: This really is like a game..."
 		face_value = normal
 	elif dialogue == 27:
-		dialogue_text = "Summoner: You have 100 days to prepare before I send you into your first battle. Fail to prepare... and you already know what happens next."
+		dialogue_text = "Summoner: You have [color=lightgreen]100[/color] days to prepare before I send you into your first battle. Fail to prepare... and you already know what happens next."
 		face_value = angry
 	elif dialogue == 28:
 		Claire_Face.global_position.x = 550
@@ -162,7 +162,7 @@ func story_progress():
 		dialogue_text = "Player: I’m Player."
 		Claire_Face.texture = Happy
 	elif dialogue == 30:
-		dialogue_text = "Claire: Nice to meet you. I’m Claire — your guide, and also the owner of your new home."
+		dialogue_text = "Claire: Nice to meet you. I’m [color=hotpink]Claire[/color] — your guide, and also the owner of your new home."
 		Claire_Face.texture = Happy
 	elif dialogue == 31:
 		dialogue_text = "Player: So… what exactly am I supposed to do?"
@@ -171,10 +171,10 @@ func story_progress():
 		dialogue_text = "Claire: For now, focus on getting stronger. The two people who came before you both failed the first stage."
 		Claire_Face.texture = Sad
 	elif dialogue == 33:
-		dialogue_text = "Claire: The first was a girl who wasted time. She died on day 164 after Eternos sent someone to hunt her down."
+		dialogue_text = "Claire: The first was a girl who wasted time. She died on day [color=red]164[/color] after Eternos sent someone to hunt her down."
 		Claire_Face.texture = Worrying
 	elif dialogue == 34:
-		dialogue_text = "Claire: The second was a man who rushed things. He learned fire magic by day 9, ran straight to Eternos, and got himself killed in the challenge."
+		dialogue_text = "Claire: The second was a man who rushed things. He learned fire magic by day [color=red]9[/color], ran straight to Eternos, and got himself killed in the challenge."
 		Claire_Face.texture = Angry
 	elif dialogue == 35:
 		dialogue_text = "Player: So, I can’t slack off… or be reckless."
@@ -183,13 +183,13 @@ func story_progress():
 		dialogue_text = "Claire: Exactly. You can attempt Eternos' challenge anytime at the Temple of Time."
 		Claire_Face.texture = Eyebrowing
 	elif dialogue == 37:
-		dialogue_text = "Claire: But don’t wait past day 100. He might make your opponent stronger… and if you wait too long, he’ll send someone to eliminate you."
+		dialogue_text = "Claire: But don’t wait past day [color=red]100[/color]. He might make your opponent stronger… and if you wait too long, he’ll send someone to eliminate you."
 		Claire_Face.texture = Uninterested
 	elif dialogue == 38:
 		dialogue_text = "Player: Can you tell me more about my situation?"
 		Claire_Face.texture = Questioning
 	elif dialogue == 39:
-		dialogue_text = "Claire: Eternos is a divine being. Why he creates warriors… even I don’t fully know."
+		dialogue_text = "Claire: [color=lightblue]Eternos[/color] is a divine being. Why he creates warriors… even I don’t fully know."
 		Claire_Face.texture = Worrying
 	elif dialogue == 40:
 		dialogue_text = "Claire: He says it’s to fight his battles, but that’s all I’ve ever been told."
@@ -264,10 +264,10 @@ func story_progress():
 		dialogue_text = "Player: Any suggestions for me?"
 		Claire_Face.texture = Questioning
 	elif dialogue == 64:
-		dialogue_text = "Claire: Take on Eternos’ challenge after day 90, but before day 100. That’s your best window."
+		dialogue_text = "Claire: Take on Eternos’ challenge after day [color=red]90[/color], but before day [color=red]100[/color]. That’s your best window."
 		Claire_Face.texture = very_happy
 	elif dialogue == 65:
-		dialogue_text = "Claire: Create a few slime dungeons and grind there to level up your stats. You’ll need the strength."
+		dialogue_text = "Claire: Create a few [color=lightgreen]slime dungeons[/color] and grind there to level up your stats. You’ll need the strength."
 		Claire_Face.texture = Happy
 	elif dialogue == 66:
 		dialogue_text = "Claire: You can also look for small jobs around town — Rabonia. It’s part of the Kingdom of Coxanne."

@@ -80,6 +80,8 @@ func check_story():
 			dialogue = 306
 		if Global.claire_sub_quest == 2:
 			dialogue = 325
+		if Global.claire_sub_quest == 3:
+			dialogue = 331
 
 func story_progress():
 	if dialogue == 1:
@@ -478,7 +480,7 @@ func story_progress():
 		Claire_Face.global_position.x = 550
 		Claire_Face.global_position.y = 380
 		Claire_Music.play()
-		dialogue_text = "Claire: Hey, I’ve got a task for you. Could you go and pick up a package from Lydia? She’s the alchemist who runs the potion shop downtown. Some people even call her a witch."
+		dialogue_text = "Claire: Hey, I’ve got a task for you. Could you go and pick up a package from [color=purple]Lydia[/color]? She’s the alchemist who runs the potion shop downtown. Some people even call her a witch."
 		Claire_Face.texture = Questioning
 	elif dialogue == 251:
 		dialogue_text = "Player: A witch, huh? Sounds interesting. What’s in the package?"
@@ -520,7 +522,7 @@ func story_progress():
 		dialogue_text = "Claire: Why the delay, she doesnt live in another city."
 		Claire_Face.texture = Pissed
 	elif dialogue == 303:
-		dialogue_text = "Player: I'll get the package from Lydia as soon as possible."
+		dialogue_text = "Player: I'll get the package from [color=purple]Lydia[/color] as soon as possible."
 		Claire_Face.texture = Pissed
 	elif dialogue == 304:
 		get_tree().change_scene_to_file(Game_Scene)
@@ -562,7 +564,7 @@ func story_progress():
 		dialogue_text = "Player: That sounds great."
 		Claire_Face.texture = Open_Mouth_Happy
 	elif dialogue == 317:
-		dialogue_text = "Claire: Speak with Veronica at the soldier barracks. She’ll equip you."
+		dialogue_text = "Claire: Speak with [color=lightblue]Veronica[/color] at the soldier barracks. She’ll equip you."
 		Claire_Face.texture = very_happy
 	elif dialogue == 318:
 		dialogue_text = "Player: Got it."
@@ -578,7 +580,7 @@ func story_progress():
 		dialogue_text = "Player: What do I do again?."
 		Claire_Face.texture = Questioning
 	elif dialogue == 326:
-		dialogue_text = "Claire: Meet Veronica. She stays at the barracks"
+		dialogue_text = "Claire: Meet [color=lightblue]Veronica[/color]. She stays at the barracks."
 		Claire_Face.texture = Happy
 	elif dialogue == 327:
 		dialogue_text = "Claire: She will provide you with your starting weapon."
@@ -587,4 +589,28 @@ func story_progress():
 		dialogue_text = "Player: Got it."
 		Claire_Face.texture = Happy
 	elif dialogue == 329:
+		get_tree().change_scene_to_file(Game_Scene)
+		
+	elif dialogue == 331:
+		Claire_Face.global_position.x = 550
+		Claire_Face.global_position.y = 380
+		Claire_Music.play()
+		dialogue_text = "Player: What do I do again?."
+		Claire_Face.texture = Questioning
+	elif dialogue == 332:
+		dialogue_text = "Claire: Try to obtain [color=green]10 green slimeballs[/color]"
+		Claire_Face.texture = Happy
+	elif dialogue == 333:
+		dialogue_text = "Claire: Create a Slime Dungeon from your bedroom"
+		Claire_Face.texture = Open_Mouth_Happy
+	elif dialogue == 334:
+		dialogue_text = "Claire: And Beat up some Slimes"
+		Claire_Face.texture = Happy
+	elif dialogue == 335:
+		dialogue_text = "Claire: Your hands should be more than enough to smash them."
+		Claire_Face.texture = Happy
+	elif dialogue == 336:
+		dialogue_text = "Player: Thanks [color=hotpink]Claire[/color]"
+		Claire_Face.texture = Happy
+	elif dialogue == 337:
 		get_tree().change_scene_to_file(Game_Scene)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kwx1gm6272ye"
-path="res://.godot/imported/Bathroom_Bg_Midnight.png-049211be033195b5199d7d67b928edf8.ctex"
+uid="uid://pug1p3b6s0tw"
+path="res://.godot/imported/Bathroom.png-cb72eed2648298ca53a53a7e98057dc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Art/Bathroom/Bathroom_Bg_Midnight.png"
-dest_files=["res://.godot/imported/Bathroom_Bg_Midnight.png-049211be033195b5199d7d67b928edf8.ctex"]
+source_file="res://Assets/Map_Art/Bathroom/Bathroom.png"
+dest_files=["res://.godot/imported/Bathroom.png-cb72eed2648298ca53a53a7e98057dc9.ctex"]
 
 [params]
 

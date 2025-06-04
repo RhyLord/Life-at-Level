@@ -1,23 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dt711mds5e420"]
+[gd_scene load_steps=5 format=3 uid="uid://ubkemjjkbxqm"]
 
-[ext_resource type="Script" path="res://Scripts/NPC_scripts/lydia_npc_scenes.gd" id="1_2a8be"]
-[ext_resource type="Texture2D" uid="uid://bsfewvcmkfb2v" path="res://Assets/NPC_Art/Lydia_Art/Lydia_Face_00_Normal.png" id="1_st7qb"]
-[ext_resource type="Texture2D" uid="uid://brmwq0emldlt8" path="res://Assets/Location_Art/Static/Potion_Shop.png" id="2_sg7xm"]
-[ext_resource type="AudioStream" uid="uid://c2wh3cixgmbtn" path="res://Music/Lydia_Music.mp3" id="4_r17ve"]
+[ext_resource type="Script" path="res://Scripts/NPC_scripts/veronica_npc_scenes.gd" id="1_mtwf1"]
+[ext_resource type="Texture2D" uid="uid://dhovwhb8hplhu" path="res://Assets/Map_Art/Soldier_Barracks/Soldier_Barrack_Morning.png" id="2_t73hy"]
+[ext_resource type="Texture2D" uid="uid://cg1wdt37ff1eh" path="res://Assets/NPC_Art/Veronica_Art/Veronica_Face_00_Smile.png" id="3_aeh7h"]
+[ext_resource type="AudioStream" uid="uid://cal5b6fk7dk8n" path="res://Music/Veronica_Music.mp3" id="4_3wxub"]
 
-[node name="Lydia_npc_scenes" type="Control"]
+[node name="veronica_npc_scenes" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_2a8be")
+script = ExtResource("1_mtwf1")
 
-[node name="Body_Lydia" type="Sprite2D" parent="."]
+[node name="Bg" type="Sprite2D" parent="."]
+z_index = -100
+position = Vector2(574, 324)
+scale = Vector2(0.904688, 0.936111)
+texture = ExtResource("2_t73hy")
+
+[node name="Body_Veronica" type="Sprite2D" parent="."]
 position = Vector2(-651, 388)
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_st7qb")
+texture = ExtResource("3_aeh7h")
 
 [node name="DialogueHolder" type="ColorRect" parent="."]
 z_index = 10
@@ -53,15 +59,9 @@ theme_override_font_sizes/normal_font_size = 28
 bbcode_enabled = true
 text = "hiii"
 
-[node name="PotionShop" type="Sprite2D" parent="."]
-z_index = -10
-position = Vector2(571.5, 335.5)
-scale = Vector2(1.27108, 1.21718)
-texture = ExtResource("2_sg7xm")
-
-[node name="LydiaMusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_r17ve")
-volume_db = 15.0
-pitch_scale = 0.7
+[node name="VeronicaMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_3wxub")
+volume_db = 11.0
+pitch_scale = 1.1
 
 [connection signal="button_up" from="DialogueHolder/Next_Button" to="." method="_on_next_button_button_up"]

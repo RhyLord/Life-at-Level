@@ -1,10 +1,10 @@
 [gd_scene load_steps=10 format=3 uid="uid://b3pjij2sk13m"]
 
-[ext_resource type="Texture2D" uid="uid://cmjlf5q4ieacc" path="res://Assets/Map_Art/Bathroom/Bathroom_Bg_Morning.png" id="1_52xhp"]
 [ext_resource type="Script" path="res://Scripts/Location_Scripts/bathroom_scene.gd" id="1_ytj3i"]
-[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Player_bedroom/Inventory_Button_1.png" id="2_hhnsq"]
-[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Player_bedroom/Inventory_Button_2.png" id="3_imi47"]
-[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Player_bedroom/Inventory_Button_3.png" id="4_egadk"]
+[ext_resource type="Texture2D" uid="uid://pug1p3b6s0tw" path="res://Assets/Map_Art/Bathroom/Bathroom.png" id="2_52adn"]
+[ext_resource type="Texture2D" uid="uid://bbturb4ipb1gl" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_1.png" id="2_hhnsq"]
+[ext_resource type="Texture2D" uid="uid://bw64m385urkbd" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_2.png" id="3_imi47"]
+[ext_resource type="Texture2D" uid="uid://bcs1cok0ly0u6" path="res://Assets/Map_Art/Player_bedroom/Inventory_Button_3.png" id="4_egadk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_thc1j"]
 bg_color = Color(0, 0, 0, 1)
@@ -34,9 +34,9 @@ text = "csdsdvsc"
 
 [node name="BG" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(587.5, 346)
-scale = Vector2(0.932031, 0.983333)
-texture = ExtResource("1_52xhp")
+position = Vector2(580, 337)
+scale = Vector2(1.2008, 1.05993)
+texture = ExtResource("2_52adn")
 
 [node name="Inventory_Button" type="TextureButton" parent="."]
 offset_left = 1052.0

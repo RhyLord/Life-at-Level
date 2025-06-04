@@ -43,7 +43,9 @@ offset_left = 37.0
 offset_top = 105.0
 offset_right = 393.0
 offset_bottom = 631.0
+theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
+columns = 2
 
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
@@ -93,6 +95,14 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 45
 text = "Tavern"
 
+[node name="Button7" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 45
+text = "Soldier Barracks"
+
 [connection signal="button_up" from="Inventory_Button" to="Inventory_Button" method="_on_button_up"]
 [connection signal="button_up" from="GridContainer/Button" to="." method="_on_button_button_up"]
 [connection signal="button_up" from="GridContainer/Button2" to="." method="_on_button_2_button_up"]
@@ -100,3 +110,4 @@ text = "Tavern"
 [connection signal="button_up" from="GridContainer/Button3" to="." method="_on_button_3_button_up"]
 [connection signal="button_up" from="GridContainer/Button4" to="." method="_on_button_4_button_up"]
 [connection signal="button_up" from="GridContainer/Button5" to="." method="_on_button_5_button_up"]
+[connection signal="button_up" from="GridContainer/Button7" to="." method="_on_button_7_button_up"]

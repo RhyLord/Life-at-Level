@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://denv1a2dwkfhx"
-path="res://.godot/imported/Bathroom_Bg_Evening.png-fa50e74833a5fb5b4ecef3b2a1d98157.ctex"
+uid="uid://pv0glnj58jy0"
+path="res://.godot/imported/Soldier_Barrack_Evening.png-51181c5a90febc599a2e0f34116cb77f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Map_Art/Bathroom/Bathroom_Bg_Evening.png"
-dest_files=["res://.godot/imported/Bathroom_Bg_Evening.png-fa50e74833a5fb5b4ecef3b2a1d98157.ctex"]
+source_file="res://Assets/Map_Art/Soldier_Barracks/Soldier_Barrack_Evening.png"
+dest_files=["res://.godot/imported/Soldier_Barrack_Evening.png-51181c5a90febc599a2e0f34116cb77f.ctex"]
 
 [params]
 
