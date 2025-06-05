@@ -7,6 +7,9 @@ var XP = 0
 var XP_NXT = calculate_xp_needed(LVL)
 var Allocation_points = 0
 
+var Weapon = "None"
+var Weapon_Type = "None"
+
 var new_game = 0
 
 var coin = 0
@@ -60,6 +63,9 @@ var FIRE_DMG = 0
 var DIVINE_DMG = 0
 var TOTAL_DMG = 0
 
+#Weappon Damage
+var SWORD_DMG = 0
+
 #DEFENSE
 var PHYSICAL_DEF = 0
 var WATER_DEF = 0
@@ -106,6 +112,10 @@ func reset_all_dmg():
 	ACID_DMG = 0
 	TOTAL_DMG = 0
 
+func Test_Game(): # add values here which you want to set to default and then save, use this for continue
+	pass
+
+
 func Save_Game():
 	var file = FileAccess.open(save_path, FileAccess.WRITE)
 
@@ -117,6 +127,8 @@ func Save_Game():
 	file.store_var(EN)
 	file.store_var(MAX_EN)
 	file.store_var(coin)
+	file.store_var(Weapon)
+	file.store_var(Weapon_Type)
 	
 	# Attributes
 	file.store_var(STR)
@@ -149,6 +161,9 @@ func Save_Game():
 	file.store_var(FIRE_DMG)
 	file.store_var(DIVINE_DMG)
 	file.store_var(TOTAL_DMG)
+	
+	#Weapon Damage Values
+	file.store_var(SWORD_DMG)
 
 	# Defense Values
 	file.store_var(PHYSICAL_DEF)
@@ -312,6 +327,7 @@ func Save_Game():
 	file.store_var(DungeonData.lowest_level_slime_91_100)
 	
 	#Inventory Items
+	#Monster Loot
 	file.store_var(Inventory.Green_Slime)
 	file.store_var(Inventory.Acid_Slime)
 	file.store_var(Inventory.Poison_Slime)
@@ -320,9 +336,13 @@ func Save_Game():
 	file.store_var(Inventory.Magic_Slime)
 	file.store_var(Inventory.Metallic_Slime)
 	
+	#Potions
 	file.store_var(Inventory.minor_health_potion)
 	file.store_var(Inventory.minor_mana_potion)
 	file.store_var(Inventory.Acid_potion)
+	
+	#Weapons
+	file.store_var(Inventory.Wooden_Sword)
 	
 	file.close()
 
@@ -335,6 +355,8 @@ func New_Game():
 	EN = 10
 	MAX_EN = 10
 	coin = 0
+	Weapon = "None"
+	Weapon_Type = "None"
 
 	# Reset Attributes
 	STR = 1
@@ -367,6 +389,9 @@ func New_Game():
 	FIRE_DMG = 0
 	DIVINE_DMG = 0
 	TOTAL_DMG = 0
+	
+	#Reset weapon damage values
+	SWORD_DMG = 0
 
 	# Reset Defense Values
 	PHYSICAL_DEF = 0
@@ -519,6 +544,7 @@ func New_Game():
 	Skill.Magic_Seeker_NXT_XP = calculate_xp_needed(Skill.Magic_Seeker_LVL)
 	
 	#Inventory Items
+	#Monster Loot
 	Inventory.Green_Slime = 0
 	Inventory.Acid_Slime = 0
 	Inventory.Poison_Slime = 0
@@ -527,10 +553,13 @@ func New_Game():
 	Inventory.Magic_Slime = 0
 	Inventory.Metallic_Slime = 0
 	
+	#Potions
 	Inventory.minor_health_potion = 0
 	Inventory.minor_mana_potion = 0
 	Inventory.Acid_potion = 0
-
+	
+	#Weapons
+	Inventory.Wooden_Sword = 0
 	
 	#Dungeon Datas
 	DungeonData.lowest_level_slime_1_10 = true
@@ -548,223 +577,236 @@ func load_data():
 	if FileAccess.file_exists(save_path):
 		var file = FileAccess.open(save_path, FileAccess.READ)
 				# Player Stats
-		HP = file.get_var(HP)
-		MAX_HP = file.get_var(MAX_HP)
-		MP = file.get_var(MP)
-		MAX_MP = file.get_var(MAX_MP)
-		EN = file.get_var(EN)
-		MAX_EN = file.get_var(MAX_EN)
-		coin = file.get_var(coin)
+		HP = file.get_var()
+		MAX_HP = file.get_var()
+		MP = file.get_var()
+		MAX_MP = file.get_var()
+		EN = file.get_var()
+		MAX_EN = file.get_var()
+		coin = file.get_var()
+		Weapon = file.get_var()
+		Weapon_Type = file.get_var()
 
 		# Attributes
-		STR = file.get_var(STR)
-		DEX = file.get_var(DEX)
-		AGI = file.get_var(AGI)
-		VIT = file.get_var(VIT)
-		END = file.get_var(END)
-		INT = file.get_var(INT)
-		WIS = file.get_var(WIS)
-		CHA = file.get_var(CHA)
-		LUK = file.get_var(LUK)
-		CTRL = file.get_var(CTRL)
+		STR = file.get_var()
+		DEX = file.get_var()
+		AGI = file.get_var()
+		VIT = file.get_var()
+		END = file.get_var()
+		INT = file.get_var()
+		WIS = file.get_var()
+		CHA = file.get_var()
+		LUK = file.get_var()
+		CTRL = file.get_var()
 
 		# Accuracy
-		ACCURACY = file.get_var(ACCURACY)
+		ACCURACY = file.get_var()
 
 		# Damage Values
-		PHYSICAL_DMG = file.get_var(PHYSICAL_DMG)
-		SHARP_DMG = file.get_var(SHARP_DMG)
-		ACID_DMG = file.get_var(ACID_DMG)
-		MAGIC_DMG = file.get_var(MAGIC_DMG)
-		WATER_DMG = file.get_var(WATER_DMG)
-		EARTH_DMG = file.get_var(EARTH_DMG)
-		AIR_DMG = file.get_var(AIR_DMG)
-		DARK_DMG = file.get_var(DARK_DMG)
-		LIGHT_DMG = file.get_var(LIGHT_DMG)
-		POISON_DMG = file.get_var(POISON_DMG)
-		ELECTRIC_DMG = file.get_var(ELECTRIC_DMG)
-		MIND_DMG = file.get_var(MIND_DMG)
-		FIRE_DMG = file.get_var(FIRE_DMG)
-		DIVINE_DMG = file.get_var(DIVINE_DMG)
-		TOTAL_DMG = file.get_var(TOTAL_DMG)
+		PHYSICAL_DMG = file.get_var()
+		SHARP_DMG = file.get_var()
+		ACID_DMG = file.get_var()
+		MAGIC_DMG = file.get_var()
+		WATER_DMG = file.get_var()
+		EARTH_DMG = file.get_var()
+		AIR_DMG = file.get_var()
+		DARK_DMG = file.get_var()
+		LIGHT_DMG = file.get_var()
+		POISON_DMG = file.get_var()
+		ELECTRIC_DMG = file.get_var()
+		MIND_DMG = file.get_var()
+		FIRE_DMG = file.get_var()
+		DIVINE_DMG = file.get_var()
+		TOTAL_DMG = file.get_var()
+
+		# Weapon damage values
+		SWORD_DMG = file.get_var()
+
 
 		# Defense Values
-		PHYSICAL_DEF = file.get_var(PHYSICAL_DEF)
-		WATER_DEF = file.get_var(WATER_DEF)
-		TOTAL_DEF = file.get_var(TOTAL_DEF)
-		
+		PHYSICAL_DEF = file.get_var()
+		WATER_DEF = file.get_var()
+		TOTAL_DEF = file.get_var()
 
 		# Level & XP
-		LVL = file.get_var(LVL)
-		XP = file.get_var(XP)
-		XP_NXT = file.get_var(XP_NXT)
-		Allocation_points = file.get_var(Allocation_points)
+		LVL = file.get_var()
+		XP = file.get_var()
+		XP_NXT = file.get_var()
+		Allocation_points = file.get_var()
 
 		# Time & Day
-		Global.Time_of_day = file.get_var(Global.Time_of_day)
-		Global.Day = file.get_var(Global.Day)
+		Global.Time_of_day = file.get_var()
+		Global.Day = file.get_var()
+
+		# Quests
+		Global.claire_quest = file.get_var()
+		Global.claire_sub_quest = file.get_var()
+		Global.lydia_quest = file.get_var()
+		Global.lydia_sub_quest = file.get_var()
+		Global.veronica_quest = file.get_var()
+		Global.veronica_sub_quest = file.get_var()
+
 		
-		#Quests
-		Global.claire_quest = file.get_var(Global.claire_quest)
-		Global.claire_sub_quest = file.get_var(Global.claire_sub_quest)
-		Global.lydia_quest = file.get_var(Global.lydia_quest)
-		Global.lydia_sub_quest = file.get_var(Global.lydia_sub_quest)
-		Global.veronica_quest = file.get_var(Global.veronica_quest)
-		Global.veronica_sub_quest = file.get_var(Global.veronica_sub_quest)
-		
-		#NPC
-		Global.claire = file.get_var(Global.claire)
-		Global.lydia = file.get_var(Global.lydia)
-		Global.veronica = file.get_var(Global.veronica)
+		# NPC
+		Global.claire = file.get_var()
+		Global.lydia = file.get_var()
+		Global.veronica = file.get_var()
 
 		# Skills
+
 		# Rest
-		Skill.Rest_Unlocked = file.get_var(Skill.Rest_Unlocked)
-		Skill.Rest_LVL = file.get_var(Skill.Rest_LVL)
-		Skill.Rest_XP = file.get_var(Skill.Rest_XP)
-		Skill.Rest_NXT_XP = file.get_var(Skill.Rest_NXT_XP)
+		Skill.Rest_Unlocked = file.get_var()
+		Skill.Rest_LVL = file.get_var()
+		Skill.Rest_XP = file.get_var()
+		Skill.Rest_NXT_XP = file.get_var()
 
 		# PushUp
-		Skill.PushUp_Unlocked = file.get_var(Skill.PushUp_Unlocked)
-		Skill.PushUp_LVL = file.get_var(Skill.PushUp_LVL)
-		Skill.PushUp_XP = file.get_var(Skill.PushUp_XP)
-		Skill.PushUp_NXT_XP = file.get_var(Skill.PushUp_NXT_XP)
+		Skill.PushUp_Unlocked = file.get_var()
+		Skill.PushUp_LVL = file.get_var()
+		Skill.PushUp_XP = file.get_var()
+		Skill.PushUp_NXT_XP = file.get_var()
 
 		# Run
-		Skill.Run_Unlocked = file.get_var(Skill.Run_Unlocked)
-		Skill.Run_LVL = file.get_var(Skill.Run_LVL)
-		Skill.Run_XP = file.get_var(Skill.Run_XP)
-		Skill.Run_NXT_XP = file.get_var(Skill.Run_NXT_XP)
+		Skill.Run_Unlocked = file.get_var()
+		Skill.Run_LVL = file.get_var()
+		Skill.Run_XP = file.get_var()
+		Skill.Run_NXT_XP = file.get_var()
+
 
 		# Study
-		Skill.Study_Unlocked = file.get_var(Skill.Study_Unlocked)
-		Skill.Study_LVL = file.get_var(Skill.Study_LVL)
-		Skill.Study_XP = file.get_var(Skill.Study_XP)
-		Skill.Study_NXT_XP = file.get_var(Skill.Study_NXT_XP)
-		
+		Skill.Study_Unlocked = file.get_var()
+		Skill.Study_LVL = file.get_var()
+		Skill.Study_XP = file.get_var()
+		Skill.Study_NXT_XP = file.get_var()
+
 		# Speech
-		Skill.Speech_Unlocked = file.get_var(Skill.Speech_Unlocked)
-		Skill.Speech_LVL = file.get_var(Skill.Speech_LVL)
-		Skill.Speech_XP = file.get_var(Skill.Speech_XP)
-		Skill.Speech_NXT_XP = file.get_var(Skill.Speech_NXT_XP)
+		Skill.Speech_Unlocked = file.get_var()
+		Skill.Speech_LVL = file.get_var()
+		Skill.Speech_XP = file.get_var()
+		Skill.Speech_NXT_XP = file.get_var()
 
 		# Punch
-		Skill.Punch_Unlocked = file.get_var(Skill.Punch_Unlocked)
-		Skill.Punch_LVL = file.get_var(Skill.Punch_LVL)
-		Skill.Punch_XP = file.get_var(Skill.Punch_XP)
-		Skill.Punch_NXT_XP = file.get_var(Skill.Punch_NXT_XP)
-		
-		# Strong Punch
-		Skill.Strong_Punch_Unlocked = file.get_var(Skill.Strong_Punch_Unlocked)
-		Skill.Strong_Punch_LVL = file.get_var(Skill.Strong_Punch_LVL)
-		Skill.Strong_Punch_XP = file.get_var(Skill.Strong_Punch_XP)
-		Skill.Strong_Punch_NXT_XP = file.get_var(Skill.Strong_Punch_NXT_XP)
+		Skill.Punch_Unlocked = file.get_var()
+		Skill.Punch_LVL = file.get_var()
+		Skill.Punch_XP = file.get_var()
+		Skill.Punch_NXT_XP = file.get_var()
 
+		# Strong Punch
+		Skill.Strong_Punch_Unlocked = file.get_var()
+		Skill.Strong_Punch_LVL = file.get_var()
+		Skill.Strong_Punch_XP = file.get_var()
+		Skill.Strong_Punch_NXT_XP = file.get_var()
 
 		# Squat
-		Skill.Squat_Unlocked = file.get_var(Skill.Squat_Unlocked)
-		Skill.Squat_LVL = file.get_var(Skill.Squat_LVL)
-		Skill.Squat_XP = file.get_var(Skill.Squat_XP)
-		Skill.Squat_NXT_XP = file.get_var(Skill.Squat_NXT_XP)
-		
-		#Physical Endurance
-		Skill.Physical_Endurance_Unlocked = file.get_var(Skill.Physical_Endurance_Unlocked)
-		Skill.Physical_Endurance_LVL = file.get_var(Skill.Physical_Endurance_LVL)
-		Skill.Physical_Endurance_XP = file.get_var(Skill.Physical_Endurance_XP)
-		Skill.Physical_Endurance_NXT_XP = file.get_var(Skill.Physical_Endurance_NXT_XP)
-		
-		#Kick
-		Skill.Kick_Unlocked = file.get_var(Skill.Kick_Unlocked)
-		Skill.Kick_LVL = file.get_var(Skill.Kick_LVL)
-		Skill.Kick_XP = file.get_var(Skill.Kick_XP)
-		Skill.Kick_NXT_XP = file.get_var(Skill.Kick_NXT_XP)
-		
-		#Magic Blast
-		Skill.Magic_Blast_Unlocked = file.get_var(Skill.Magic_Blast_Unlocked)
-		Skill.Magic_Blast_LVL = file.get_var(Skill.Magic_Blast_LVL)
-		Skill.Magic_Blast_XP = file.get_var(Skill.Magic_Blast_XP)
-		Skill.Magic_Blast_NXT_XP = file.get_var(Skill.Magic_Blast_NXT_XP)
-		
-		#Minor Regen
-		Skill.Minor_Regen_Unlocked = file.get_var(Skill.Minor_Regen_Unlocked)
-		Skill.Minor_Regen_LVL = file.get_var(Skill.Minor_Regen_LVL)
-		Skill.Minor_Regen_XP = file.get_var(Skill.Minor_Regen_XP)
-		Skill.Minor_Regen_NXT_XP = file.get_var(Skill.Minor_Regen_NXT_XP)
+		Skill.Squat_Unlocked = file.get_var()
+		Skill.Squat_LVL = file.get_var()
+		Skill.Squat_XP = file.get_var()
+		Skill.Squat_NXT_XP = file.get_var()
+
+		# Physical Endurance
+		Skill.Physical_Endurance_Unlocked = file.get_var()
+		Skill.Physical_Endurance_LVL = file.get_var()
+		Skill.Physical_Endurance_XP = file.get_var()
+		Skill.Physical_Endurance_NXT_XP = file.get_var()
+
+		# Kick
+		Skill.Kick_Unlocked = file.get_var()
+		Skill.Kick_LVL = file.get_var()
+		Skill.Kick_XP = file.get_var()
+		Skill.Kick_NXT_XP = file.get_var()
+
+		# Magic Blast
+		Skill.Magic_Blast_Unlocked = file.get_var()
+		Skill.Magic_Blast_LVL = file.get_var()
+		Skill.Magic_Blast_XP = file.get_var()
+		Skill.Magic_Blast_NXT_XP = file.get_var()
+
+		# Minor Regen
+		Skill.Minor_Regen_Unlocked = file.get_var()
+		Skill.Minor_Regen_LVL = file.get_var()
+		Skill.Minor_Regen_XP = file.get_var()
+		Skill.Minor_Regen_NXT_XP = file.get_var()
+
 		
 		# Lowly Mana Regen
-		Skill.Lowly_Mana_Regen_Unlocked = file.get_var(Skill.Lowly_Mana_Regen_Unlocked)
-		Skill.Lowly_Mana_Regen_LVL = file.get_var(Skill.Lowly_Mana_Regen_LVL)
-		Skill.Lowly_Mana_Regen_XP = file.get_var(Skill.Lowly_Mana_Regen_XP)
-		Skill.Lowly_Mana_Regen_NXT_XP = file.get_var(Skill.Lowly_Mana_Regen_NXT_XP)
-		
-		#Meditate
-		Skill.Meditate_Unlocked = file.get_var(Skill.Meditate_Unlocked)
-		Skill.Meditate_LVL = file.get_var(Skill.Meditate_LVL)
-		Skill.Meditate_XP = file.get_var(Skill.Meditate_XP)
-		Skill.Meditate_NXT_XP = file.get_var(Skill.Meditate_NXT_XP)
-		
-		#Shower
-		Skill.Shower_Unlocked = file.get_var(Skill.Shower_Unlocked)
-		Skill.Shower_LVL = file.get_var(Skill.Shower_LVL)
-		Skill.Shower_XP = file.get_var(Skill.Shower_XP)
-		Skill.Shower_NXT_XP = file.get_var(Skill.Shower_NXT_XP)
-		
-		#Magic Seeker
-		Skill.Magic_Seeker_Unlocked = file.get_var(Skill.Magic_Seeker_Unlocked)
-		Skill.Magic_Seeker_LVL = file.get_var(Skill.Magic_Seeker_LVL)
-		Skill.Magic_Seeker_XP = file.get_var(Skill.Magic_Seeker_XP)
-		Skill.Magic_Seeker_NXT_XP = file.get_var(Skill.Magic_Seeker_NXT_XP)
+		Skill.Lowly_Mana_Regen_Unlocked = file.get_var()
+		Skill.Lowly_Mana_Regen_LVL = file.get_var()
+		Skill.Lowly_Mana_Regen_XP = file.get_var()
+		Skill.Lowly_Mana_Regen_NXT_XP = file.get_var()
+
+		# Meditate
+		Skill.Meditate_Unlocked = file.get_var()
+		Skill.Meditate_LVL = file.get_var()
+		Skill.Meditate_XP = file.get_var()
+		Skill.Meditate_NXT_XP = file.get_var()
+
+		# Shower
+		Skill.Shower_Unlocked = file.get_var()
+		Skill.Shower_LVL = file.get_var()
+		Skill.Shower_XP = file.get_var()
+		Skill.Shower_NXT_XP = file.get_var()
+
+		# Magic Seeker
+		Skill.Magic_Seeker_Unlocked = file.get_var()
+		Skill.Magic_Seeker_LVL = file.get_var()
+		Skill.Magic_Seeker_XP = file.get_var()
+		Skill.Magic_Seeker_NXT_XP = file.get_var()
+
 		
 		# Potion Proficiency
-		Skill.Potion_Proficiency_Unlocked = file.get_var(Skill.Potion_Proficiency_Unlocked)
-		Skill.Potion_Proficiency_LVL = file.get_var(Skill.Potion_Proficiency_LVL)
-		Skill.Potion_Proficiency_XP = file.get_var(Skill.Potion_Proficiency_XP)
-		Skill.Potion_Proficiency_NXT_XP = file.get_var(Skill.Potion_Proficiency_NXT_XP)
+		Skill.Potion_Proficiency_Unlocked = file.get_var()
+		Skill.Potion_Proficiency_LVL = file.get_var()
+		Skill.Potion_Proficiency_XP = file.get_var()
+		Skill.Potion_Proficiency_NXT_XP = file.get_var()
 
 		# Health Potion
-		Skill.Health_Potion_Unlocked = file.get_var(Skill.Health_Potion_Unlocked)
-		Skill.Health_Potion_LVL = file.get_var(Skill.Health_Potion_LVL)
-		Skill.Health_Potion_XP = file.get_var(Skill.Health_Potion_XP)
-		Skill.Health_Potion_NXT_XP = file.get_var(Skill.Health_Potion_NXT_XP)
-		
+		Skill.Health_Potion_Unlocked = file.get_var()
+		Skill.Health_Potion_LVL = file.get_var()
+		Skill.Health_Potion_XP = file.get_var()
+		Skill.Health_Potion_NXT_XP = file.get_var()
+
 		# Mana Potion
-		Skill.Mana_Potion_Unlocked = file.get_var(Skill.Mana_Potion_Unlocked)
-		Skill.Mana_Potion_LVL = file.get_var(Skill.Mana_Potion_LVL)
-		Skill.Mana_Potion_XP = file.get_var(Skill.Mana_Potion_XP)
-		Skill.Mana_Potion_NXT_XP = file.get_var(Skill.Mana_Potion_NXT_XP)
-		
+		Skill.Mana_Potion_Unlocked = file.get_var()
+		Skill.Mana_Potion_LVL = file.get_var()
+		Skill.Mana_Potion_XP = file.get_var()
+		Skill.Mana_Potion_NXT_XP = file.get_var()
+
 		# Acid Potion
-		Skill.Acid_Potion_Unlocked = file.get_var(Skill.Acid_Potion_Unlocked)
-		Skill.Acid_Potion_LVL = file.get_var(Skill.Acid_Potion_LVL)
-		Skill.Acid_Potion_XP = file.get_var(Skill.Acid_Potion_XP)
-		Skill.Acid_Potion_NXT_XP = file.get_var(Skill.Acid_Potion_NXT_XP)
-		
-		#DungeonData
-		DungeonData.lowest_level_slime_1_10 = file.get_var(DungeonData.lowest_level_slime_1_10)
-		DungeonData.lowest_level_slime_11_20 = file.get_var(DungeonData.lowest_level_slime_11_20)
-		DungeonData.lowest_level_slime_21_30 = file.get_var(DungeonData.lowest_level_slime_21_30)
-		DungeonData.lowest_level_slime_31_40 = file.get_var(DungeonData.lowest_level_slime_31_40)
-		DungeonData.lowest_level_slime_41_50 = file.get_var(DungeonData.lowest_level_slime_41_50)
-		DungeonData.lowest_level_slime_51_60 = file.get_var(DungeonData.lowest_level_slime_51_60)
-		DungeonData.lowest_level_slime_61_70 = file.get_var(DungeonData.lowest_level_slime_61_70)
-		DungeonData.lowest_level_slime_71_80 = file.get_var(DungeonData.lowest_level_slime_71_80)
-		DungeonData.lowest_level_slime_81_90 = file.get_var(DungeonData.lowest_level_slime_81_90)
-		DungeonData.lowest_level_slime_91_100 = file.get_var(DungeonData.lowest_level_slime_91_100)
+		Skill.Acid_Potion_Unlocked = file.get_var()
+		Skill.Acid_Potion_LVL = file.get_var()
+		Skill.Acid_Potion_XP = file.get_var()
+		Skill.Acid_Potion_NXT_XP = file.get_var()
 
 		
-		#Inventory Items
-		Inventory.Green_Slime = file.get_var(Inventory.Green_Slime)
-		Inventory.Acid_Slime = file.get_var(Inventory.Acid_Slime)
-		Inventory.Poison_Slime = file.get_var(Inventory.Poison_Slime)
-		Inventory.Lava_Slime = file.get_var(Inventory.Lava_Slime)
-		Inventory.Aqua_Slime = file.get_var(Inventory.Aqua_Slime)
-		Inventory.Magic_Slime = file.get_var(Inventory.Magic_Slime)
-		Inventory.Metallic_Slime = file.get_var(Inventory.Metallic_Slime)
-		
-		Inventory.minor_health_potion = file.get_var(Inventory.minor_health_potion)
-		Inventory.minor_mana_potion = file.get_var(Inventory.minor_mana_potion)
-		Inventory.Acid_potion = file.get_var(Inventory.Acid_potion)
-		
+		# DungeonData
+		DungeonData.lowest_level_slime_1_10 = file.get_var()
+		DungeonData.lowest_level_slime_11_20 = file.get_var()
+		DungeonData.lowest_level_slime_21_30 = file.get_var()
+		DungeonData.lowest_level_slime_31_40 = file.get_var()
+		DungeonData.lowest_level_slime_41_50 = file.get_var()
+		DungeonData.lowest_level_slime_51_60 = file.get_var()
+		DungeonData.lowest_level_slime_61_70 = file.get_var()
+		DungeonData.lowest_level_slime_71_80 = file.get_var()
+		DungeonData.lowest_level_slime_81_90 = file.get_var()
+		DungeonData.lowest_level_slime_91_100 = file.get_var()
+
+		# Inventory Items
+		# Monster Loot
+		Inventory.Green_Slime = file.get_var()
+		Inventory.Acid_Slime = file.get_var()
+		Inventory.Poison_Slime = file.get_var()
+		Inventory.Lava_Slime = file.get_var()
+		Inventory.Aqua_Slime = file.get_var()
+		Inventory.Magic_Slime = file.get_var()
+		Inventory.Metallic_Slime = file.get_var()
+
+		# Potions
+		Inventory.minor_health_potion = file.get_var()
+		Inventory.minor_mana_potion = file.get_var()
+		Inventory.Acid_potion = file.get_var()
+
+		# Weapons
+		Inventory.Wooden_Sword = file.get_var()
 		file.close()
 		
 	else:

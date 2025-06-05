@@ -64,7 +64,7 @@ func story_progress():
 		dialogue_text = "Player: Actually, [color=hotpink]Claire[/color] send me. Said you'd have something for her."
 		Lydia_Face.texture = Normal
 	elif dialogue == 5:
-		dialogue_text = "Lydia: Claire, huh? So you're the latest chosen one."
+		dialogue_text = "Lydia: [color=hotpink]Claire[/color], huh? So you're the latest chosen one."
 		Lydia_Face.texture = Speaking
 	elif dialogue == 6:
 		dialogue_text = "Player: You mean the warrior anointed by [color=lightblue]Eternos[/color]?"

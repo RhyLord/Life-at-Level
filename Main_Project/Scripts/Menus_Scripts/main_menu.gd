@@ -15,7 +15,7 @@ func _on_play_button_button_up():
 
 func _on_test_button_button_up():
 	GlobalButtonClick.button_click()
-	get_tree().change_scene_to_file(Test_Scene)
+	Player.Test_Game()
 
 
 func _on_settings_button_button_up():

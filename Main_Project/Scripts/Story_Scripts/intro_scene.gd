@@ -139,7 +139,7 @@ func story_progress():
 		dialogue_text = "Player: So ... like washing dishes?"
 		face_value = unamused
 	elif dialogue == 25:
-		dialogue_text = "Summoner: Moving on. Every time you level up, you’ll receive stat allocation points. Use them wisely."
+		dialogue_text = "Summoner: Moving on. Every time you level up, you’ll receive [color=blue]stat allocation points[/color]. Use them wisely."
 		face_value = normal
 	elif dialogue == 26:
 		dialogue_text = "Player: This really is like a game..."
@@ -171,16 +171,16 @@ func story_progress():
 		dialogue_text = "Claire: For now, focus on getting stronger. The two people who came before you both failed the first stage."
 		Claire_Face.texture = Sad
 	elif dialogue == 33:
-		dialogue_text = "Claire: The first was a girl who wasted time. She died on day [color=red]164[/color] after Eternos sent someone to hunt her down."
+		dialogue_text = "Claire: The first was a girl who wasted time. She died on day [color=red]164[/color] after [color=lightblue]Eternos[/color] sent someone to hunt her down."
 		Claire_Face.texture = Worrying
 	elif dialogue == 34:
-		dialogue_text = "Claire: The second was a man who rushed things. He learned fire magic by day [color=red]9[/color], ran straight to Eternos, and got himself killed in the challenge."
+		dialogue_text = "Claire: The second was a man who rushed things. He learned fire magic by day [color=red]9[/color], ran straight to [color=lightblue]Eternos[/color], and got himself killed in the challenge."
 		Claire_Face.texture = Angry
 	elif dialogue == 35:
 		dialogue_text = "Player: So, I can’t slack off… or be reckless."
 		Claire_Face.texture = Questioning
 	elif dialogue == 36:
-		dialogue_text = "Claire: Exactly. You can attempt Eternos' challenge anytime at the Temple of Time."
+		dialogue_text = "Claire: Exactly. You can attempt [color=lightblue]Eternos[/color] challenge anytime at the Temple of Time."
 		Claire_Face.texture = Eyebrowing
 	elif dialogue == 37:
 		dialogue_text = "Claire: But don’t wait past day [color=red]100[/color]. He might make your opponent stronger… and if you wait too long, he’ll send someone to eliminate you."
@@ -195,7 +195,7 @@ func story_progress():
 		dialogue_text = "Claire: He says it’s to fight his battles, but that’s all I’ve ever been told."
 		Claire_Face.texture = Sad
 	elif dialogue == 41:
-		dialogue_text = "Claire: The Temple of Time is where his devotees worship him. In this world, Eternos is treated like a god — and each world is allowed only one chosen warrior at a time."
+		dialogue_text = "Claire: The [color=lime]Temple of Time[/color] is where his devotees worship him. In this world, [color=lightblue]Eternos[/color] is treated like a god — and each world is allowed only one chosen warrior at a time."
 		Claire_Face.texture = Eyebrowing
 	elif dialogue == 42:
 		dialogue_text = "Player: So, I’m the chosen warrior here?"
@@ -231,7 +231,7 @@ func story_progress():
 		dialogue_text = "Claire: For example, if you keep doing push-ups, that action becomes a registered skill. The more you train it, the stronger it gets… and so do you."
 		Claire_Face.texture = very_happy
 	elif dialogue == 53:
-		dialogue_text = "Claire: You’ll also level up as a whole. Every time you do, you’ll receive 10 stat allocation points. You can use those to improve your attributes."
+		dialogue_text = "Claire: You’ll also level up as a whole. Every time you do, you’ll receive [color=blue]10 stat allocation points[/color]. You can use those to improve your attributes."
 		Claire_Face.texture = Open_Mouth_Happy
 	elif dialogue == 54:
 		dialogue_text = "Player: So, I can choose how I grow?"
@@ -243,7 +243,7 @@ func story_progress():
 		dialogue_text = "Player: Now tell me about this house."
 		Claire_Face.texture = Questioning
 	elif dialogue == 57:
-		dialogue_text = "Claire: Well, I’m the owner. Right now, it’s a bit… minimal. I haven’t had the time — or money — to build or furnish any new rooms. But if you help me gather the funds, we can expand and upgrade the place together."
+		dialogue_text = "Claire: Well, I’m the owner. Right now, it’s a bit… minimal. I haven’t had the time — or [color=gold]money[/color] — to build or furnish any new rooms. But if you help me gather the funds, we can expand and upgrade the place together."
 		Claire_Face.texture = Uninterested
 	elif dialogue == 58:
 		dialogue_text = "Player: What rooms are available right now?"
@@ -255,10 +255,10 @@ func story_progress():
 		dialogue_text = "Player: No kitchen?"
 		Claire_Face.texture = Eyebrowing
 	elif dialogue == 61:
-		dialogue_text = "Claire: Not yet. If you bring in enough money, we can build one. I usually eat at work anyway — I work at the local tavern."
+		dialogue_text = "Claire: Not yet. If you bring in enough [color=gold]money[/color], we can build one. I usually eat at work anyway — I work at the [color=hotpink]local tavern[/color]."
 		Claire_Face.texture = Open_Mouth_Happy
 	elif dialogue == 62:
-		dialogue_text = "Claire: You could work there too, but with your current stats? Yeah… you’re not exactly worth hiring just yet. I’d suggest raising your stats first."
+		dialogue_text = "Claire: You could work there too, but with your current [color=blue]stats[/color]? Yeah… you’re not exactly worth hiring just yet. I’d suggest raising your [color=blue]stats[/color] first."
 		Claire_Face.texture = Pissed
 	elif dialogue == 63:
 		dialogue_text = "Player: Any suggestions for me?"
@@ -270,7 +270,7 @@ func story_progress():
 		dialogue_text = "Claire: Create a few [color=lightgreen]slime dungeons[/color] and grind there to level up your stats. You’ll need the strength."
 		Claire_Face.texture = Happy
 	elif dialogue == 66:
-		dialogue_text = "Claire: You can also look for small jobs around town — Rabonia. It’s part of the Kingdom of Coxanne."
+		dialogue_text = "Claire: You can also look for small jobs around town — [color=crimson]Rabonia[/color]. It’s part of the [color=yellow]Kingdom of Coxanne[/color]."
 		Claire_Face.texture = very_happy
 	elif dialogue == 67:
 		dialogue_text = "Claire: Just… don’t stir up trouble. The guards here aren’t exactly known for their patience."

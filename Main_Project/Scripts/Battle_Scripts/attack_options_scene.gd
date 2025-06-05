@@ -88,3 +88,7 @@ func _on_strong_punch_pressed():
 		BattleMech.Player_Skill_Effect = "basic_hit"
 		BattleMech.turn_order = 1
 		queue_free()
+
+func _on_go_back_button_button_up():
+	GlobalButtonClick.button_click()
+	queue_free()

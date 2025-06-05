@@ -7,25 +7,17 @@ extends Control
 # All skill data (icon + scene paths)
 var all_skills = {
 	
-	"Acid_Potion": {
-		"icon": preload("res://Assets/Skills_art/AcidPotion_Button.png"),
-		"scene": "res://Scenes/Skills/acidpotion_skill.tscn"
-	},
-	"Health_Potion": {
-		"icon": preload("res://Assets/Skills_art/Health_Potion_button.png"),
-		"scene": "res://Scenes/Skills/health_potion_skill.tscn"
+	"Punch": {
+		"icon": preload("res://Assets/Skills_art/Punch_button.png"),
+		"scene": "res://Scenes/Skills/punch_skill.tscn"
 	},
 	"Kick": {
 		"icon": preload("res://Assets/Skills_art/Kick_button.png"),
 		"scene": "res://Scenes/Skills/kick_skill.tscn"
 	},
-	"Run": {
-		"icon": preload("res://Assets/Skills_art/Run_button.png"),
-		"scene": "res://Scenes/Skills/run_skill.tscn"
-	},
-	"Lowly_Mana_Regen": {
-		"icon": preload("res://Assets/Skills_art/Lowly_Mana_Regen_button.png"),
-		"scene": "res://Scenes/Skills/lowly_mana_regen_skill.tscn"
+	"Strong_Punch": {
+		"icon": preload("res://Assets/Skills_art/Strong_Punch_Button.png"),
+		"scene": "res://Scenes/Skills/strong_punch_skill.tscn"
 	},
 	"Magic_Blast": {
 		"icon": preload("res://Assets/Skills_art/Magic_Blast_button.png"),
@@ -35,41 +27,53 @@ var all_skills = {
 		"icon": preload("res://Assets/Skills_art/Magic_Seeker_button.png"),
 		"scene": "res://Scenes/Skills/magic_seeker_scene.tscn"
 	},
-	"Mana_Potion": {
-		"icon": preload("res://Assets/Skills_art/Mana_Potion_button.png"),
-		"scene": "res://Scenes/Skills/mana_potion_skill.tscn"
-	},
-	"Meditate": {
-		"icon": preload("res://Assets/Skills_art/Meditate_button.png"),
-		"scene": "res://Scenes/Skills/meditate_skill.tscn"
+	"Lowly_Mana_Regen": {
+		"icon": preload("res://Assets/Skills_art/Lowly_Mana_Regen_button.png"),
+		"scene": "res://Scenes/Skills/lowly_mana_regen_skill.tscn"
 	},
 	"Minor_Regen": {
 		"icon": preload("res://Assets/Skills_art/Minor_Regen_button.png"),
 		"scene": "res://Scenes/Skills/minor_regen_skill.tscn"
 	},
-	"Physical_Endurance": {
-		"icon": preload("res://Assets/Skills_art/Physical_Endurance_button.png"),
-		"scene": "res://Scenes/Skills/physical_endurance_skill.tscn"
-	},
 	"Potion_Proficiency": {
 		"icon": preload("res://Assets/Skills_art/Potion_Proficiency_button.png"),
 		"scene": "res://Scenes/Skills/potion_proficiency_skill.tscn"
 	},
-	"Punch": {
-		"icon": preload("res://Assets/Skills_art/Punch_button.png"),
-		"scene": "res://Scenes/Skills/punch_skill.tscn"
+	"Acid_Potion": {
+		"icon": preload("res://Assets/Skills_art/AcidPotion_Button.png"),
+		"scene": "res://Scenes/Skills/acidpotion_skill.tscn"
 	},
-	"PushUp": {
-		"icon": preload("res://Assets/Skills_art/Pushup_button.png"),
-		"scene": "res://Scenes/Skills/pushup_skill.tscn"
+	"Health_Potion": {
+		"icon": preload("res://Assets/Skills_art/Health_Potion_button.png"),
+		"scene": "res://Scenes/Skills/health_potion_skill.tscn"
+	},
+	"Mana_Potion": {
+		"icon": preload("res://Assets/Skills_art/Mana_Potion_button.png"),
+		"scene": "res://Scenes/Skills/mana_potion_skill.tscn"
+	},
+	"Physical_Endurance": {
+		"icon": preload("res://Assets/Skills_art/Physical_Endurance_button.png"),
+		"scene": "res://Scenes/Skills/physical_endurance_skill.tscn"
 	},
 	"Rest": {
 		"icon": preload("res://Assets/Skills_art/Rest_Button.png"),
 		"scene": "res://Scenes/Skills/rest_skill.tscn"
 	},
+	"PushUp": {
+		"icon": preload("res://Assets/Skills_art/Pushup_button.png"),
+		"scene": "res://Scenes/Skills/pushup_skill.tscn"
+	},
+	"Run": {
+		"icon": preload("res://Assets/Skills_art/Run_button.png"),
+		"scene": "res://Scenes/Skills/run_skill.tscn"
+	},
 	"Shower": {
 		"icon": preload("res://Assets/Skills_art/Shower_button.png"),
 		"scene": "res://Scenes/Skills/shower_skill.tscn"
+	},
+	"Meditate": {
+		"icon": preload("res://Assets/Skills_art/Meditate_button.png"),
+		"scene": "res://Scenes/Skills/meditate_skill.tscn"
 	},
 	"Speech": {
 		"icon": preload("res://Assets/Skills_art/Speech_Button.png"),
@@ -78,10 +82,6 @@ var all_skills = {
 	"Squat": {
 		"icon": preload("res://Assets/Skills_art/Squat_button.png"),
 		"scene": "res://Scenes/Skills/squat_skill.tscn"
-	},
-	"Strong_Punch": {
-		"icon": preload("res://Assets/Skills_art/Strong_Punch_Button.png"),
-		"scene": "res://Scenes/Skills/strong_punch_skill.tscn"
 	},
 	"Study": {
 		"icon": preload("res://Assets/Skills_art/Study_button.png"),

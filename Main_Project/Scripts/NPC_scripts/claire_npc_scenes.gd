@@ -487,7 +487,7 @@ func story_progress():
 		Claire_Face.texture = Eyebrowing
 
 	elif dialogue == 252:
-		dialogue_text = "Claire: It’s just some potions. Nothing too special, really. I’m sure Lydia’s got a ton of them lying around."
+		dialogue_text = "Claire: It’s just some potions. Nothing too special, really. I’m sure [color=purple]Lydia’s[/color] got a ton of them lying around."
 		Claire_Face.texture = Happy
 
 	elif dialogue == 253:
@@ -503,7 +503,7 @@ func story_progress():
 		Claire_Face.texture = very_happy
 
 	elif dialogue == 256:
-		dialogue_text = "Claire: Appreciate it. Lydia’s shop is on the main street, you can’t miss it. Thanks for helping out."
+		dialogue_text = "Claire: Appreciate it. [color=purple]Lydia’s[/color] shop is on the main street, you can’t miss it. Thanks for helping out."
 		Claire_Face.texture = Happy
 		Global.claire_quest = 1
 	elif dialogue == 257:
@@ -546,13 +546,13 @@ func story_progress():
 		dialogue_text = "Player: Impressive."
 		Claire_Face.texture = very_happy
 	elif dialogue == 311:
-		dialogue_text = "Claire: I’ve even mastered a few rare spells from Eternos. They're not of this world."
+		dialogue_text = "Claire: I’ve even mastered a few rare spells from [color=lightblue]Eternos[/color]. They're not of this world."
 		Claire_Face.texture = Happy
 	elif dialogue == 312:
 		dialogue_text = "Player: Could I learn them too?"
 		Claire_Face.texture = Uninterested
 	elif dialogue == 313:
-		dialogue_text = "Claire: Only if Eternos deems you worthy."
+		dialogue_text = "Claire: Only if [color=lightblue]Eternos[/color] deems you worthy."
 		Claire_Face.texture = Questioning
 	elif dialogue == 314:
 		dialogue_text = "Player: I see..."

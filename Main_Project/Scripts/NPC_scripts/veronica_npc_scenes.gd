@@ -55,7 +55,10 @@ func check_story():
 	
 	if Global.veronica == 1:
 		if Global.claire_quest == 1 and Global.claire_sub_quest == 3:
-			dialogue = 20
+			if Inventory.Green_Slime < 10:
+				dialogue = 20
+			else:
+				dialogue = 90
 
 func _ready():
 	Set_Core_Stats()
@@ -306,6 +309,35 @@ func story_progress():
 	elif dialogue == 79:
 		Global.veronica = 1
 		get_tree().change_scene_to_file(Game_Scene)
+	
+	elif dialogue == 90:
+		Veronica_Face.global_position.x = 550
+		Veronica_Face.global_position.y = 380
+		Veronica_Music.play()
+		dialogue_text = "Veronica: Did you bring the [color=green]10 green slimeballs[/color]?"
+		Veronica_Face.texture = Normal
+	elif dialogue == 91:
+		dialogue_text = "Player: Yes."
+		Inventory.Green_Slime -= 10
+	elif dialogue == 92:
+		dialogue_text = "Veronica: Good job, and now for your reward."
+		Veronica_Face.texture = Smirk
+	elif dialogue == 93:
+		dialogue_text = "Player: Yes"
+		Veronica_Face.texture = Smirk
+	elif dialogue == 94:
+		dialogue_text = "Veronica: You can have this [color=brown]Wooden Sword[/color] as your starting Weapon."
+		Veronica_Face.texture = Smirk
+	elif dialogue == 95:
+		dialogue_text = "Player: Better than nothing i guess."
+		Inventory.Wooden_Sword += 1
+		Veronica_Face.texture = Smile
+	elif dialogue == 96:
+		Global.claire_sub_quest = 0
+		Global.claire_quest = 2
+		Global.veronica = 1
+		get_tree().change_scene_to_file(Game_Scene)
+	
 
 
 

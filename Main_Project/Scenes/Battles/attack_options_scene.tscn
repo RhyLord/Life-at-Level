@@ -23,18 +23,18 @@ color = Color(0, 0, 0, 0.470588)
 [node name="Go_Back_Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1067.0
-offset_top = 7.0
+offset_top = 8.0
 offset_right = 1139.0
-offset_bottom = 65.0
+offset_bottom = 71.0
 theme_override_font_sizes/font_size = 40
 text = "X"
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 84.0
-offset_right = 2230.0
-offset_bottom = 1114.0
+offset_top = 99.0
+offset_right = 2266.0
+offset_bottom = 1099.0
 scale = Vector2(0.5, 0.5)
 theme_override_constants/h_separation = 20
 columns = 6
