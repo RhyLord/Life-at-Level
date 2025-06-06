@@ -59,11 +59,13 @@ func _on_option_button_1_button_up():
 
 func _on_option_button_3_pressed():
 	GlobalButtonClick.button_click()
+	Skill.Meditate_Unlocked = true
 	var meditate_scene = Meditate_Scene.instantiate()
 	get_tree().current_scene.add_child(meditate_scene)
 
 func _on_option_button_4_pressed():
 	GlobalButtonClick.button_click()
+	Skill.Study_Unlocked = true
 	var study_scene = Study_Scene.instantiate()
 	get_tree().current_scene.add_child(study_scene)
 

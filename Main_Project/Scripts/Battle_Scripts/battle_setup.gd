@@ -2,9 +2,12 @@ extends Node2D
 
 @export var Lowest_Slime_1_1 = "res://Scenes/Battles/Slime_Dungeons/Lowest_Slime_Dungeons/lowest_slime_dungeon_1_1.tscn"
 
+@export var Lowest_Undead_1_1 = "res://Scenes/Battles/Undead_Dungeons/Lowest_Undead_Dungeons/lowest_undead_dungeon_1_1.tscn"
+
 var Bg_Texture = null
 
 var Plain_Texture = preload("res://Assets/Location_Art/Plains/SlimePlainsTexture.png")
+var Undead_Texture = preload("res://Assets/Location_Art/Plains/Undead_Dungeon_Bg.png")
 
 @onready var Player_Card = $Player_Card
 @onready var Player_Grid = $GridContainer
@@ -30,6 +33,8 @@ func _ready():
 func set_bg_texture():
 	if PreBattleData.bg_textures == "Plains":
 		Bg_Texture = Plain_Texture
+	elif PreBattleData.bg_textures == "Undead":
+		Bg_Texture = Undead_Texture
 	else:
 		Bg_Texture = null
 	
@@ -80,3 +85,5 @@ func _on_ready_button_button_up():
 	PreBattleData.Player_position_y = Player_Card.global_position.y
 	if DungeonData.lowest_level_slime > 0:
 		get_tree().change_scene_to_file(Lowest_Slime_1_1)
+	elif DungeonData.lowest_level_undead > 0:
+		get_tree().change_scene_to_file(Lowest_Undead_1_1)

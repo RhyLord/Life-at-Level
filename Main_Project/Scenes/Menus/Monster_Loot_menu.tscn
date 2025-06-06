@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://8yf0uk2x5ns2"]
+[gd_scene load_steps=12 format=3 uid="uid://8yf0uk2x5ns2"]
 
 [ext_resource type="Script" path="res://Scripts/Menus_Scripts/monster_loot_menu.gd" id="1_dkps7"]
 [ext_resource type="Texture2D" uid="uid://lvtxd4roawfo" path="res://Assets/Effects_art/panel_rect.png" id="2_7nmen"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://404kglpu24qu" path="res://Assets/Items_Art/AquaSlime_Item.png" id="7_d15mk"]
 [ext_resource type="Texture2D" uid="uid://ccdn6u76m80kd" path="res://Assets/Items_Art/MagicSlime_Item.png" id="8_poqeh"]
 [ext_resource type="Texture2D" uid="uid://85xm50k48gs8" path="res://Assets/Items_Art/MetallicSlime_Item.png" id="9_pfldn"]
+[ext_resource type="Texture2D" uid="uid://d35bjc5fuuqbw" path="res://Assets/Items_Art/Bone_Item.png" id="10_gj4mr"]
+[ext_resource type="Texture2D" uid="uid://bf55cl1lwvjan" path="res://Assets/Items_Art/Skull_Item.png" id="11_le1ma"]
 
 [node name="Monster_Loot_Menu" type="Control"]
 layout_mode = 3
@@ -134,7 +136,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Acidic Slime
-Sell value = 10"
+Sell value = 5"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel2"]
 layout_mode = 0
@@ -170,7 +172,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Poisonous Slime
-Sell value = 10"
+Sell value = 5"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel3"]
 layout_mode = 0
@@ -206,7 +208,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Lava Slime
-Sell value = 20"
+Sell value = 10"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel4"]
 layout_mode = 0
@@ -242,7 +244,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Aqua Slime
-Sell value = 10"
+Sell value = 5"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel5"]
 layout_mode = 0
@@ -278,7 +280,7 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Magic Slime
-Sell value = 50"
+Sell value = 15"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel6"]
 layout_mode = 0
@@ -314,9 +316,81 @@ theme_override_constants/outline_size = 5
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Metallic Slime
-Sell value = 50"
+Sell value = 15"
 
 [node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel7"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Panel8" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_7nmen")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel8"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("10_gj4mr")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel8"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Bone
+Sell value = 1"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel8"]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 95.0
+offset_right = 374.0
+offset_bottom = 141.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Owned[0]"
+
+[node name="Panel9" type="TextureRect" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_7nmen")
+
+[node name="Sprite2D" type="Sprite2D" parent="ScrollContainer/VBoxContainer/Panel9"]
+position = Vector2(59, 72)
+scale = Vector2(0.401111, 0.401111)
+texture = ExtResource("11_le1ma")
+
+[node name="BaseText" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel9"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 17.0
+offset_right = 448.0
+offset_bottom = 128.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Skull
+Sell value = 3"
+
+[node name="Text1" type="RichTextLabel" parent="ScrollContainer/VBoxContainer/Panel9"]
 layout_mode = 0
 offset_left = 127.0
 offset_top = 95.0

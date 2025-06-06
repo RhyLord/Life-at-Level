@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpxph8f5dwkr"]
+[gd_scene load_steps=4 format=3 uid="uid://bqd1tm1upohee"]
 
-[ext_resource type="Texture2D" uid="uid://b7m6s6srpeydl" path="res://Assets/Skills_art/Kick_button.png" id="1_kxqsq"]
-[ext_resource type="Script" path="res://Scripts/Skill_Menu_Scripts/kick_skill.gd" id="1_oprp8"]
-[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Go_Back_To_Skills.gd" id="2_ahywm"]
+[ext_resource type="Script" path="res://Scripts/Skill_Menu_Scripts/sword_mastery_skill.gd" id="1_bvnh8"]
+[ext_resource type="Texture2D" uid="uid://8o7t64fww05h" path="res://Assets/Skills_art/Sword_Mastery_button.png" id="1_xsk2h"]
+[ext_resource type="Script" path="res://Scripts/Menus_Scripts/Go_Back_To_Skills.gd" id="2_d6m8b"]
 
-[node name="kick_skill" type="Control"]
+[node name="Sword_Mastery_Skill" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_oprp8")
+script = ExtResource("1_bvnh8")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -20,18 +20,6 @@ offset_top = -17.0
 offset_right = 1164.0
 offset_bottom = 667.0
 color = Color(0.492416, 0.658999, 0.893626, 1)
-
-[node name="Type_Text" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 30.0
-offset_top = 180.0
-offset_right = 742.0
-offset_bottom = 229.0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 25
-text = "Type: Combat and Physical"
 
 [node name="Leveltxt" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -64,9 +52,11 @@ offset_left = 20.0
 offset_top = 299.0
 offset_right = 1123.0
 offset_bottom = 396.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
 text = "EXP:"
 
 [node name="Off-Combat_Desc" type="RichTextLabel" parent="."]
@@ -75,18 +65,7 @@ offset_left = 20.0
 offset_top = 400.0
 offset_right = 1123.0
 offset_bottom = 448.0
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 3
-theme_override_font_sizes/normal_font_size = 20
-bbcode_enabled = true
-text = "EXP:"
-
-[node name="Combat_Desc" type="RichTextLabel" parent="."]
-layout_mode = 0
-offset_left = 20.0
-offset_top = 450.0
-offset_right = 1123.0
-offset_bottom = 585.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 20
@@ -95,22 +74,19 @@ text = "EXP:"
 
 [node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 10.0
-offset_right = 376.0
-offset_bottom = 118.0
+offset_left = 25.0
+offset_top = -4.0
+offset_right = 699.0
+offset_bottom = 104.0
 theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 5
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 75
-text = "Kick"
+text = "Sword Mastery"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(921, 149)
-texture = ExtResource("1_kxqsq")
+texture = ExtResource("1_xsk2h")
 
 [node name="Go_Back_Button" type="Button" parent="."]
 layout_mode = 0
@@ -120,6 +96,18 @@ offset_right = 1144.0
 offset_bottom = 69.0
 theme_override_font_sizes/font_size = 40
 text = "X"
-script = ExtResource("2_ahywm")
+script = ExtResource("2_d6m8b")
+
+[node name="Type_Text" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 180.0
+offset_right = 742.0
+offset_bottom = 229.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/normal_font_size = 25
+text = "Type: Off-Combat"
 
 [connection signal="button_up" from="Go_Back_Button" to="Go_Back_Button" method="_on_button_up"]

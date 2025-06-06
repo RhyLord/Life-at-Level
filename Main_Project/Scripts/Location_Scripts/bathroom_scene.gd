@@ -59,11 +59,13 @@ func _on_option_button_2_button_up():
 
 func _on_option_button_3_button_up():
 	GlobalButtonClick.button_click()
+	Skill.Shower_Unlocked = true
 	var shower_scene = Shower_Scene.instantiate()
 	get_tree().current_scene.add_child(shower_scene)
 
 
 func _on_option_button_4_button_up():
 	GlobalButtonClick.button_click()
+	Skill.Speech_Unlocked = true
 	var speech_scene = Speech_Scene.instantiate()
 	get_tree().current_scene.add_child(speech_scene)

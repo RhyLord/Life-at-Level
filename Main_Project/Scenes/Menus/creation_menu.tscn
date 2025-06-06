@@ -20,18 +20,6 @@ offset_right = 1164.0
 offset_bottom = 667.0
 color = Color(0.492416, 0.658999, 0.893626, 1)
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 294.0
-offset_top = 142.0
-offset_right = 847.0
-offset_bottom = 258.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 40
-text = "Lowest Level Slime Dungeon"
-
 [node name="Go_Back_Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1067.0
@@ -43,5 +31,91 @@ theme_override_font_sizes/font_size = 40
 text = "X"
 script = ExtResource("1_0s80q")
 
-[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[node name="Grid2" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = -1596.0
+offset_top = 102.0
+offset_right = -480.0
+offset_bottom = 642.0
+
+[node name="GridContainer" type="GridContainer" parent="Grid2"]
+layout_mode = 2
+theme_override_constants/v_separation = 10
+
+[node name="Button10" type="Button" parent="Grid2/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Lowest Level Slime Dungeon"
+
+[node name="ButtonBack1" type="Button" parent="Grid2/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Go Back"
+
+[node name="Grid3" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = -2963.0
+offset_top = 102.0
+offset_right = -1847.0
+offset_bottom = 642.0
+
+[node name="GridContainer" type="GridContainer" parent="Grid3"]
+layout_mode = 2
+theme_override_constants/v_separation = 10
+
+[node name="Button20" type="Button" parent="Grid3/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Lowest Level Undead Dungeon"
+
+[node name="ButtonBack2" type="Button" parent="Grid3/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Go Back"
+
+[node name="Grid1" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 102.0
+offset_right = 1146.0
+offset_bottom = 642.0
+
+[node name="GridContainer" type="GridContainer" parent="Grid1"]
+layout_mode = 2
+theme_override_constants/v_separation = 10
+
+[node name="Button1" type="Button" parent="Grid1/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Slime Dungeon"
+
+[node name="Button2" type="Button" parent="Grid1/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Undead Dungeon"
+
 [connection signal="button_up" from="Go_Back_Button" to="Go_Back_Button" method="_on_button_up"]
+[connection signal="button_up" from="Grid2/GridContainer/Button10" to="." method="_on_button_10_button_up"]
+[connection signal="button_up" from="Grid2/GridContainer/ButtonBack1" to="." method="_on_button_back_1_button_up"]
+[connection signal="button_up" from="Grid3/GridContainer/Button20" to="." method="_on_button_20_button_up"]
+[connection signal="button_up" from="Grid3/GridContainer/ButtonBack2" to="." method="_on_button_back_2_button_up"]
+[connection signal="button_up" from="Grid1/GridContainer/Button1" to="." method="_on_button_1_button_up"]
+[connection signal="button_up" from="Grid1/GridContainer/Button2" to="." method="_on_button_2_button_up"]

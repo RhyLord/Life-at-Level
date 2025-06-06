@@ -16,6 +16,7 @@ var Selected_Action
 @onready var aquaslime_effect = load("res://Scenes/Effects/aquaslime_effect.tscn")
 @onready var magicslime_effect = load("res://Scenes/Effects/magicslime_effect.tscn")
 @onready var metallicslime_effect = load("res://Scenes/Effects/metalslime_effect.tscn")
+@onready var hit_effect = load("res://Scenes/Effects/basic_hit_effect.tscn")
 
 var enemies = []
 
@@ -148,6 +149,8 @@ func Enemy_attack_effect():
 			magicslime_attack_effect()
 		elif enemy_data.attack_effect == "metallicslime":
 			metallicslime_attack_effect()
+		elif enemy_data.attack_effect == "hit":
+			Hit_effect()
 
 func greenslime_attack_effect():
 	var hit_effect = greenslime_effect.instantiate()
@@ -247,6 +250,22 @@ func magicslime_attack_effect():
 
 func metallicslime_attack_effect():
 	var hit_effect = metallicslime_effect.instantiate()
+	hit_effect.global_position = Vector2(
+		PreBattleData.Player_position_x,
+		PreBattleData.Player_position_y
+	)
+	hit_effect.z_index = 201
+	add_child(hit_effect)
+
+	var particles = hit_effect.get_node("CPUParticles2D")
+	if particles:
+		particles.emitting = true
+
+	await get_tree().create_timer(0.9).timeout
+	hit_effect.queue_free()
+
+func Hit_effect():
+	var hit_effect = hit_effect.instantiate()
 	hit_effect.global_position = Vector2(
 		PreBattleData.Player_position_x,
 		PreBattleData.Player_position_y

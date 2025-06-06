@@ -11,6 +11,8 @@ extends Control
 @onready var text5 = $ScrollContainer/VBoxContainer/Panel5/Text1
 @onready var text6 = $ScrollContainer/VBoxContainer/Panel6/Text1
 @onready var text7 = $ScrollContainer/VBoxContainer/Panel7/Text1
+@onready var text8 = $ScrollContainer/VBoxContainer/Panel8/Text1
+@onready var text9 = $ScrollContainer/VBoxContainer/Panel9/Text1
 
 
 #Dev func Delete before export
@@ -30,6 +32,8 @@ func page_1():
 	text5.text = "Owned[" + str(Inventory.Aqua_Slime) + "]"
 	text6.text = "Owned[" + str(Inventory.Magic_Slime) + "]"
 	text7.text = "Owned[" + str(Inventory.Metallic_Slime) + "]"
+	text8.text = "Owned[" + str(Inventory.Bone) + "]"
+	text9.text = "Owned[" + str(Inventory.Skull) + "]"
 	
 	
 	

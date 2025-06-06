@@ -9,6 +9,9 @@ var Aqua_Slime = 0
 var Magic_Slime = 0
 var Metallic_Slime = 0
 
+var Bone = 0
+var Skull = 0
+
 #Potions
 var minor_health_potion = 0
 var minor_mana_potion = 0

@@ -24,9 +24,9 @@ color = Color(0.492416, 0.658999, 0.893626, 1)
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 0
 offset_left = 333.0
-offset_top = 129.0
+offset_top = 81.0
 offset_right = 852.0
-offset_bottom = 611.0
+offset_bottom = 644.0
 
 [node name="Button4" type="Button" parent="GridContainer"]
 layout_mode = 2
@@ -78,6 +78,14 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 50
 text = "Exit To Main Menu"
 
+[node name="Debug" type="Button" parent="GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 50
+text = "Debug"
+
 [node name="Go_Back_Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1067.0
@@ -96,4 +104,5 @@ text = "X"
 [connection signal="button_up" from="GridContainer/Button" to="GridContainer/Button" method="_on_button_up"]
 [connection signal="button_up" from="GridContainer/Save_Button" to="." method="_on_save_button_button_up"]
 [connection signal="pressed" from="GridContainer/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="button_up" from="GridContainer/Debug" to="." method="_on_debug_button_up"]
 [connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]

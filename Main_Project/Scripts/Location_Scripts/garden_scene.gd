@@ -72,17 +72,20 @@ func _on_option_button_2_button_up():
 
 func _on_option_button_3_button_up():
 	GlobalButtonClick.button_click()
+	Skill.Run_Unlocked = true
 	var run_scene = Run_Scene.instantiate()
 	get_tree().current_scene.add_child(run_scene)
 
 
 func _on_option_button_4_button_up():
 	GlobalButtonClick.button_click()
+	Skill.PushUp_Unlocked = true
 	var Pushup_scene = PushUp_Scene.instantiate()
 	get_tree().current_scene.add_child(Pushup_scene)
 
 
 func _on_option_button_5_button_up():
 	GlobalButtonClick.button_click()
+	Skill.Squat_Unlocked = true
 	var squat_scene = Squat_Scene.instantiate()
 	get_tree().current_scene.add_child(squat_scene)

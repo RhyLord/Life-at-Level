@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmo0negnvmxg7"]
+
+[ext_resource type="PackedScene" uid="uid://dkd068viwcaxf" path="res://Scenes/Battles/battle_hud.tscn" id="1_xwsgh"]
+[ext_resource type="Texture2D" uid="uid://dom625if2alf3" path="res://Assets/Location_Art/Plains/Undead_Dungeon_Bg.png" id="2_y7i64"]
+
+[node name="Lowest_Undead_Dungeon_1_2" type="Node2D"]
+
+[node name="Battle_HUD" parent="." instance=ExtResource("1_xwsgh")]
+
+[node name="BG" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(580.5, 322.5)
+scale = Vector2(0.910156, 0.909722)
+texture = ExtResource("2_y7i64")

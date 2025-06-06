@@ -295,6 +295,18 @@ func Save_Game():
 	file.store_var(Skill.Potion_Proficiency_LVL)
 	file.store_var(Skill.Potion_Proficiency_XP)
 	file.store_var(Skill.Potion_Proficiency_NXT_XP)
+	
+	# –– Sword Mastery –– 
+	file.store_var(Skill.Sword_Mastery_Unlocked)
+	file.store_var(Skill.Sword_Mastery_LVL)
+	file.store_var(Skill.Sword_Mastery_XP)
+	file.store_var(Skill.Sword_Mastery_NXT_XP)
+	
+	# Sword Slash Save
+	file.store_var(Skill.Sword_Slash_Unlocked)
+	file.store_var(Skill.Sword_Slash_LVL)
+	file.store_var(Skill.Sword_Slash_XP)
+	file.store_var(Skill.Sword_Slash_NXT_XP)
 
 	# Health Potion
 	file.store_var(Skill.Health_Potion_Unlocked)
@@ -326,6 +338,8 @@ func Save_Game():
 	file.store_var(DungeonData.lowest_level_slime_81_90)
 	file.store_var(DungeonData.lowest_level_slime_91_100)
 	
+	file.store_var(DungeonData.lowest_level_undead_1_10)
+	
 	#Inventory Items
 	#Monster Loot
 	file.store_var(Inventory.Green_Slime)
@@ -335,6 +349,9 @@ func Save_Game():
 	file.store_var(Inventory.Aqua_Slime)
 	file.store_var(Inventory.Magic_Slime)
 	file.store_var(Inventory.Metallic_Slime)
+	
+	file.store_var(Inventory.Bone)
+	file.store_var(Inventory.Skull)
 	
 	#Potions
 	file.store_var(Inventory.minor_health_potion)
@@ -430,25 +447,25 @@ func New_Game():
 	Skill.Rest_NXT_XP = Skill.calculate_xp_needed(Skill.Rest_LVL)
 	
 	# PushUp
-	Skill.PushUp_Unlocked = true
+	Skill.PushUp_Unlocked = false
 	Skill.PushUp_LVL = 1
 	Skill.PushUp_XP = 0
 	Skill.PushUp_NXT_XP = Skill.calculate_xp_needed(Skill.PushUp_LVL)
 	
 	# Run
-	Skill.Run_Unlocked = true
+	Skill.Run_Unlocked = false
 	Skill.Run_LVL = 1
 	Skill.Run_XP = 0
 	Skill.Run_NXT_XP = Skill.calculate_xp_needed(Skill.Run_LVL)
 
 	# Study
-	Skill.Study_Unlocked = true
+	Skill.Study_Unlocked = false
 	Skill.Study_LVL = 1
 	Skill.Study_XP = 0
 	Skill.Study_NXT_XP = Skill.calculate_xp_needed(Skill.Study_LVL)
 	
 	# Speech
-	Skill.Speech_Unlocked = true
+	Skill.Speech_Unlocked = false
 	Skill.Speech_LVL = 1
 	Skill.Speech_XP = 0
 	Skill.Speech_NXT_XP = Skill.calculate_xp_needed(Skill.Speech_LVL)
@@ -466,7 +483,7 @@ func New_Game():
 	Skill.Strong_Punch_NXT_XP = Skill.calculate_xp_needed(Skill.Strong_Punch_LVL)
 
 	# Squat
-	Skill.Squat_Unlocked = true
+	Skill.Squat_Unlocked = false
 	Skill.Squat_LVL = 1
 	Skill.Squat_XP = 0
 	Skill.Squat_NXT_XP = Skill.calculate_xp_needed(Skill.Squat_LVL)
@@ -502,13 +519,13 @@ func New_Game():
 	Skill.Lowly_Mana_Regen_NXT_XP = Skill.calculate_xp_needed(Skill.Lowly_Mana_Regen_LVL)
 	
 	#Meditate
-	Skill.Meditate_Unlocked = true
+	Skill.Meditate_Unlocked = false
 	Skill.Meditate_LVL = 1
 	Skill.Meditate_XP = 0
 	Skill.Meditate_NXT_XP = calculate_xp_needed(Skill.Meditate_LVL)
 	
 	#Shower
-	Skill.Shower_Unlocked = true
+	Skill.Shower_Unlocked = false
 	Skill.Shower_LVL = 1
 	Skill.Shower_XP = 0
 	Skill.Shower_NXT_XP = calculate_xp_needed(Skill.Shower_LVL)
@@ -518,6 +535,18 @@ func New_Game():
 	Skill.Potion_Proficiency_LVL = 1
 	Skill.Potion_Proficiency_XP = 0
 	Skill.Potion_Proficiency_NXT_XP = calculate_xp_needed(Skill.Potion_Proficiency_LVL)
+	
+	# Sword Slash (New Game)
+	Skill.Sword_Slash_Unlocked = false
+	Skill.Sword_Slash_LVL = 1
+	Skill.Sword_Slash_XP = 0
+	Skill.Sword_Slash_NXT_XP = Skill.calculate_xp_needed(Skill.Sword_Slash_LVL)
+	
+	# Sword Mastery
+	Skill.Sword_Mastery_Unlocked = false
+	Skill.Sword_Mastery_LVL = 1
+	Skill.Sword_Mastery_XP = 0
+	Skill.Sword_Mastery_NXT_XP = Skill.calculate_xp_needed(Skill.Sword_Mastery_LVL)
 	
 	# **Health Potion Skill**
 	Skill.Health_Potion_Unlocked = false
@@ -553,6 +582,9 @@ func New_Game():
 	Inventory.Magic_Slime = 0
 	Inventory.Metallic_Slime = 0
 	
+	Inventory.Bone = 0
+	Inventory.Skull = 0
+	
 	#Potions
 	Inventory.minor_health_potion = 0
 	Inventory.minor_mana_potion = 0
@@ -572,6 +604,8 @@ func New_Game():
 	DungeonData.lowest_level_slime_71_80 = false
 	DungeonData.lowest_level_slime_81_90 = false
 	DungeonData.lowest_level_slime_91_100 = false
+	
+	DungeonData.lowest_level_undead_1_10 = false
 
 func load_data():
 	if FileAccess.file_exists(save_path):
@@ -758,6 +792,18 @@ func load_data():
 		Skill.Potion_Proficiency_LVL = file.get_var()
 		Skill.Potion_Proficiency_XP = file.get_var()
 		Skill.Potion_Proficiency_NXT_XP = file.get_var()
+		
+		# Sword Slash Load
+		Skill.Sword_Slash_Unlocked = file.get_var()
+		Skill.Sword_Slash_LVL = file.get_var()
+		Skill.Sword_Slash_XP = file.get_var()
+		Skill.Sword_Slash_NXT_XP = file.get_var()
+		
+		# Sword Mastery
+		Skill.Sword_Mastery_Unlocked = file.get_var()
+		Skill.Sword_Mastery_LVL = file.get_var()
+		Skill.Sword_Mastery_XP = file.get_var()
+		Skill.Sword_Mastery_NXT_XP = file.get_var()
 
 		# Health Potion
 		Skill.Health_Potion_Unlocked = file.get_var()
@@ -789,6 +835,8 @@ func load_data():
 		DungeonData.lowest_level_slime_71_80 = file.get_var()
 		DungeonData.lowest_level_slime_81_90 = file.get_var()
 		DungeonData.lowest_level_slime_91_100 = file.get_var()
+		
+		DungeonData.lowest_level_undead_1_10 = file.get_var()
 
 		# Inventory Items
 		# Monster Loot
@@ -799,6 +847,9 @@ func load_data():
 		Inventory.Aqua_Slime = file.get_var()
 		Inventory.Magic_Slime = file.get_var()
 		Inventory.Metallic_Slime = file.get_var()
+		
+		Inventory.Bone = file.get_var()
+		Inventory.Skull = file.get_var()
 
 		# Potions
 		Inventory.minor_health_potion = file.get_var()

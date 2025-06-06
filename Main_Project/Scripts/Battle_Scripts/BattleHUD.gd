@@ -20,6 +20,8 @@ var Aqua_Slime_Texture = preload("res://Assets/Card_art/AquaSlime_Card.png")
 var Magic_Slime_Texture = preload("res://Assets/Card_art/MagicSlime_Card.png")
 var Metallic_Slime_Texture = preload("res://Assets/Card_art/MetallicSlime_Card.png")
 
+var Skull_Texture = preload("res://Assets/Items_Art/Skull_Item.png")
+
 @onready var Enemy_Cards = [
 	$Enemy_Card_1,
 	$Enemy_Card_2,
@@ -230,22 +232,23 @@ func Enemy_Attack_Check():
 	Option_Holder.visible = true
 
 func Set_Enemy_Image():
-	var slime_textures = {
+	var textures = {
 		"green_slime": Green_Slime_Texture,
 		"acid_slime": Acid_Slime_Texture,
 		"poison_slime": Poison_Slime_Texture,
 		"lava_slime": Lava_Slime_Texture,
 		"aqua_slime": Aqua_Slime_Texture,
 		"magic_slime": Magic_Slime_Texture,
-		"metallic_slime": Metallic_Slime_Texture
+		"metallic_slime": Metallic_Slime_Texture,
+		"skull": Skull_Texture
 	}
 
 	var enemies = [Enemy1Data, Enemy2Data, Enemy3Data, Enemy4Data, Enemy5Data]
 	var images = [Enemy_Image1, Enemy_Image2, Enemy_Image3, Enemy_Image4, Enemy_Image5]
 
 	for i in range(enemies.size()):
-		if enemies[i].type in slime_textures:
-			images[i].texture_normal = slime_textures[enemies[i].type]
+		if enemies[i].type in textures:
+			images[i].texture_normal = textures[enemies[i].type]
 
 
 func _on_enemy_image_button_up():

@@ -19,6 +19,14 @@ var all_skills = {
 		"icon": preload("res://Assets/Skills_art/Strong_Punch_Button.png"),
 		"scene": "res://Scenes/Skills/strong_punch_skill.tscn"
 	},
+	"Sword_Mastery": {
+		"icon": preload("res://Assets/Skills_art/Sword_Mastery_button.png"),
+		"scene": "res://Scenes/Skills/sword_mastery_skill.tscn"
+	},
+	"Sword_Slash": {
+		"icon": preload("res://Assets/Skills_art/Sword_Slash_button.png"),
+		"scene": "res://Scenes/Skills/sword_slash_skill.tscn"
+	},
 	"Magic_Blast": {
 		"icon": preload("res://Assets/Skills_art/Magic_Blast_button.png"),
 		"scene": "res://Scenes/Skills/magic_blast_skill.tscn"

@@ -1,7 +1,9 @@
 extends Node
 
 var dungeon_lvl = 0
+var lowest_undead_dungeon_lvl = 0
 var lowest_level_slime = 0
+var lowest_level_undead = 0
 var next_scene = ""
 
 var lowest_level_slime_1_10 = true
@@ -14,6 +16,9 @@ var lowest_level_slime_61_70 = false
 var lowest_level_slime_71_80 = false
 var lowest_level_slime_81_90 = false
 var lowest_level_slime_91_100 = false
+
+var lowest_level_undead_1_10 = false
+var lowest_level_undead_11_20 = false
 
 func Lowest_Level_Slime_Dungeon():
 	if dungeon_lvl == 1:
@@ -111,6 +116,7 @@ func Lowest_Level_Slime_Dungeon():
 		PostBattleData.XP = 120
 		PostBattleData.lowest_slime = 7
 		lowest_level_slime_11_20 = true
+		lowest_level_undead_1_10 = true
 		Enemy1Data.Create_AquaSlime(1)
 		Enemy2Data.Create_GreenSlime(3)
 		next_scene = "Lowest_Level_Slime_Dungeon_1_11"
@@ -665,11 +671,117 @@ func Lowest_Level_Slime_Dungeon():
 		Enemy3Data.Create_LavaSlime(57)
 		next_scene = "Lowest_Level_Slime_Dungeon_1_62"
 
+func Lowest_Level_Undead_Dungeon():
+	if lowest_undead_dungeon_lvl == 1:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 1"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 1"
+		PostBattleData.XP = 35
+		PostBattleData.lowest_undead = 1
+		Enemy1Data.Create_Skull(1)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_2" 
+	
+	if lowest_undead_dungeon_lvl == 2:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 2"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 2"
+		PostBattleData.XP = 48
+		PostBattleData.lowest_undead = 2
+		Enemy1Data.Create_Skull(2)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_3"
+		
+	if lowest_undead_dungeon_lvl == 3:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 3"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 3"
+		PostBattleData.XP = 65
+		PostBattleData.lowest_undead = 3
+		Enemy1Data.Create_Skull(3)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_4"
+	
+	if lowest_undead_dungeon_lvl == 4:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 4"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 4"
+		PostBattleData.XP = 98
+		PostBattleData.lowest_undead = 4
+		Enemy1Data.Create_Skull(1)
+		Enemy2Data.Create_Skull(1)
+		Enemy3Data.Create_Skull(1)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_5"
+	
+	if lowest_undead_dungeon_lvl == 5:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 5"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 5"
+		PostBattleData.XP = 144
+		PostBattleData.lowest_undead = 5
+		Enemy1Data.Create_Skull(3)
+		Enemy2Data.Create_Skull(3)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_6"
+	
+	if lowest_undead_dungeon_lvl == 6:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 6"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 6"
+		PostBattleData.XP = 160
+		PostBattleData.lowest_undead = 6
+		Enemy1Data.Create_Skull(4)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_7"
+		
+	if lowest_undead_dungeon_lvl == 7:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 7"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 7"
+		PostBattleData.XP = 200
+		PostBattleData.lowest_undead = 7
+		Enemy1Data.Create_Skull(5)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_8"
+		
+	if lowest_undead_dungeon_lvl == 8:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 8"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 8"
+		PostBattleData.XP = 311
+		PostBattleData.lowest_undead = 8
+		Enemy1Data.Create_Skull(2)
+		Enemy2Data.Create_Skull(2)
+		Enemy3Data.Create_Skull(3)
+		Enemy4Data.Create_Skull(1)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_9"
+	
+	if lowest_undead_dungeon_lvl == 9:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 9"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 9"
+		PostBattleData.XP = 499
+		PostBattleData.lowest_undead = 9
+		Enemy1Data.Create_Skull(4)
+		Enemy2Data.Create_Skull(4)
+		Enemy3Data.Create_Skull(1)
+		Enemy4Data.Create_Skull(1)
+		next_scene = "Lowest_Level_Undead_Dungeon_1_10"
+	
+	if lowest_undead_dungeon_lvl == 10:
+		PreBattleData.bg_textures = "Undead"
+		PreBattleData.Dungeon_start_name = "Undead Dungeon 1 - 10"
+		PreBattleData.description_txt = "You have entered Undead Dungeon 1 - 10"
+		PostBattleData.XP = 579
+		PostBattleData.lowest_undead = 10
+		Enemy1Data.Create_Skull(5)
+		Enemy2Data.Create_Skull(5)
+		lowest_level_undead_11_20 = true
+		next_scene = "Lowest_Level_Undead_Dungeon_1_11"
 
 func Next_lvl():
 	if lowest_level_slime == 1:
 		dungeon_lvl += 1
 		Lowest_Level_Slime_Dungeon()
+	
+	elif lowest_level_undead == 1:
+		lowest_undead_dungeon_lvl += 1
+		Lowest_Level_Undead_Dungeon()
+		
 
 func Reset_Data():
 	BattleMech.Set_Default()
@@ -680,5 +792,7 @@ func Reset_Data():
 	Enemy4Data.Set_Default()
 	Enemy5Data.Set_Default()
 	dungeon_lvl = 0
+	lowest_undead_dungeon_lvl = 0
 	lowest_level_slime = 0
+	lowest_level_undead = 0
 	next_scene = "" 

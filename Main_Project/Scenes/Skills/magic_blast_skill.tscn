@@ -55,6 +55,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
 text = "EXP:"
 
 [node name="Description" type="RichTextLabel" parent="."]
@@ -77,6 +78,7 @@ offset_bottom = 448.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
 text = "EXP:"
 
 [node name="Combat_Desc" type="RichTextLabel" parent="."]
@@ -88,6 +90,7 @@ offset_bottom = 585.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 3
 theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
 text = "EXP:"
 
 [node name="Title" type="RichTextLabel" parent="."]

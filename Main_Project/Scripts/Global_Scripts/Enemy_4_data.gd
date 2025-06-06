@@ -83,6 +83,15 @@ func Create_MetallicSlime(lvl):
 	PHYSICAL_DEF = 5 * lvl
 	Set_HP()
 	Alive = true
+	
+func Create_Skull(lvl):
+	Enemy_name = "Level " + str(lvl) + " Skull"
+	type = "skull"
+	MAX_HP = (10 * lvl) + 10
+	PHYSICAL_DMG = ceil(2.5 * lvl) + 5
+	attack_effect = "hit"
+	Set_HP()
+	Alive = true
 
 func Set_Default():
 	HP = 0

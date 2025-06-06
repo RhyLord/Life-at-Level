@@ -8,7 +8,8 @@ var textures = {
 	"magic_blast": preload("res://Assets/Skills_art/Magic_Blast_button.png"),
 	"magic_seeker": preload("res://Assets/Skills_art/Magic_Seeker_button.png"),
 	"acid_potion": preload("res://Assets/Skills_art/AcidPotion_Button.png"),
-	"strong_punch": preload("res://Assets/Skills_art/Strong_Punch_Button.png")
+	"strong_punch": preload("res://Assets/Skills_art/Strong_Punch_Button.png"),
+	"sword_slash": preload("res://Assets/Skills_art/Sword_Slash_button.png")
 }
 
 func _ready():
@@ -16,6 +17,13 @@ func _ready():
 
 	if Skill.Kick_Unlocked:
 		_add_skill_button("kick", _on_kick_pressed)
+	
+	if Skill.Strong_Punch_Unlocked:
+		_add_skill_button("strong_punch", _on_strong_punch_pressed)
+	
+	if Skill.Sword_Slash_Unlocked:
+		if Player.Weapon_Type == "Sword":
+			_add_skill_button("sword_slash", _on_sword_slash_pressed)
 
 	if Skill.Magic_Blast_Unlocked:
 		_add_skill_button("magic_blast", _on_magic_blast_pressed)
@@ -26,8 +34,6 @@ func _ready():
 	if Skill.Acid_Potion_Unlocked:
 		_add_skill_button("acid_potion", _on_acid_potion_pressed)
 
-	if Skill.Strong_Punch_Unlocked:
-		_add_skill_button("strong_punch", _on_strong_punch_pressed)
 
 func _add_skill_button(texture_key: String, callback: Callable):
 	var btn = TextureButton.new()
@@ -50,6 +56,15 @@ func _on_kick_pressed():
 	if Player.EN >= 25:
 		GlobalButtonClick.button_click()
 		BattleMech.Selected_Skill = Skill.Kick.bind()
+		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
+		BattleMech.Player_Skill_Effect = "basic_hit"
+		BattleMech.turn_order = 1
+		queue_free()
+
+func _on_sword_slash_pressed():
+	if Player.EN >= 20:
+		GlobalButtonClick.button_click()
+		BattleMech.Selected_Skill = Skill.Sword_Slash.bind()
 		BattleMech.Selected_Action = BattleMech.Player_Attack_1.bind()
 		BattleMech.Player_Skill_Effect = "basic_hit"
 		BattleMech.turn_order = 1

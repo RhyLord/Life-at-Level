@@ -43,7 +43,7 @@ func Combat_Rest():
 	Combat_Rest_XP()
 
 # Push-Up Skill
-var PushUp_Unlocked = true
+var PushUp_Unlocked = false
 var PushUp_LVL = 1
 var PushUp_XP = 0
 var PushUp_NXT_XP = calculate_xp_needed(PushUp_LVL)
@@ -64,7 +64,7 @@ func Active_PushUp():
 		Active_PushUp_XP()
 
 #Run Skill		
-var Run_Unlocked = true
+var Run_Unlocked = false
 var Run_LVL = 1
 var Run_XP = 0
 var Run_NXT_XP = calculate_xp_needed(Run_LVL)
@@ -85,7 +85,7 @@ func Active_Run():
 		Active_Run_XP()
 		
 # **Study Skill**		
-var Study_Unlocked = true
+var Study_Unlocked = false
 var Study_LVL = 1
 var Study_XP = 0
 var Study_NXT_XP = calculate_xp_needed(Study_LVL)
@@ -106,7 +106,7 @@ func Active_Study():
 		Active_Study_XP()
 			
 # **Speech Skill**		
-var Speech_Unlocked = true
+var Speech_Unlocked = false
 var Speech_LVL = 1
 var Speech_XP = 0
 var Speech_NXT_XP = calculate_xp_needed(Speech_LVL)
@@ -146,7 +146,7 @@ func Punch():
 		level_up_skill("Punch_XP", "Punch_LVL", "Punch_NXT_XP")
 
 # **Squat Skill**
-var Squat_Unlocked = true
+var Squat_Unlocked = false
 var Squat_LVL = 1
 var Squat_XP = 0
 var Squat_NXT_XP = calculate_xp_needed(Squat_LVL)
@@ -282,7 +282,7 @@ func Active_Magic_Blast():
 		level_up_skill("Magic_Blast_XP", "Magic_Blast_LVL", "Magic_Blast_NXT_XP")
 
 # **Meditate Skill**
-var Meditate_Unlocked = true
+var Meditate_Unlocked = false
 var Meditate_LVL = 1
 var Meditate_XP = 0
 var Meditate_NXT_XP = calculate_xp_needed(Meditate_LVL)
@@ -303,7 +303,7 @@ func Active_Meditate():
 		Active_Meditate_XP()
 
 # **Shower Skill**
-var Shower_Unlocked = true
+var Shower_Unlocked = false
 var Shower_LVL = 1
 var Shower_XP = 0
 var Shower_NXT_XP = calculate_xp_needed(Shower_LVL)
@@ -334,6 +334,42 @@ func Gain_Potion_Proficiency_XP():
 	var xp_gain = 50 + (Player.DEX * Potion_Proficiency_LVL)
 	Potion_Proficiency_XP += xp_gain
 	level_up_skill("Potion_Proficiency_XP", "Potion_Proficiency_LVL", "Potion_Proficiency_NXT_XP")
+
+# Sword Mastery Skill
+var Sword_Mastery_Unlocked = false
+var Sword_Mastery_LVL = 1
+var Sword_Mastery_XP = 0
+var Sword_Mastery_NXT_XP = calculate_xp_needed(Sword_Mastery_LVL)
+
+func Gain_Sword_Mastery_XP():
+	var xp_gain = (25 + (Player.DEX * Sword_Mastery_LVL)) + (25 + (Player.STR * Sword_Mastery_LVL))
+	Sword_Mastery_XP += xp_gain
+	level_up_skill("Sword_Mastery_XP", "Sword_Mastery_LVL", "Sword_Mastery_NXT_XP")
+	
+# Sword Slash Skill
+var Sword_Slash_Unlocked = false
+var Sword_Slash_LVL = 1
+var Sword_Slash_XP = 0
+var Sword_Slash_NXT_XP = calculate_xp_needed(Sword_Slash_LVL)
+
+func Sword_Slash_XP_gain():
+	var xp_gain = (50 * Sword_Slash_LVL) + (5 * Player.STR) + (5 * Player.DEX) + (5 * Skill.Sword_Mastery_LVL)
+	Sword_Slash_XP += xp_gain
+	level_up_skill("Sword_Slash_XP", "Sword_Slash_LVL", "Sword_Slash_NXT_XP")
+	Gain_Sword_Mastery_XP()
+
+func Sword_Slash():
+	var en_cost = 20
+	if Player.EN >= en_cost:
+		Player.EN -= en_cost
+		
+		Player.SHARP_DMG = (2 * Sword_Slash_LVL) \
+			+ ceil(1.25 * Player.STR) \
+			+ ceil(1.25 * Player.DEX) \
+			+ (5 * Skill.Sword_Mastery_LVL) \
+			+ Player.SWORD_DMG
+
+		Sword_Slash_XP_gain()
 
 # **Health Potion Skill**
 var Health_Potion_Unlocked = false

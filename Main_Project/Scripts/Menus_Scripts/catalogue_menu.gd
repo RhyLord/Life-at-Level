@@ -45,3 +45,7 @@ func _on_go_back_button_button_up():
 func _on_button_2_button_up():
 	GlobalButtonClick.button_click()
 	get_tree().change_scene_to_file(Inventory_Scene)
+
+
+func _on_debug_button_up():
+	pass

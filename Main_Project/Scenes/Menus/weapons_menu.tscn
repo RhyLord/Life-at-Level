@@ -108,6 +108,7 @@ bbcode_enabled = true
 text = "Owned[0]"
 
 [node name="Button1" type="Button" parent="ScrollContainer/VBoxContainer/Panel1"]
+layout_mode = 0
 offset_left = 780.0
 offset_top = 23.0
 offset_right = 1080.0
@@ -116,3 +117,4 @@ theme_override_font_sizes/font_size = 45
 text = "Unavailable"
 
 [connection signal="button_up" from="Go_Back_Button" to="." method="_on_go_back_button_button_up"]
+[connection signal="button_up" from="ScrollContainer/VBoxContainer/Panel1/Button1" to="." method="_on_button_1_button_up"]

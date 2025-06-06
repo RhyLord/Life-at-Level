@@ -4,6 +4,7 @@ var XP = 0
 var VictoryText = "[center]You defeated all enemies. You gained " + str(XP) + " XP.[/center]"
 
 var lowest_slime = 0
+var lowest_undead = 0
 
 var greenslime = 0
 var acidslime = 0
@@ -30,6 +31,8 @@ func update():
 	Lowest_Level_Slime_31_40()
 	Lowest_Level_Slime_41_50()
 	Lowest_Level_Slime_51_60()
+	
+	Lowest_Level_Undead_1_10()
 	
 	VictoryText = "[center]You defeated all enemies. You gained " + str(XP) + " XP.[/center]"
 
@@ -117,14 +120,14 @@ func Lowest_Level_Slime_1_10():
 		if Player.LUK > 12:
 			Inventory.Aqua_Slime += 2
 			Inventory.Green_Slime += 3
-			ItemGainText = "You Got 2 Aqua Slime and 3 Green Slime"
+			ItemGainText = "You Got 2 Aqua Slime and 3 Green Slime, You also Unlocked Lowest Level Undead Dunegon."
 		elif Player.LUK > 4:
 			Inventory.Aqua_Slime += 1
 			Inventory.Green_Slime += 2
-			ItemGainText = "You Got 1 Aqua Slime and 2 Green Slime"
+			ItemGainText = "You Got 1 Aqua Slime and 2 Green Slime, You also Unlocked Lowest Level Undead Dunegon."
 		else:
 			Inventory.Green_Slime += 1
-			ItemGainText = "You Got 1 Green Slime"
+			ItemGainText = "You Got 1 Green Slime, You also Unlocked Lowest Level Undead Dunegon."
 
 func Lowest_Level_Slime_11_30():
 	if lowest_slime == 8:
@@ -626,3 +629,102 @@ func Lowest_Level_Slime_51_60():
 		else:
 			Inventory.Metallic_Slime  += 25
 			ItemGainText = "You Got 25 Metallic Slime."
+
+func Lowest_Level_Undead_1_10():
+	if lowest_undead == 1:
+		if Player.LUK > 30:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+			
+	if lowest_undead == 2:
+		if Player.LUK > 20:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+			
+	if lowest_undead == 3:
+		if Player.LUK > 10:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_undead == 4:
+		if Player.LUK > 40:
+			Inventory.Skull += 3
+			ItemGainText = "You Got [color=#cccccc]3 Skull[/color]"
+		elif Player.LUK > 19:
+			Inventory.Skull += 2
+			ItemGainText = "You Got [color=#cccccc]2 Skull[/color]"
+		elif Player.LUK > 11:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+			
+	if lowest_undead == 5:
+		if Player.LUK > 17:
+			Inventory.Skull += 2
+			ItemGainText = "You Got [color=#cccccc]2 Skull[/color]"
+		if Player.LUK > 8:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_undead == 6:
+		if Player.LUK > 7:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_undead == 7:
+		if Player.LUK > 5:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+			
+	if lowest_undead == 8:
+		if Player.LUK > 30:
+			Inventory.Skull += 4
+			ItemGainText = "You Got [color=#cccccc]4 Skull[/color]"
+		elif Player.LUK > 20:
+			Inventory.Skull += 3
+			ItemGainText = "You Got [color=#cccccc]3 Skull[/color]"
+		elif Player.LUK > 10:
+			Inventory.Skull += 2
+			ItemGainText = "You Got [color=#cccccc]2 Skull[/color]"
+		elif Player.LUK > 5:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_undead == 9:
+		if Player.LUK > 21:
+			Inventory.Skull += 4
+			ItemGainText = "You Got [color=#cccccc]4 Skull[/color]"
+		elif Player.LUK > 14:
+			Inventory.Skull += 3
+			ItemGainText = "You Got [color=#cccccc]3 Skull[/color]"
+		elif Player.LUK > 8:
+			Inventory.Skull += 2
+			ItemGainText = "You Got [color=#cccccc]2 Skull[/color]"
+		elif Player.LUK > 2:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_undead == 10:
+		if Player.LUK > 5:
+			Inventory.Skull += 2
+			ItemGainText = "You Got [color=#cccccc]2 Skull[/color]"
+		else:
+			Inventory.Skull += 1
+			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"

@@ -331,6 +331,8 @@ func story_progress():
 	elif dialogue == 95:
 		dialogue_text = "Player: Better than nothing i guess."
 		Inventory.Wooden_Sword += 1
+		Skill.Sword_Mastery_Unlocked = true
+		Skill.Sword_Slash_Unlocked = true
 		Veronica_Face.texture = Smile
 	elif dialogue == 96:
 		Global.claire_sub_quest = 0
