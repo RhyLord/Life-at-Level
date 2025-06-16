@@ -339,6 +339,8 @@ func Save_Game():
 	file.store_var(DungeonData.lowest_level_slime_91_100)
 	
 	file.store_var(DungeonData.lowest_level_undead_1_10)
+	file.store_var(DungeonData.lowest_level_undead_11_20)
+	file.store_var(DungeonData.lowest_level_undead_21_30)
 	
 	#Inventory Items
 	#Monster Loot
@@ -606,6 +608,8 @@ func New_Game():
 	DungeonData.lowest_level_slime_91_100 = false
 	
 	DungeonData.lowest_level_undead_1_10 = false
+	DungeonData.lowest_level_undead_11_20 = false
+	DungeonData.lowest_level_undead_21_30 = false
 
 func load_data():
 	if FileAccess.file_exists(save_path):
@@ -837,6 +841,8 @@ func load_data():
 		DungeonData.lowest_level_slime_91_100 = file.get_var()
 		
 		DungeonData.lowest_level_undead_1_10 = file.get_var()
+		DungeonData.lowest_level_undead_11_20 = file.get_var()
+		DungeonData.lowest_level_undead_21_30 = file.get_var()
 
 		# Inventory Items
 		# Monster Loot

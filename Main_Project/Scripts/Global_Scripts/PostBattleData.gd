@@ -33,6 +33,7 @@ func update():
 	Lowest_Level_Slime_51_60()
 	
 	Lowest_Level_Undead_1_10()
+	Lowest_Level_Undead_11_20()
 	
 	VictoryText = "[center]You defeated all enemies. You gained " + str(XP) + " XP.[/center]"
 
@@ -631,6 +632,7 @@ func Lowest_Level_Slime_51_60():
 			ItemGainText = "You Got 25 Metallic Slime."
 
 func Lowest_Level_Undead_1_10():
+	
 	if lowest_undead == 1:
 		if Player.LUK > 30:
 			Inventory.Skull += 1
@@ -677,8 +679,8 @@ func Lowest_Level_Undead_1_10():
 	
 	if lowest_undead == 6:
 		if Player.LUK > 7:
-			Inventory.Skull += 1
-			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+			Inventory.Bone += 1
+			ItemGainText = "You Got [color=#cccccc]1 Bone[/color]"
 		else:
 			ItemGainText = str(no_item)
 	
@@ -728,3 +730,29 @@ func Lowest_Level_Undead_1_10():
 		else:
 			Inventory.Skull += 1
 			ItemGainText = "You Got [color=#cccccc]1 Skull[/color]"
+
+func Lowest_Level_Undead_11_20():
+	
+	if lowest_undead == 11:
+		if Player.LUK > 10:
+			Inventory.Bone += 5
+			ItemGainText = "You Got [color=#cccccc]5 Bones[/color]"
+		elif Player.LUK > 5:
+			Inventory.Bone += 2
+			ItemGainText = "You Got [color=#cccccc]2 Bones[/color]"
+		elif Player.LUK > 3:
+			Inventory.Bone += 1
+			ItemGainText = "You Got [color=#cccccc]1 Bone[/color]"
+		else:
+			ItemGainText = str(no_item)
+	
+	if lowest_undead == 12:
+		if Player.LUK > 10:
+			Inventory.Bone += 8
+			ItemGainText = "You Got [color=#cccccc]8 Bones[/color]"
+		elif Player.LUK > 5:
+			Inventory.Skull += 4
+			ItemGainText = "You Got [color=#cccccc]4 Bones[/color]"
+		else:
+			Inventory.Bone += 1
+			ItemGainText = "You Got [color=#cccccc]1 Bone[/color]"

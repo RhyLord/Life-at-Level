@@ -48,4 +48,4 @@ func _on_button_2_button_up():
 
 
 func _on_debug_button_up():
-	pass
+	Player.Test_Game()

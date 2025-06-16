@@ -21,6 +21,8 @@ var Magic_Slime_Texture = preload("res://Assets/Card_art/MagicSlime_Card.png")
 var Metallic_Slime_Texture = preload("res://Assets/Card_art/MetallicSlime_Card.png")
 
 var Skull_Texture = preload("res://Assets/Items_Art/Skull_Item.png")
+var Skeleton_Texture = preload("res://Assets/Card_art/Skeleton_Card.png")
+var Wooden_Sword_Skeleton_Texture = preload("res://Assets/Card_art/Wooden_Sword_Skeleton_Card.png")
 
 @onready var Enemy_Cards = [
 	$Enemy_Card_1,
@@ -240,7 +242,9 @@ func Set_Enemy_Image():
 		"aqua_slime": Aqua_Slime_Texture,
 		"magic_slime": Magic_Slime_Texture,
 		"metallic_slime": Metallic_Slime_Texture,
-		"skull": Skull_Texture
+		"skull": Skull_Texture,
+		"skeleton": Skeleton_Texture,
+		"wooden_sword_skeleton": Wooden_Sword_Skeleton_Texture
 	}
 
 	var enemies = [Enemy1Data, Enemy2Data, Enemy3Data, Enemy4Data, Enemy5Data]

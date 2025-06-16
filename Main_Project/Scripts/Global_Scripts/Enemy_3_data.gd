@@ -9,6 +9,7 @@ var HP = 0
 var MAX_HP = 0
 var AGI = 0
 var PHYSICAL_DMG = 0
+var SHARP_DMG = 0
 var ACID_DMG = 0
 var POISON_DMG = 0
 var FIRE_DMG = 0
@@ -93,11 +94,30 @@ func Create_Skull(lvl):
 	Set_HP()
 	Alive = true
 
+func Create_Skeleton(lvl):
+	Enemy_name = "Level " + str(lvl) + " Skeleton"
+	type = "skeleton"
+	MAX_HP = (20 * lvl) + 25
+	PHYSICAL_DMG = (5 * lvl) + 10
+	attack_effect = "hit"
+	Set_HP()
+	Alive = true
+
+func Create_Wooden_Sword_Skeleton(lvl):
+	Enemy_name = "Level " + str(lvl) + " Wooden Sword Skeleton"
+	type = "wooden_sword_skeleton"
+	MAX_HP = (22 * lvl) + 60
+	SHARP_DMG = (8 * lvl) + 10
+	attack_effect = "hit"
+	Set_HP()
+	Alive = true
+
 func Set_Default():
 	HP = 0
 	MAX_HP = 0
 	AGI = 0
 	PHYSICAL_DMG = 0
+	SHARP_DMG = 0
 	ACID_DMG = 0
 	POISON_DMG = 0
 	FIRE_DMG = 0
@@ -123,7 +143,7 @@ func Health_Check():
 func compute_total_dmg():
 	var PHYSICAL_DMG_new = max(PHYSICAL_DMG - Player.PHYSICAL_DEF, 0)
 	var WATER_DMG_new = max(WATER_DMG - Player.WATER_DEF, 0)
-	TOTAL_DMG = PHYSICAL_DMG_new + ACID_DMG + POISON_DMG + FIRE_DMG + WATER_DMG_new + MAGIC_DMG
+	TOTAL_DMG = PHYSICAL_DMG_new + ACID_DMG + POISON_DMG + FIRE_DMG + WATER_DMG_new + MAGIC_DMG + SHARP_DMG
 	if Skill.Physical_Endurance_Unlocked == true:
 		Skill.Active_Physical_Endurance_XP(PHYSICAL_DMG)
 	return TOTAL_DMG
